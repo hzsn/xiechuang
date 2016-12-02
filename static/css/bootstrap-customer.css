@@ -1,0 +1,65 @@
+.xc-nav-bar {
+	height: 50px;
+	background: rgb(233, 3, 2);
+}
+.pagination>.active>a, .pagination>.active>span,
+.pagination>.active>a:hover, .pagination>.active>span:hover,
+.pagination>.active>a:focus, .pagination>.active>span:focus{
+	background-color: color:rgb(247, 9, 9);
+	border-color: color:rgb(247, 9, 9);
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    color: #fff;
+    margin: 0 30px;
+    font-weight: bold;
+}
+.nav>li>a:hover, .nav>li>a:focus, .pagination>li>a, .pagination>li>span{
+	color:rgb(247, 9, 9)
+}
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
+	border-color: transparent;
+    color: rgb(247, 9, 9);
+}
+.navbar-nav>li>.dropdown-menu{
+	margin-left: 30px;
+	border-radius: 0;
+	background-color: rgba(255, 255, 255, 0.87);
+	transition: all 0.5s;
+	-moz-transition:all 0.5s;
+	-webkit-transition:all 0.5s;
+	-o-transition:all 0.5s;
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
+	color: rgb(247, 9, 9);
+	background: transparent;
+}
+.carousel{
+	height: 600px;
+}
+.carousel .item{
+	max-height: 600px;
+}
+.carousel .item img{
+	height: 100%;
+}
+
+.carousel-indicators li{
+	margin:1px 6px;
+}
+.carousel-indicators .active{
+	margin: 0 6px;
+}
+.carousel-caption{
+	background: rgba(0,0,0, 0.1);
+	    left: 10%;
+    right: 50%;
+        bottom: 50%;
+    top: 10%;
+    padding-bottom: 30px;
+    overflow: hidden;
+}
+
+
