@@ -26,6 +26,8 @@
 .navbar-nav>li>.dropdown-menu{
 	margin-left: 30px;
 	border-radius: 0;
+	/*display: block;
+	opacity: 0;*/
 	background-color: rgba(255, 255, 255, 0.87);
 	transition: all 0.5s;
 	-moz-transition:all 0.5s;
@@ -36,11 +38,8 @@
 	color: rgb(247, 9, 9);
 	background: transparent;
 }
-.carousel{
-	height: 600px;
-}
 .carousel .item{
-	max-height: 600px;
+	height: 600px;
 }
 .carousel .item img{
 	height: 100%;

@@ -18,12 +18,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<?php for($i = 0; $i < 6; $i++){?>
 	<div class="row xc-news-box">
 	    <div class="col-md-5 xc-news-img" style="background-image: url(http://10447105.s61i.faiusr.com/2/AD0IgdL9BBACGAAg_aOfvgUoz5PwjQQw7wI46gE.jpg);">
-	      <a href="/news" class="xc-news-date">
+	      <a href="/article/1" class="xc-news-date">
 	          	<div>2016-12-01</div>
 	      </a>
 	    </div>
 	    <div class="col-md-7 xc-news-body">
-	      <h2 class="xc-news-heading xc-text-wrap"><a href="/news">Oh yeah, it's that good.Oh yeah, it's that good.Oh yeah, it's that good.Oh yeah, it's that good.</a></h2>
+	      <h2 class="xc-news-heading xc-text-wrap"><a href="/article/1">Oh yeah, it's that good.Oh yeah, it's that good.Oh yeah, it's that good.Oh yeah, it's that good.</a></h2>
 	      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodoDonec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodoDonec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodoDonec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
 	    </div>
 	 </div>
@@ -47,4 +47,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <?php require_once('public/footer.php') ?>
 </body>
+<script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+<script type="text/javascript">
+	
+</script>
 </html>

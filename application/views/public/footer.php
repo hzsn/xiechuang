@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 		<div class="col-md-4 col-lg-4 text-left">
 			<h3>联系我们</h3>
 			<p>400-8273-666</p>
-			<p>xiechuang@hzxc.com</p>
+			<p>xiechuang@hzxc.com(测试数据)</p>
 			<p>浙江省杭州市拱墅区花园岗路111号金通国际大厦A座901</p>
 		</div>
 		<div class="col-md-4 col-lg-4 text-left">

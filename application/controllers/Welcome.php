@@ -37,4 +37,9 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('news');	
 	}
+
+	public function article($value='1')
+	{
+		$this->load->view('article');
+	}
 }
