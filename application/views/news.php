@@ -1,18 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>新闻动态-杭州协创实业有限公司</title>
-	<script type="text/javascript" src="/static/js/public.js" ></script>
-</head>
-<body>
+?>
+<?php require_once('public/head.php') ?>
 <?php require_once('public/header.php') ?>
 <div class="xc-ban-titile">
-	<h1 class="text-center" style="margin: 0; line-height: 250px;">协创-新闻动态</h1>
+	<h1 class="text-center" style="margin: 0 auto; line-height: 250px;">协创-新闻动态</h1>
 </div>
 <div class="container xc-margin">
 	<?php for($i = 0; $i < 6; $i++){?>

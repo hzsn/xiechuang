@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="section fp-auto-height fp-section">
 			<?php require_once('public/header.php') ?>
 			<div class="xc-ban-titile">
-				<h1 class="text-center" style="margin: 0; line-height: 250px;">协创-团队介绍</h1>
+				<h1 class="text-center" style="margin: 0 auto; line-height: 250px;">协创-团队介绍</h1>
 			</div>
 			<!-- <div style="height: 80px;" class="text-center">
 				<h4 style="margin: 0; line-height: 80px;">众人拾柴火焰高</h4>

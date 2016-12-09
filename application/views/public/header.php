@@ -1,5 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');?>
+
 <!-- header -->
 <header style="height: 150px;">
 	<div class="container">
@@ -12,11 +13,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 					</div>
 			</div>
 			<div class="col-md-6 col-lg-6">
-				<!-- <div class="tel">400-8273-666</div> -->
-				<h2 class="fl-r tel"><span class="glyphicon glyphicon-phone-alt"></span> <span class="tel-text">400-8273-666</span></h2>
-				<!-- <div class="fl-r">
-					<img src="/static/img/tel.png">
-				</div> -->
+				<h2 class="fl-r tel">
+				<span class="glyphicon glyphicon-phone-alt"></span>
+				<span class="tel-text">400-8273-666</span>
+				</h2>
 			</div>
 		</div>
 	</div>
@@ -26,45 +26,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 <nav class="xc-nav-bar">
 	<div class="container">
 		<div class="navbar-collapse collapse" role="navigation">
-	      <ul class="nav navbar-nav">
-	        <?php 
-	        $szNavText = array(
-	        	array('name' => '首页', 'url' => '/'),
-	        	array('name' => '官网商城', 'url' => 'http://carsociety.cn/', 'target' =>'_blank'),
-	        	array(
-	        		'name' => '企业动态',
-	        		'url'  =>'/',
-	        		'subName' => array(
-	        			array('name' => '最新动态', 'url' => '/news'),
-	        			array('name' => '行业动态', 'url' => '/'),
-	        			array('name' => '员工风采', 'url' => '/'),
-	        		)
-	        		),
-	        	array(
-	        		'name' => '关于协创',
-	        		'url' => '/',
-	        		'subName' => array(
-	        				array('name' => '团队介绍','url' => '/team'),
-	        			)
-	        		),
-	        	array('name'=>'合作伙伴', 'url' => '/'),
-	        	array('name'=>'联系我们',
-	        			'url' => '/',
-	        			'subName' => array(['name'=> '诚招英才','url'=> '/']))
-	        );
-
-	        $len = count($szNavText);
-	        for($i = 0; $i < $len; $i++){
-	        	if (array_key_exists("subName",$szNavText[$i])) {
+	      <ul class="nav navbar-nav" id="navbar-nav">
+	        <?php
+	        foreach ($szNav as $value) {
+	        	if (array_key_exists("subName",$value)) {
 	        		$subli = '';
-	        		foreach ($szNavText[$i]['subName'] as $subObj) {
-	        			
-	        			$subli .= '<li><a href="'.$subObj['url'].'">'.$subObj['name'].'</a></li>';
+	        		foreach ($value['subName'] as $subObj) {
+	        			$subli .= '<li><a class="text-center" href="'.$subObj['url'].'" rel="'.$subObj['rel'].'">'.$subObj['name'].'</a></li>';
 	        		}
-	        		$li = '<li class="dropdown"><a href="'.$szNavText[$i]['url'].'">'.$szNavText[$i]['name'].'</a><ul class="dropdown-menu" role="menu">'.$subli.'</ul></li>';
+	        		$li = '<li class="dropdown"><a href="'.$value['url'].'" rel="'.$value['rel'].'">'.$value['name'].'</a><ul class="dropdown-menu" role="menu">'.$subli.'</ul></li>';
 			        echo($li);
 	        	}else{
-	        		echo('<li><a href="'.$szNavText[$i]['url'].'">'.$szNavText[$i]['name'].'</a></li>');
+	        		echo('<li class=""><a href="'.$value['url'].'" rel="'.$value['rel'].'">'.$value['name'].'</a></li>');
 	        	}
 	        }
 	        ?>
@@ -81,5 +54,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 	  	},function(){
 	  		$(this).removeClass('open');
 	  	});
+
+		var pathname = window.location.pathname;
+		if (pathname == '/') {
+			pathname = '/index';
+		}
+		$('#navbar-nav>li.xc-active').removeClass('xc-active');
+		$('#navbar-nav>li>a').each(function(i, e){
+			if ((pathname).indexOf($(this).attr('rel')) > -1 && $(this).attr('rel')!='') {
+		      $(this).parent().addClass('xc-active');
+		    }
+		});
+		
+		$('.dropdown').each(function(i, e){ 
+			$(this).children('.dropdown-menu').css({
+				'min-width':$(this).width()+'px',
+			});
+		});
+
 	})
 </script>

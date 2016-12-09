@@ -180,7 +180,7 @@ footer p{
 }
 .xc-section{
 	//height: 600px; 
-	overflow: hidden; 
+	/*overflow: hidden; */
 	position: relative;
 }
 .xc-ban-titile{
@@ -249,11 +249,11 @@ footer p{
 
 .xc-backtop-box{
 	position: fixed;
-	width: 40px; 
-	height: 40px;
+	width: 30px; 
+	height: 30px;
 	background-color: rgba(187, 187, 187, 0.59); 
-	right: 5%; 
-	bottom: 40px;
+	right: 2%; 
+	bottom: 20px;
 	cursor: pointer;
 	border-radius: 6px;
 	opacity: 0;
@@ -276,13 +276,18 @@ footer p{
 	-webkit-transform:scale(1,1); /* Safari 和 Chrome */
 	-o-transform:scale(1,1); 	/* Opera */	
 }
-
+.xc-backtop-open:hover{
+	background-color: rgba(255, 0, 0, 0.75);
+}
 .xc-backtop-box span{
 	position: absolute;
-    top: 13px;
-    left: 13px;
-    width: 14px;
+    top: 50%;
+    left: 50%;
     color: rgba(255, 255, 255, 0.86);
+    transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
 }
 .xc-firends-box{
 
@@ -325,11 +330,8 @@ footer p{
 .xc-slide-item{
     width: 38px;
     height: 38px;
-    /*text-align: center;
-    background-image: url(/static/img/slide-img-1.png);
     */background-color: #fff;
     border: 1px solid rgba(245,0,0, 1);
-    /*color: #fff;*/
     font-size: 10px;
     position: relative;
     border-bottom: none;
@@ -338,15 +340,48 @@ footer p{
 	border-bottom: 1px solid rgba(245,0,0, 1);
 }
 .xc-slide-img{
-	    width: 140px;
-	    display: none;
+	    width: 100px;
 	    position: absolute;
-	    right: 38px;
+	    right: 0px;
 	    bottom: 0px;
 }
-.xc-slide-item img{
-	/*display: block;*/
+
+.xc-img-box{
+	height: 100%;
+	width: 100%;
+	position: absolute; 
+	background: #eee;
+	background-size: cover;
+	background-position: center;
 }
-.xc-slide-item:hover{
-	/*background: rgba(134,40,40, 0.93);*/
+
+.xc-rect-item{
+	margin-top: 10px;
+    height: 150px;
+    background-color: #ea4b13;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+}
+.xc-rect-item-title{
+	color: #fff; font-size: 24px;
+	line-height: 150px;
+}
+.xc-rect-item-desc{
+	position: absolute;
+	top: -100%;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	padding: 10px;
+	overflow: hidden;
+	background-color: rgba(25, 20, 20, 0.6);
+	color: #fff;
+	transition: all .5s;
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	-o-transition: all .5s;
+}
+.xc-rect-item:hover>.xc-rect-item-desc{
+	top: 0px;
 }

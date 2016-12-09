@@ -18,9 +18,24 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+
+	private $data;
+
+	function __construct()
+	{
+		parent::__construct();
+		$this->load->helper('cons');
+		$this->data['szNav'] = get_nav_bar();
+		$this->data['title'] = '杭州协创实业有限公司';
+	}
 	public function index()
 	{
-		$this->load->view('index');
+		$this->data['carousel'] = get_carousel();
+		$this->data['cooperator'] = get_cooperator();
+		$this->data['news'] = get_news_item();
+		$this->data['business'] = get_business();
+		$this->data['brief'] = get_brief_intr();
+		$this->load->view('index', $this->data);
 	}
 
 	public function test($value='')
@@ -30,16 +45,19 @@ class Welcome extends CI_Controller {
 
 	public function team($value='')
 	{
-		$this->load->view('team');
+		$this->data['title'] = '我们的团队--杭州协创实业有限公司';
+		$this->load->view('team', $this->data);
 	}
 
 	public function news($value='')
 	{
-		$this->load->view('news');	
+		$this->data['title'] = '新闻动态--杭州协创实业有限公司';
+		$this->load->view('news', $this->data);	
 	}
 
 	public function article($value='1')
 	{
-		$this->load->view('article');
+		$this->data['title'] = '文章标题--杭州协创实业有限公司';
+		$this->load->view('article', $this->data);
 	}
 }

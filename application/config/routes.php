@@ -53,6 +53,6 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['test'] = 'welcome/test';
-$route['team'] = 'welcome/team';
+$route['aboutxc/team'] = 'welcome/team';
 $route['news'] = 'welcome/news';
 $route['article/(:num)'] = 'welcome/article/$1';
