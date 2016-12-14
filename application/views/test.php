@@ -9,7 +9,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </head>
 <body>
 <div id="fullpage" class="fullpage">
-	
+	<div class='animatedParent animateOnce section fp-section' data-sequence='500' style="overflow: hidden;">
+		<?php 
+			
+			// print_r($sz);
+		?>
+	</div>
 	<div id="domain-box" class="section fp-section ">
 		
 		<?php 
@@ -25,6 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						['name' => 'hzxcis.cn', 'price'=>29, 'desc' =>'Hangzhou Xiechuang Industries 首写字母和Industries末字母的缩写'],
 						['name' => 'hzxcis.com', 'price'=>55, 'desc' =>'Hangzhou Xiechuang Industries 首写字母和Industries末字母的缩写'],
 						];
+
 		 ?>
 		 <table class="table table-bordered text-center table-striped">
 		      <caption>域名备选（价格来自阿里万网）</caption>
@@ -43,11 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		      </tbody>
 		    </table>
 	</div>
-	<div class='animatedParent animateOnce section fp-section' data-sequence='500' style="overflow: hidden;">
-		<h2 class='animated bounceInDown' data-id='1'>It Works!</h2>
-		<h2 class='animated bounceInDown' data-id='2'>This animation will start 500ms after</h2>
-		<h2 class='animated bounceInDown' data-id='3'>This animation will start 500ms after</h2>
-	</div>
+	
 	<div class="section fp-section" style=""></div>
 	<div class="section fp-section fp-auto-height">
 		<div style="height: 200px ; background: #000;"></div>

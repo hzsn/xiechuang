@@ -1,38 +1,39 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
+<!DOCTYPE html>
+<html lang="zh-cn">
 <?php require_once('public/head.php') ?>
 <?php require_once('public/header.php') ?>
-<div class="xc-ban-titile">
+<body>
+<div class="xc-ban-titile" style="background-image: url('http://12171073.s61i.faiusr.com/4/AD0Iwe7mBRAEGAAgh8aTwgUoqb7ZgAcwgA84zgI.png'); color: #fff">
 	<h1 class="text-center" style="margin: 0 auto; line-height: 250px;">协创-新闻动态</h1>
 </div>
 <div class="container xc-margin">
-	<?php for($i = 0; $i < 6; $i++){?>
+	<?php 
+		foreach ($news as $key => $value) {
+	?>
 	<div class="row xc-news-box">
 	    <div class="col-md-5 xc-news-img" style="background-image: url(http://10447105.s61i.faiusr.com/2/AD0IgdL9BBACGAAg_aOfvgUoz5PwjQQw7wI46gE.jpg);">
-	      <a href="/article/1" class="xc-news-date">
-	          	<div>2016-12-01</div>
+	      <a href="/article/<?php echo $value['id'] ;?>" class="xc-news-date">
+	          	<div><?php echo $value['create_time'] ;?></div>
 	      </a>
 	    </div>
 	    <div class="col-md-7 xc-news-body">
-	      <h2 class="xc-news-heading xc-text-wrap"><a href="/article/1">Oh yeah, it's that good.Oh yeah, it's that good.Oh yeah, it's that good.Oh yeah, it's that good.</a></h2>
-	      <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodoDonec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodoDonec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodoDonec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+	      <h2 class="xc-news-heading xc-text-wrap"><a href="/article/<?php echo $value['id'] ;?>">
+	      	<?php echo $value['title'] ;?>
+	      </a></h2>
+	      <p class="lead"><?php echo $value['summary'] ;?></p>
 	    </div>
 	 </div>
-     <?php if ($i < 5) {
+     <?php
      	echo "<hr>";
-     }}?>
+     }?>
      <!-- 分页 -->
-     <nav class="text-center xc-page-nav">
-	  <ul class="pagination">
-	    <li class="diabled"><a href="#">&laquo;</a></li>
-	    <li class="active"><a href="#">1</a></li>
-	    <li><a href="#">2</a></li>
-	    <li><a href="#">3</a></li>
-	    <li><a href="#">4</a></li>
-	    <li><a href="#">5</a></li>
-	    <li><a href="#">&raquo;</a></li>
-	  </ul>
+	<nav class="text-center xc-page-nav">
+	 	<ul class="pagination">
+			<?php echo $pagination; ;?>
+		</ul>
 	</nav>
 <!-- 分页 end -->
 </div>

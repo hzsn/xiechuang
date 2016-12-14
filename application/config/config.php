@@ -1,4 +1,4 @@
-<?php
+f<?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 /*
@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 // $config['base_url'] = 'xlgp.me';
-$config['base_url'] = '/';
+$config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'];
 
 /*
 |--------------------------------------------------------------------------
@@ -115,7 +115,7 @@ $config['enable_hooks'] = FALSE;
 | https://codeigniter.com/user_guide/general/creating_libraries.html
 |
 */
-$config['subclass_prefix'] = 'MY_';
+$config['subclass_prefix'] = 'XC_';
 
 /*
 |--------------------------------------------------------------------------
@@ -512,3 +512,11 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+
+$config['pager']['page_size'] = 8;
+$config['pager']['base_link_url'] = '/news/';
+
+$config['title'] = '杭州协创实业有限公司';
+$config['news_title'] = '综合咨讯';
+$config['cooperator_title'] = '合作伙伴';
+$config['team_title'] = '我们的团队';

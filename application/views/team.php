@@ -7,8 +7,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>我们的团队--杭州协创实业有限公司</title>
-	<script type="text/javascript" src="/static/js/public.js" ></script>
+
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/static/css3animate/css/animations.css"/>
 	<link href="//cdn.bootcss.com/fullPage.js/2.8.9/jquery.fullPage.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap-customer.css"/>
+	<link rel="stylesheet" type="text/css" href="/static/css/xc-base.css"/>
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="/static/js/xc-base.js"></script>
 </head>
 <body>
 	<div id="fullpage" class="fullpage">

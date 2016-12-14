@@ -25,39 +25,56 @@ class Welcome extends CI_Controller {
 	{
 		parent::__construct();
 		$this->load->helper('cons');
-		$this->data['szNav'] = get_nav_bar();
-		$this->data['title'] = '杭州协创实业有限公司';
+		$this->load->helper('util');
+		$this->load->model('m_navbar');
+		$this->data['navbar'] = navbar_format($this->m_navbar->get_navbars());
+		$this->data['title'] = $this->config->item('title');
 	}
+
+	public function welcome($value='')
+	{
+		$this->load->view('welcome_message');
+	}
+
 	public function index()
 	{
-		$this->data['carousel'] = get_carousel();
-		$this->data['cooperator'] = get_cooperator();
-		$this->data['news'] = get_news_item();
+		$this->load->helper('url');
+		// $this->output->cache(1);
+		$this->load->model('m_commen');
+		$this->data['carousel'] = $this->m_commen->get_carousels();
+
+		$this->data['cooperator']['title'] = $this->config->item('cooperator_title');
+		$this->data['cooperator']['item'] = $this->m_commen->get_cooperators();
+
+		$this->load->model('m_article');
+		$this->data['news']['item'] = $this->m_article->get_article_by_time('1');
+		$this->data['news']['title'] = $this->config->item('news_title');
 		$this->data['business'] = get_business();
 		$this->data['brief'] = get_brief_intr();
+
 		$this->load->view('index', $this->data);
 	}
 
 	public function test($value='')
 	{
-		$this->load->view('test');
+		$this->load->model('m_article');
+		$this->data['news']['item'] = $this->m_article->get_article_by_time('1');	
+		$this->load->view('test', $this->data);
 	}
 
 	public function team($value='')
 	{
-		$this->data['title'] = '我们的团队--杭州协创实业有限公司';
+		$this->data['title'] = $this->config->item('team_title').$this->config->item('title');
 		$this->load->view('team', $this->data);
 	}
 
 	public function news($value='')
 	{
-		$this->data['title'] = '新闻动态--杭州协创实业有限公司';
+		$this->load->model('M_article');
+		$this->data['news'] = $this->m_article->get_article_by_time('0');
+		$this->data['title'] = $this->config->item('news_stitle').$this->config->item('title');
 		$this->load->view('news', $this->data);	
 	}
 
-	public function article($value='1')
-	{
-		$this->data['title'] = '文章标题--杭州协创实业有限公司';
-		$this->load->view('article', $this->data);
-	}
+	
 }

@@ -1,8 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<?php require_once('public/head.php') ?>
-<?php require_once('public/header.php') ?>
+<!DOCTYPE html>
+<html lang="zh-cn">
+<?php require_once('public/head.php');?>
+<?php require_once('public/header.php'); ?>
+<body>
 <!-- 图片轮播 -->
 <div id="xc-big-carousel" class="carousel slide container" data-ride="carousel" data-pause="none">
     <!-- Indicators -->
@@ -22,13 +25,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <div class="carousel-inner" role="listbox">
     <?php for($i = 0; $i < $len; $i++){
     	$i == 0 ? $active = 'active' : $active = '';
+    	$item_desc = $carousel[$i]['item_desc'];
+    	$bgcss = $item_desc ? 'rgba(0,0,0, 0.1)' : 'rgba(0,0,0,0)';
     ?>
     <div class="item <?php echo $active;?>">
     	<div style="position: relative; width: 100%;height: 100%">
     		<div class="xc-img-box" style="background-image: url('<?php echo $carousel[$i]['img_path'];?>');"></div>	
     	</div>
-      <div class="carousel-caption">
-      	<h2><?php echo $carousel[$i]['item_desc'] ?></h2>
+      <div class="carousel-caption" style="background-color: <?php echo $bgcss;?>">
+      	<h2><?php echo  $item_desc?></h2>
       </div>
     </div>
     <?php }?>
@@ -58,12 +63,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="col-lg-6 col-md-6 animated bounceInUp go">
 			<h2 class="xc-title animated bounceInUp slow go"><a class="xc-icon-title" href="/"><?php echo $news['title'];?></a></h2>
 			<div class="list-group" style="">
-				<?php
+				<?php 
 					foreach ($news['item'] as $value) {
 				?>
-					<a href="<?php echo $value['url'];?>" class="list-group-item">
+					<a href="/article/<?php echo $value['id'];?>" class="list-group-item">
 						<span><?php echo $value['title'];?></span>
-						<span><?php echo $value['publish_date'];?></span>
+						<span><?php echo explode(' ', $value['create_time'])[0];?></span>
 					</a>
 				<?php }?>
 				
@@ -131,7 +136,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 <div class="container animatedParent">
 	<div class="">
-		<h2 class="xc-title animated bounceInUp slow go"><a class="xc-icon-title" href="/"><?php echo $cooperator['title']?></a></h2>
+		<h2 class="xc-title animated bounceInUp slow go">
+		<a class="xc-icon-title" href="/">
+		<?php echo $cooperator['title'];?>
+		</a></h2>
 		<div class="xc-margin">
 			<ul class="xc-firends-box animated fadeInRight go">
 				<?php foreach ($cooperator['item'] as $value) {	?>

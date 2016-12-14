@@ -1,29 +1,25 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
-<?php require_once('public/head.php') ?>
-<?php require_once('public/header.php') ?>
-
+<!DOCTYPE html>
+<html lang="zh-cn">
+<?php require_once('public/head.php'); ?>
+<?php require_once('public/header.php'); ?>
+<body>
 <div class="xc-ban-titile">
 	<h1 class="text-center" style="margin: 0 auto; line-height: 250px;">协创-综合资讯</h1>
 </div>
 <div class="container">
 	<div class="row">
-		<h2 class="text-center">标题</h2>
+		<h2 class="text-center" id="article-title"><?php echo $article['title'];?></h2>
 		<div class="text-center">
-			<span>时间：2016-12-02</span>
-			<span>作者：admin</span>
-			<span>浏览量：0</span>
+			<span>时间：<?php echo $article['create_time'];?></span>
+			<span>作者：<?php echo $article['create_user'];?></span>
+			<span>浏览量：<?php echo $article['pv'];?></span>
 		</div>
 		<hr>
 		<div class="xc-article-content-box">
-			<div class="xc-article-content">
-			<?php for($i = 0; $i < 10; $i++){?>
-			<p>
-				余从京域，言归东藩，背伊阙 ，越轘辕，经通谷，陵景山。日既西倾，车殆马烦。尔乃税驾乎蘅皋，秣驷乎芝田，容与乎阳林，流眄乎洛川。于是精移神骇，忽焉思散。俯则未察，仰以殊观。睹一丽人，于岩之畔。乃援御者而告之曰：“尔有觌于彼者乎？彼何人斯，若此之艳也！”御者对曰：“臣闻河洛之神，名曰宓妃。然则君王所见，无乃是乎？其状若何，臣愿闻之。”
-			</p>
-			<?php }?>
-			</div>
+			<div class="xc-article-content"><?php echo $article['contant'];?></div>
 			<hr>
 			<div class="row">
 				<div class="bdsharebuttonbox xc-share-box" data-tag="share_1">
@@ -38,24 +34,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<a class="bds_count" data-cmd="count"></a>
 					</div>
 				</div>
-				<div class="col-md-6">
-					<div class="text-left xc-text-wrap">
-					上一篇:<a href="/article/0">上一篇标题</a>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="text-right xc-text-wrap">下一篇:<a href="article/2">上一篇标题</a></div>
-				</div>
+				<?php echo $article['other'];?>
 			</div>
 		</div>
 	</div>
 </div>
 <?php require_once('public/footer.php') ?>
 <script>
-	console.log(window.location.href);
 	window._bd_share_config = {
 		common : {
-			bdText : '文章标题-xiechuang',	
+			bdText : $('#article-title').text(),
 			bdDesc : '自定义分享摘要',	
 			bdUrl : window.location.href, 	
 			bdPic : '自定义分享图片'

@@ -28,16 +28,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 		<div class="navbar-collapse collapse" role="navigation">
 	      <ul class="nav navbar-nav" id="navbar-nav">
 	        <?php
-	        foreach ($szNav as $value) {
-	        	if (array_key_exists("subName",$value)) {
+	        foreach ($navbar as $key => $value) {
+	        	if (array_key_exists("subNavBar",$value) && $value['subNavBar']) {
 	        		$subli = '';
-	        		foreach ($value['subName'] as $subObj) {
-	        			$subli .= '<li><a class="text-center" href="'.$subObj['url'].'" rel="'.$subObj['rel'].'">'.$subObj['name'].'</a></li>';
+	        		foreach ($value['subNavBar'] as $subObj) {
+	        			$subli .= '<li><a class="text-center" href="'.$subObj['url'].'" rel="'.$subObj['rel'].'" target="'.$subObj['target'].'">'.$subObj['name'].'</a></li>';
 	        		}
 	        		$li = '<li class="dropdown"><a href="'.$value['url'].'" rel="'.$value['rel'].'">'.$value['name'].'</a><ul class="dropdown-menu" role="menu">'.$subli.'</ul></li>';
 			        echo($li);
 	        	}else{
-	        		echo('<li class=""><a href="'.$value['url'].'" rel="'.$value['rel'].'">'.$value['name'].'</a></li>');
+	        		echo('<li class=""><a href="'.$value['url'].'" rel="'.$value['rel'].'" target="'.$value['target'].'">'.$value['name'].'</a></li>');
 	        	}
 	        }
 	        ?>

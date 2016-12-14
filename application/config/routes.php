@@ -54,5 +54,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['test'] = 'welcome/test';
 $route['aboutxc/team'] = 'welcome/team';
-$route['news'] = 'welcome/news';
-$route['article/(:num)'] = 'welcome/article/$1';
+$route['news/(:num)'] = 'news/index/$1';
+$route['article/(:num)'] = 'news/article/$1';

@@ -8,8 +8,8 @@
 .pagination>.active>a, .pagination>.active>span,
 .pagination>.active>a:hover, .pagination>.active>span:hover,
 .pagination>.active>a:focus, .pagination>.active>span:focus{
-	background-color: color:rgb(247, 9, 9);
-	border-color: color:rgb(247, 9, 9);
+	background-color:rgb(247, 9, 9);
+	border-color:rgb(247, 9, 9);
 }
 .container>.navbar-collapse{
 	margin-right: -15px;
@@ -25,9 +25,10 @@
     padding: 0 15px;
     line-height: 50px;
 }
-.nav>li>a:hover, .nav>li>a:focus, .pagination>li>a, .pagination>li>span{
-	color:rgb(247, 9, 9)
+.nav>li>a:hover, .nav>li>a:focus, .pagination>li>a,.pagination>li>a:hover, .pagination>li>span{
+	color:rgb(247, 9, 9);
 }
+
 .nav>li>a:hover, .nav>li>a:focus{
 	background-color: transparent;
 }
