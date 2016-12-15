@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>我们的团队--杭州协创实业有限公司</title>
+	<title><?php echo $title;?></title>
 
 	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="/static/css3animate/css/animations.css"/>
@@ -21,8 +21,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div id="fullpage" class="fullpage">
 		<div class="section fp-auto-height fp-section">
 			<?php require_once('public/header.php') ?>
-			<div class="xc-ban-titile">
-				<h1 class="text-center" style="margin: 0 auto; line-height: 250px;">协创-团队介绍</h1>
+			<div class="xc-ban-titile" style="color:#fff;background-image: url('http://static.bootcss.com/expo/img/d/dd/2de797545de56274f03a5920eb3a1.jpg');">
+				<h1 class="text-center" style="margin: 0 auto; line-height: 250px;"><?php echo $team_title;?></h1>
 			</div>
 			<!-- <div style="height: 80px;" class="text-center">
 				<h4 style="margin: 0; line-height: 80px;">众人拾柴火焰高</h4>

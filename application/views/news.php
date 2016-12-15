@@ -6,11 +6,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php require_once('public/head.php') ?>
 <?php require_once('public/header.php') ?>
 <body>
-<div class="xc-ban-titile" style="background-image: url('http://12171073.s61i.faiusr.com/4/AD0Iwe7mBRAEGAAgh8aTwgUoqb7ZgAcwgA84zgI.png'); color: #fff">
-	<h1 class="text-center" style="margin: 0 auto; line-height: 250px;">协创-新闻动态</h1>
+<div class="xc-ban-titile" style="background-image: url('http://9429871.s21i-9.faiusr.com/4/ABUIABAEGAAg8cK7uQUoycz80wMwgA84rAI.png'); color: #fff">
+	<h1 class="text-center" style="margin: 0 auto; line-height: 250px;"><?php echo $news_title;?></h1>
 </div>
 <div class="container xc-margin">
-	<?php 
+	<?php
+		if ($code != '0') {
+			echo $message;
+		}else{
 		foreach ($news as $key => $value) {
 	?>
 	<div class="row xc-news-box">
@@ -35,7 +38,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<?php echo $pagination; ;?>
 		</ul>
 	</nav>
-<!-- 分页 end -->
+	<!-- 分页 end -->
+	<?php }?>
 </div>
 
 <?php require_once('public/footer.php') ?>

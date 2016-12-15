@@ -23,7 +23,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-// $config['base_url'] = 'xlgp.me';
 $config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'];
 
 /*
@@ -513,10 +512,12 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
-$config['pager']['page_size'] = 8;
+$config['pager']['page_size'] = 5;
 $config['pager']['base_link_url'] = '/news/';
 
 $config['title'] = '杭州协创实业有限公司';
 $config['news_title'] = '综合咨讯';
 $config['cooperator_title'] = '合作伙伴';
 $config['team_title'] = '我们的团队';
+$config['aboutxc_title'] = '公司简介';
+$config['404_title'] = '找不到你所需要的资源';

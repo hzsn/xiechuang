@@ -179,13 +179,16 @@ footer p{
 	margin: 0;
 }
 .xc-section{
-	//height: 600px; 
-	/*overflow: hidden; */
 	position: relative;
+}
+.xc-section >.item{
+	margin-bottom: 15px;
 }
 .xc-ban-titile{
 	height: 250px; 
 	background: #ec7575;
+	background-position: center;
+	background-size: cover;
 }
 .xc-news-box{
 	height: 250px;
@@ -315,7 +318,7 @@ footer p{
 }
 
 .xc-article-content-box{
-	margin-bottom: 15px;
+	margin: 15px 0;
 	color: #505050;	
 }
 .xc-share-box{

@@ -8,7 +8,6 @@ class M_navbar extends CI_Model{
 	
 	function __construct(){
 		
-		$this->load->database('test');
 	}
 
 	public function get_navbars($value='')

@@ -12,7 +12,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class='animatedParent animateOnce section fp-section' data-sequence='500' style="overflow: hidden;">
 		<?php 
 			
-			// print_r($sz);
+			echo __FILE__.'<br>';
+			echo dirname(dirname(__FILE__)).'<br>';
 		?>
 	</div>
 	<div id="domain-box" class="section fp-section ">

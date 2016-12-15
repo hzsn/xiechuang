@@ -59,6 +59,7 @@ class M_article extends CI_Model
  */
 	public function get_article_count()
 	{
+		// $this->db->cache_on();
 		return $this->db->query('select count(1) as total_row from xc_article where status = 0;')->row()->total_row;
 		// return $this->db->count_all('xc_article');
 	}

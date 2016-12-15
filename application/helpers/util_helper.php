@@ -58,6 +58,25 @@ if (!function_exists('pre_next_format')) {
     }
 }
 
+if (!function_exists('cache_navbar')) {
+    function cache_navbar(){
+        $CI =& get_instance();
+
+        $CI->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+        $navbar = $CI->cache->get('navbar');
+        if ($navbar) {
+            return $navbar;
+        }else{
+            $CI->load->model('m_navbar');
+            $navbar = navbar_format($CI->m_navbar->get_navbars());
+            if ($navbar) {
+                $CI->cache->save('navbar', $navbar, 300);    
+            }
+        }
+        return $navbar;
+    }
+}
+
 if (!function_exists('navbar_format')) {
     /**
      * @param  array 导航条中的菜单数组

@@ -10,7 +10,6 @@ class M_commen extends CI_Model
 	function __construct()
 	{
 		parent::__construct();
-		$this->load->database('test');
 	}
 	/**
 	 * 查询轮播图片
