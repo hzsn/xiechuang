@@ -11,9 +11,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 <div class="container xc-margin">
 	<?php
-		if ($code != '0') {
-			echo $message;
-		}else{
+		// if ($code != '0') {
+		// 	echo $message;
+		// }else{
 		foreach ($news as $key => $value) {
 	?>
 	<div class="row xc-news-box">
@@ -39,7 +39,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</ul>
 	</nav>
 	<!-- 分页 end -->
-	<?php }?>
+	
 </div>
 
 <?php require_once('public/footer.php') ?>

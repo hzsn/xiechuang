@@ -521,3 +521,4 @@ $config['cooperator_title'] = '合作伙伴';
 $config['team_title'] = '我们的团队';
 $config['aboutxc_title'] = '公司简介';
 $config['404_title'] = '找不到你所需要的资源';
+$config['news_other_title'] = '行业动态';

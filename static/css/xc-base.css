@@ -89,7 +89,7 @@ body{
     vertical-align: middle;
 }
 .list-group-item span:first-child{
-	width: 70%;
+	width: 80%;
 }
 .list-group-item span:last-child{
 	float: right;
