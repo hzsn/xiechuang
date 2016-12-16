@@ -26,8 +26,6 @@ class Welcome extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('cons');
 		$this->load->helper('util');
-		// $this->load->model('m_navbar');
-		// $this->data['navbar'] = navbar_format($this->m_navbar->get_navbars());
 		$this->data['navbar'] = cache_navbar();
 		$this->data['title'] = $this->config->item('title');
 	}
@@ -39,7 +37,8 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		// $this->output->cache(1);
+		$this->output->cache(10);
+
 		$this->load->model('m_commen');
 		$this->data['carousel'] = $this->m_commen->get_carousels();
 
@@ -79,16 +78,25 @@ class Welcome extends CI_Controller {
 
 	public function aboutxc($value='')
 	{
-		$this->data['title'] = $this->config->item('news_stitle').$this->config->item('title');
+		$this->data['title'] = $this->config->item('aboutxc_title').$this->config->item('title');
 		$this->data['aboutxc_title']  = $this->config->item('aboutxc_title');
 		$this->data['brief'] = get_brief_intr();
 		$this->load->view('aboutxc', $this->data);
 	}
 
-	public function e404($value='')
+	public function contact($value='')
 	{
-		$this->data['code'] = '1';
-		$this->data['message'] = '没有数据';
+		$this->data['title'] = $this->config->item('contact_title').$this->config->item('title');
+		$this->data['contact_title']  = $this->config->item('contact_title');
+		$this->load->view('contact', $this->data);	
+	}
+
+	/**
+	 * 默认404界面
+	 * @return
+	 */
+	public function error_404()
+	{
 		$this->data['title'] = $this->config->item('404_title').$this->config->item('title');
 		$this->load->view('errors/404', $this->data);
 	}

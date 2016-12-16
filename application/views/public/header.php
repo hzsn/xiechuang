@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 			<div class="col-md-6 col-lg-6">
 				<h2 class="fl-r tel">
 				<span class="glyphicon glyphicon-phone-alt"></span>
-				<span class="tel-text">400-8273-666</span>
+				<span class="tel-text"><?php echo $this->config->item('tel');;?></span>
 				</h2>
 			</div>
 		</div>

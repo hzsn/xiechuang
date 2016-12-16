@@ -114,21 +114,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div> -->
 	<div class="row item animatedParent">
 		<h2 class="xc-title animated bounceInUp slow go"><a class="xc-icon-title" href="/">企业文化</a></h2>
-		<div class="fl-l">
+		<!-- <div class="fl-l">
 			<img class="fl-l img-responsive animated fadeInLeft" src="/static/img/qiyejingshen-1.jpg" width="270">
 			<img class="fl-l img-responsive animated fadeInLeft" src="/static/img/qiyeshiming-1.jpg" width="270">
 			<img class="fl-l img-responsive animated fadeInLeft" src="/static/img/jingyinglinian-1.jpg" width="270">
-		</div>
-		<div class="text-center">
+		</div> -->
+		<!-- <div class="text-center">
 			<h3>人在一起叫聚会</h3>
 			<h3>心在一起叫团队</h3>
-		</div>
-		<!-- <div class="col-md-4 col-lg-4">
-			
-		</div>
-		<div class="col-md-4 col-lg-4">
-			
 		</div> -->
+		<div class="col-md-4 col-lg-4 text-left">
+			<img class="img-responsive animated fadeInLeft" src="/static/img/qiyejingshen-1.jpg" width="270">
+		</div>
+		<div class="col-md-4 col-lg-4 text-center">
+			<img class="img-responsive animated fadeInLeft" src="/static/img/qiyeshiming-1.jpg" width="270" style="display: inline-block;">
+		</div>
+		<div class="col-md-4 col-lg-4 text-right">
+			<img class="img-responsive animated fadeInLeft" src="/static/img/jingyinglinian-1.jpg" width="270" style="display: inline-block;">
+		</div>
 		<!-- <div class="animated bounceInUp go">
 			
 		</div> -->
@@ -155,8 +158,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 
 <!-- body end -->
-
+<script type="text/javascript" src="/static/css3animate/js/css3-animate-it.js" ></script>
 <?php require_once('public/footer.php') ?>
+
 <!-- <div id="xc-backtop" class="xc-backtop-box">
 	<span class="glyphicon glyphicon-chevron-up"></span>
 </div> -->

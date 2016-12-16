@@ -44,11 +44,12 @@ class M_article extends CI_Model
 
 	public function get_article_title($id=0)
 	{
-		$this->db->select('id, title');
-		$ids = [$id-1, $id+1];
-		$this->db->where_in('id', $ids);
-		$this->db->where('status', 0);
-		$query = $this->db->get('xc_article');
+		$sql = '(select id, title from xc_article where id < '.$id.' and status = 0 order by id desc limit 1)';
+		$sql .= 'union all';
+		$sql .= '(select id, title from xc_article where id > '.$id.' and status = 0 order by id limit 1);';
+
+		$query = $this->db->query($sql);
+
 		return $query->result_array();
 	}
 

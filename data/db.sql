@@ -74,6 +74,17 @@
 -- status int(2) not null default 0 comment '显示的状态, 0表示显示，非0表示不显示'
 -- );
 
+-- create table IF NOT EXISTS xc_category(
+-- id int(3) not null primary key auto_increment comment '主键',
+-- name varchar(16) NOT null default '公司咨询',
+-- create_time TIMESTAMP not null default now() comment '创建id的时间',
+-- create_user	varchar(32) not null default 'admin' comment '创建者',
+-- status int(2) not null default 0 comment '显示的状态, 0表示显示，非0表示不显示'
+-- );
+-- insert into xc_category(name) values('公司咨询');
+-- alter table xc_article add column cato_id int(4);
+-- alter table xc_article add CONSTRAINT article_cato_fk foreign key(cato_id) REFERENCES xc_category(id);
+
 -- insert into xc_article(title, summary, contant) select title,summary, contant from xc_article where id = 1;
 -- insert into xc_article(title, summary, contant) select title,summary, contant from xc_article where id = 1;
 -- insert into xc_article(title, summary, contant) select title,summary, contant from xc_article where id = 1;
@@ -161,3 +172,11 @@
 -- update xc_article set create_time = '2016-12-12 14:53:42' where id = 42;
 -- update xc_article set create_time = '2016-12-12 14:53:43' where id = 43;
 -- update xc_article set create_time = '2016-12-12 14:53:44' where id = 44;
+
+-- (select id, title, create_time, -1 as sorts from xc_article where id < 1 and status = 0 order by id desc limit 1)
+-- union all
+-- (select id, title,create_time, 1 as sorts from xc_article where id > 1 and status = 0 order by id limit 1);
+
+
+
+

@@ -14,6 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php echo $brief['brief_introduction'] ?>
 	</div>
 </div>
+
 <?php require_once('public/footer.php') ?>
 </body>
 </html>

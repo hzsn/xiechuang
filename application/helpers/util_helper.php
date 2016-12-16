@@ -26,6 +26,7 @@ if (!function_exists('pre_next_format')) {
         if (!is_array($array) || empty($array)) {
             $_html;
         }
+
         if (count($array) == 1) {
 
             if ($array[0]['id'] > $id) {
