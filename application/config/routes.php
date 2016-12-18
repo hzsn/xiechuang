@@ -59,3 +59,4 @@ $route['news/(:num)'] = 'news/index/$1';
 $route['article/(:num)'] = 'news/article/$1';
 $route['404'] = 'welcome/e404';
 $route['contact'] = 'welcome/contact';
+$route['contact/joinus'] = 'welcome/joinus';

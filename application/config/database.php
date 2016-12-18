@@ -70,12 +70,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-$active_group = 'test';
+$active_group = 'wwtx_test';
 $query_builder = TRUE;
 
 $db['test'] = array(
 	'dsn'	=> '',
 	'hostname' => '192.168.1.124',
+	'username' => 'hzxc',
+	'password' => 'hzxc',
+	'database' => 'hzxcsydb',
+	'dbdriver' => 'mysqli',
+	'dbprefix' => '',
+	'pconnect' => TRUE,
+	'db_debug' => (ENVIRONMENT !== 'production'),
+	'cache_on' => FALSE,
+	'cachedir' => '/tmp',
+	'char_set' => 'utf8',
+	'dbcollat' => 'utf8_general_ci',
+	'swap_pre' => '',
+	'encrypt' => FALSE,
+	'compress' => FALSE,
+	'stricton' => FALSE,
+	'failover' => array(),
+	'save_queries' => TRUE
+);
+
+$db['wwtx_test'] = array(
+	'dsn'	=> '',
+	'hostname' => '127.0.0.1',
 	'username' => 'hzxc',
 	'password' => 'hzxc',
 	'database' => 'hzxcsydb',

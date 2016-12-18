@@ -13,7 +13,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 		<div class="col-md-6">
 			<h1 style="font-size: 30px; padding-top: 60px">抱歉，您访问的资源不存在…</h1>
-			<!-- <?php echo $message ;?> -->
+			
 		</div>
 	</div>
 </div>

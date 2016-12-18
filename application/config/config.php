@@ -512,6 +512,11 @@ $config['rewrite_short_tags'] = FALSE;
 */
 $config['proxy_ips'] = '';
 
+/**
+ * 分页配置
+ * $config['pager']['page_size']	每一页显示的条数
+ * $config['pager']['base_link_url']	链接
+ */
 $config['pager']['page_size'] = 5;
 $config['pager']['base_link_url'] = '/news/';
 
@@ -526,3 +531,4 @@ $config['contact_title'] = '联系我们';
 $config['tel'] = '400-827-3666';
 $config['email'] = 'xiechuang@hzxc.com(测试数据)';
 $config['address'] = '浙江省杭州市拱墅区花园岗路113号金通国际大厦A座9F';
+$config['joinus_title'] = '诚招精英';

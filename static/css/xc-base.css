@@ -39,6 +39,9 @@ body{
 	    margin: 15px auto;
 }
 
+.xc-table th{
+	text-align: center;
+}
 .xc-icon-title {
     position: relative;
 }
@@ -447,3 +450,28 @@ padding: 20px;
     background: #fff;
     z-index: -1;
  }
+
+ #joinus-box .joinus-item-box{
+ 	padding:0px;
+ }
+ .joinus-active{
+ 	color: rgb(233,3,2);
+ }
+ .joinus-info{
+ 	background-color: #f8f8f8;
+ }
+ .joinus-info:hover{
+ 	background-color: #eee;
+ 	cursor: pointer;
+ }
+ .joinus-item{
+ overflow:hidden;
+
+ display: none;
+ }
+ .joinus-item-inner{
+ 	padding: 8px;
+ }
+ 
+
+ 

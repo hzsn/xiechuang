@@ -91,6 +91,13 @@ class Welcome extends CI_Controller {
 		$this->load->view('contact', $this->data);	
 	}
 
+	public function joinus($value='')
+	{
+		$this->data['title'] = $this->config->item('joinus_title').$this->config->item('title');
+		$this->data['joinus_title']  = $this->config->item('joinus_title');
+		$this->load->view('joinus', $this->data);	
+	}
+
 	/**
 	 * 默认404界面
 	 * @return

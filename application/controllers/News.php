@@ -55,7 +55,8 @@ class News extends CI_Controller{
 		//设置分页总数	
 		$row = $this->get_total_row();
 		if (!$row) {
-			show_404();
+			// show_404();
+			redirect('/404');
 		}
 		$page_config['total_row'] = $row;
 		//查询数据
