@@ -26,6 +26,7 @@ class Welcome extends CI_Controller {
 		parent::__construct();
 		$this->load->helper('cons');
 		$this->load->helper('util');
+		$this->load->model('m_commen');
 		$this->data['navbar'] = cache_navbar();
 		$this->data['title'] = $this->config->item('title');
 	}
@@ -37,30 +38,19 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->output->cache(10);
-
-		$this->load->model('m_commen');
+		// $this->output->cache(1);
+		
 		$this->data['carousel'] = $this->m_commen->get_carousels();
 
-		$this->data['cooperator']['title'] = $this->config->item('cooperator_title');
-		$this->data['cooperator']['item'] = $this->m_commen->get_cooperators();
-
 		$this->load->model('m_article');
-		$this->data['news']['item'] = $this->m_article->get_article_by_time('1');
-		$this->data['news']['title'] = $this->config->item('news_title');
+		$this->data['news'] = news_format($this->m_article->get_article_by_time(0, 3));
+		
 		$this->data['business'] = get_business();
 		$this->data['brief'] = get_brief_intr();
 
 		$this->load->view('index', $this->data);
 	}
-
-	public function test($value='')
-	{
-		$this->load->model('m_article');
-		$this->data['news']['item'] = $this->m_article->get_article_by_time('1');	
-		$this->load->view('test', $this->data);
-	}
-
+	
 	public function team($value='')
 	{
 		$this->data['title'] = $this->config->item('team_title').$this->config->item('title');
@@ -71,7 +61,7 @@ class Welcome extends CI_Controller {
 	public function news($value='')
 	{
 		$this->load->model('M_article');
-		$this->data['news'] = $this->m_article->get_article_by_time('0');
+		$this->data['news'] = $this->m_article->get_article_by_time();
 		$this->data['title'] = $this->config->item('news_stitle').$this->config->item('title');
 		$this->load->view('news', $this->data);	
 	}
@@ -80,7 +70,7 @@ class Welcome extends CI_Controller {
 	{
 		$this->data['title'] = $this->config->item('aboutxc_title').$this->config->item('title');
 		$this->data['aboutxc_title']  = $this->config->item('aboutxc_title');
-		$this->data['brief'] = get_brief_intr();
+		$this->data['cooperator']['item'] = $this->m_commen->get_cooperators();
 		$this->load->view('aboutxc', $this->data);
 	}
 
@@ -106,5 +96,23 @@ class Welcome extends CI_Controller {
 	{
 		$this->data['title'] = $this->config->item('404_title').$this->config->item('title');
 		$this->load->view('errors/404', $this->data);
+	}
+
+	public function test($value='')
+	{
+
+		// $this->load->view('test', array('title'=>'测试页面'));
+		$this->load->model('m_commen');
+		$this->data['carousel'] = $this->m_commen->get_carousels();
+
+		$this->data['cooperator']['title'] = $this->config->item('cooperator_title');
+		$this->data['cooperator']['item'] = $this->m_commen->get_cooperators();
+
+		$this->load->model('m_article');
+		$this->data['news'] = news_format($this->m_article->get_article_by_time(0, 3));
+		
+		$this->data['business'] = get_business();
+		$this->data['brief'] = get_brief_intr();
+		$this->load->view('index_old', $this->data);
 	}
 }

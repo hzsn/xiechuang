@@ -521,7 +521,7 @@ $config['pager']['page_size'] = 5;
 $config['pager']['base_link_url'] = '/news/';
 
 $config['title'] = '杭州协创实业有限公司';
-$config['news_title'] = '综合资讯';
+$config['news_title'] = '综合资讯 / News';
 $config['cooperator_title'] = '合作伙伴';
 $config['team_title'] = '我们的团队';
 $config['aboutxc_title'] = '公司简介';
@@ -531,4 +531,4 @@ $config['contact_title'] = '联系我们';
 $config['tel'] = '400-827-3666';
 $config['email'] = 'xiechuang@hzxc.com(测试数据)';
 $config['address'] = '浙江省杭州市拱墅区花园岗路113号金通国际大厦A座9F';
-$config['joinus_title'] = '诚招精英';
+$config['joinus_title'] = '诚聘精英';

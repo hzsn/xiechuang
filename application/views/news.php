@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		foreach ($news as $key => $value) {
 	?>
 	<div class="row xc-news-box">
-	    <div class="col-md-5 xc-news-img" style="background-image: url(http://10447105.s61i.faiusr.com/2/AD0IgdL9BBACGAAg_aOfvgUoz5PwjQQw7wI46gE.jpg);">
+	    <div class="col-md-5 xc-news-img" style="background-image: url(<?php echo $value['item_img']?>);">
 	      <a href="/article/<?php echo $value['id'] ;?>" class="xc-news-date">
 	          	<div><?php echo $value['create_time'] ;?></div>
 	      </a>

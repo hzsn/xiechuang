@@ -10,15 +10,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 			<p><?php echo $this->config->item('address');?></p>
 		</div>
 		<div class="col-md-4 col-lg-4 text-left">
-			<h3>关于我们</h3>
-			<p><a href="/aboutxc">公司简介</a></p>
-			<p><a href="/news">公司新闻</a></p>
-			<p><a href="/">企业文化</a></p>
-			<p><a href="/joinus">诚征英才</a></p>
+			<div class="col-md-6 col-lg-6 text-left">
+				<h3>关于我们</h3>
+				<p><a href="/aboutxc">公司简介</a></p>
+				<p><a href="/news">公司新闻</a></p>
+				<p><a href="/">员工风采</a></p>
+				<p><a href="/joinus">诚聘英才</a></p>
+			</div>
+			<div class="col-md-6 col-lg-6 text-left">
+				<!-- 此处可以再放一列 -->
+			</div>
 		</div>
-		<div class="col-md-4 col-lg-4">
-			<img src="/static/img/csh_weixin.jpg" width="150" height="150">
-			<img src="/static/img/csh_weixin.jpg" width="150" height="150">
+		<div class="col-md-4 col-lg-4 text-right">
+			<h2>
+				<img style="margin-right: 10px" src="/static/img/csh_weixin.jpg" width="120" height="120">
+				<img class="" src="/static/img/csh_weixin.jpg" width="120" height="120">
+			</h2>
 		</div>
 	</div>
 	<div class="row">

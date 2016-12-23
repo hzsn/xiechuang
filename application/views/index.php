@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php require_once('public/header.php'); ?>
 <body>
 <!-- 图片轮播 -->
-<div id="xc-big-carousel" class="carousel slide container" data-ride="carousel" data-pause="none">
+<div id="xc-big-carousel" class="carousel slide" data-ride="carousel" data-pause="none">
     <!-- Indicators -->
   <ol class="carousel-indicators">
   	<?php
@@ -40,147 +40,88 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   </div>
 </div>
 <!-- 图片轮播 end-->
-<!-- 侧边固定栏 -->
-<div class="xc-slide-fixed">
-	<img class ='xc-slide-img' src="/static/img/csh_weixin-2.jpg">
-	<img class ='xc-slide-img' src="/static/img/csh_weixin-2.jpg">
-	<!-- <div class="xc-slide-item">
-		<img id="img-guanzhu" class="xc-slide-img-item" src="/static/img/slide-img-1.png">
-		<img class ='xc-slide-img' src="/static/img/csh_weixin-2.jpg">
-	</div>
-	<div class="xc-slide-item xc-slide-item-last">
-		<img id="img-app" class="xc-slide-img-item" src="/static/img/slide-img-app.png">
-		<img class ='xc-slide-img' src="/static/img/csh_weixin-2.jpg">
-	</div> -->
-</div>
-<!-- 侧边固定栏 end-->
+
 <!-- body -->
 <div class="xc-section container">
-	<!-- <div class="xc-img-box" style="height: 100%; width: 100%; position: absolute;">
-		<img src="/static/img/tmp/qiche1.jpg" >
-	</div> -->
-	<div class="row item animatedParent">
+	<div class="row animatedParent" style="height: 400px">
+		<h2 class="xc-title text-center"><?php echo $brief['title'] ?></h2>
+			
 		<div class="col-lg-6 col-md-6 animated bounceInUp go">
-			<h2 class="xc-title animated bounceInUp slow go"><a class="xc-icon-title" href="/"><?php echo $news['title'];?></a></h2>
-			<div class="list-group" style="">
-				<?php 
-					foreach ($news['item'] as $value) {
-				?>
-					<a href="/article/<?php echo $value['id'];?>" class="list-group-item">
-						<span><?php echo $value['title'];?></span>
-						<span><?php echo explode(' ', $value['create_time'])[0];?></span>
-					</a>
-				<?php }?>
-				
-			</div>
+			<div class="xc-img-box" style="background-image: url(<?php echo $brief['bg_img']?>); height: 275px"></div>
 		</div>
 		<div class="col-lg-6 col-md-6 animated bounceInUp go">
-			<h2 class="xc-title animated bounceInUp slow go"><a class="xc-icon-title" href="/"><?php echo $business['title']?></a></h2>
+			<div class="xc-panel-box" style="margin: 10px 0 0 35px;">
+				<div style="height: 12.6em;overflow: hidden;font-size: 16px;"><?php echo $brief['brief_summary'] ?></div>
+				<div class="text-center" style="margin-top: 10px;"><a class="xc-button xc-button-red" href="/aboutxc">查看更多</a></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="xc-section">
+	<div class="xc-img-box" style="background-image: url('http://10437109.s61i.faiusr.com/2/AD0I9YP9BBACGAAg4qSfvgUogKSyMjCADzj5Bw.jpg');z-index: -1;">
+	</div>
+	<div class="container">
+		<div class="row">
+			<h2 class="xc-title text-center" style="color: #fff"><?php echo $business['title']?></h2>	
 			<?php 
 				$item = $business['content'];
 				for($i = 0; $i < count($item); $i++){
-					if ($i%2) {
-						$style = "padding: 0px 0px 0px 5px;";
-					}else{
-						$style = "padding: 0px 5px 0px 0px;";
-					}
 			?>
-			<div class="col-md-6" style="<?php echo $style;?>">
-				<div class="text-center xc-rect-item" style="background-image: url(<?php echo $item[$i]['item_img'];?>);">
-					<div class="xc-rect-item-title"><?php echo $item[$i]['item_title'] ?></div>
-					<div class="xc-rect-item-desc"><?php echo $item[$i]['item_desc'] ?></div>
+			<div class="col-md-3 xc-buss-box">
+				<div class="xc-buss-wapper">
+					<div class="xc-buss-bg" style="background-image: url(<?php echo $item[$i]['item_img'];?>);"></div>
+					<div class="xc-buss-content-box">
+							<div class="xc-buss-content-title"><?php echo $item[$i]['item_title'];?></div>
+							<div class="xc-buss-content"><?php echo $item[$i]['item_desc'];?></div>
+					</div>
+					<div class="xc-buss-title"><?php echo $item[$i]['item_title'];?></div>
 				</div>
 			</div>
 			<?php }?>
 		</div>
 	</div>
 </div>
-<div class="xc-section container">
-	<div class="row xc-img-box" style="background-image: url(<?php echo $brief['bg_img']?>);">
-		<!-- <img src="/static/img/273544429841561048.jpg" > -->
-		<div style="height: 100%; width: 60%;background-color: rgba(0,0,0,.7);" class="fl-r"></div>
-	</div>
-	<div class="row item animatedParent" >
-		<div class="col-lg-6 col-md-6"></div>
-		<div class="col-lg-6 col-md-6 animated bounceInUp go">
-			<h2 class="xc-title animated bounceInUp slow go"><a class="xc-icon-title" href="/"><?php echo $brief['title'] ?></a></h2>
-			<div class="" style="/*font-weight: bold;*/color: #fff"><?php echo $brief['brief_introduction'] ?></div>
-		</div>
-	</div>
-</div>
-<div class="xc-section container">
-	<!-- <div class="xc-img-box" style="height: 100%; width: 100%; position: absolute;">
-		<img src="/static/img/tmp/qiche1.jpg" >
-	</div> -->
-	<div class="row item animatedParent">
-		<h2 class="xc-title animated bounceInUp slow go"><a class="xc-icon-title" href="/">企业文化</a></h2>
-		<!-- <div class="fl-l">
-			<img class="fl-l img-responsive animated fadeInLeft" src="/static/img/qiyejingshen-1.jpg" width="270">
-			<img class="fl-l img-responsive animated fadeInLeft" src="/static/img/qiyeshiming-1.jpg" width="270">
-			<img class="fl-l img-responsive animated fadeInLeft" src="/static/img/jingyinglinian-1.jpg" width="270">
-		</div> -->
-		<!-- <div class="text-center">
-			<h3>人在一起叫聚会</h3>
-			<h3>心在一起叫团队</h3>
-		</div> -->
-		<div class="col-md-4 col-lg-4 text-left">
-			<img class="img-responsive animated fadeInLeft" src="/static/img/qiyejingshen-1.jpg" width="270">
-		</div>
-		<div class="col-md-4 col-lg-4 text-center">
-			<img class="img-responsive animated fadeInLeft" src="/static/img/qiyeshiming-1.jpg" width="270" style="display: inline-block;">
-		</div>
-		<div class="col-md-4 col-lg-4 text-right">
-			<img class="img-responsive animated fadeInLeft" src="/static/img/jingyinglinian-1.jpg" width="270" style="display: inline-block;">
-		</div>
-		<!-- <div class="animated bounceInUp go">
-			
-		</div> -->
-	</div>
-</div>
-<div class="container animatedParent">
-	<div class="">
-		<h2 class="xc-title animated bounceInUp slow go">
-		<a class="xc-icon-title" href="/">
-		<?php echo $cooperator['title'];?>
-		</a></h2>
-		<div class="xc-margin">
-			<ul class="xc-firends-box animated fadeInRight go">
-				<?php foreach ($cooperator['item'] as $value) {	?>
-				<li>
-				<div><img class="img-rounded" alt="<?php echo $value['name'];?>" style="width: 200px; height: 120px" src="/static/img/<?php echo $value['img_path'];?>" data-holder-rendered="true"></div>
-				<div class="xc-pos-abs text-center xc-firends-text" style="opacity: 0"><?php echo $value['name'];?></div>
-				</li>
-				<?php }?>
-				
-			</ul>
-		</div>
-	</div>
+<div class="xc-section" style="background: #eee;">
+    <div class="container">
+        <div class="row">
+        	<h2 class="xc-title text-center" style="color: rgb(247,9,9);"><?php echo $this->config->item('news_title'); ?></h2>	
+        	<?php 
+        		// var_dump($news);
+        		if (!$news) {
+        			echo '没有数据';
+        		}else if ($news['code']) {
+        			echo $news['msg'];
+        		}else{
+        			echo $news['item'];
+        		}
+        	;?>
+            <!-- <div class="col-md-8"> -->
+                
+            
+           <!--  <div class="col-md-4 xc-news-i-box" style="padding-left: 0px;">
+                <div class="xc-news-i-img" style="background-image: url('http://www.hdu.edu.cn/uploads/images/20160321/201603211104281000.jpg');height: 157.5px;">
+                        <a class="xc-news-i-title text-right" href="/article/0">标题</a>
+                        <span class="xc-news-i-date" style="right: 0">2016-12-21</span>
+                </div>
+                <div class="xc-height100 xc-news-small">
+                   <div class="xc-news-i-content">
+                   	<p>kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf, ha.
+                        kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf. ha
+                        kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf. ha
+                        kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf. ha
+                        kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf. ha
+                        kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf. ha
+                        kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf. ha
+                        kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf. ha</p>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>    
 </div>
 
 <!-- body end -->
 <script type="text/javascript" src="/static/css3animate/js/css3-animate-it.js" ></script>
 <?php require_once('public/footer.php') ?>
-
-<!-- <div id="xc-backtop" class="xc-backtop-box">
-	<span class="glyphicon glyphicon-chevron-up"></span>
-</div> -->
 </body>
-<script type="text/javascript" src="/static/css3animate/js/css3-animate-it.js" ></script>
-<script>
-  $(function(){
-  	_height = $(window).height();
-  	// if (_height > 800) {
-  	// 	_height = _height>650 ? 650:_height;
-  	// 	$('.carousel').css({
-	  // 		'height':_height+'px',
-	  // 	});
-	  // 	$('.carousel .item').css({
-	  // 		'max-height':_height+'px',
-	  // 	});
-  	// }
-  });
-
-  
-
-</script>
 </html>

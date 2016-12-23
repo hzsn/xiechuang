@@ -13,9 +13,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="row">
 		<h2 class="text-center" id="article-title"><?php echo $article['title'];?></h2>
 		<div class="text-center">
+			<input id="article_id" type="hidden" value="<?php echo $article['id'];?>">
 			<span>时间：<?php echo $article['create_time'];?></span>
 			<span>作者：<?php echo $article['create_user'];?></span>
-			<span>浏览量：<?php echo $article['pv'];?></span>
+			<span>浏览量：<span id="pv" data-pv="<?php echo $article['pv'] ;?>"><?php echo $article['pv'];?></span></span>
 		</div>
 		<hr>
 		<div class="xc-article-content-box">
@@ -40,6 +41,42 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 </div>
 <?php require_once('public/footer.php') ?>
+<div id="pv-box"></div>
+<script type="text/javascript">
+/**
+ * 更新浏览量函数
+ */
+	function add_pv() {
+		$.ajax({
+			url:'<?php echo site_url("/news/add_pv")?>',
+			type:"POST",
+			data:{
+				'article_id':$('#article_id').val()
+			},
+			success:function(rep,status,xhr){
+				try{
+					var jobj =JSON.parse(rep);
+					if (jobj && jobj.code == '0') {
+							var pv = $('#pv').data('pv') + jobj.pv;
+							$('#pv').text(pv);
+							$('#pv').data('pv',pv);
+					}
+				}catch(e){
+					console.log(e.message, e.name, e.lineNumber);
+					console.log('JSON字符串解析错误');
+				}
+			},
+			timeout:3000,
+			error:function(xhr,status,error){
+				console.log(xhr,status,error);
+			},
+		});
+	}
+	$(function () {
+		
+		add_pv();
+	});
+</script>
 <script>
 	window._bd_share_config = {
 		common : {
