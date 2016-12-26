@@ -1,23 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
-
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+class Page extends CI_Controller {
 
 	private $data;
 
@@ -31,53 +15,60 @@ class Welcome extends CI_Controller {
 		$this->data['title'] = $this->config->item('title');
 	}
 
-	public function welcome($value='')
-	{
-		$this->load->view('welcome_message');
-	}
-
+	/**
+	 * 加载首页
+	 * @return 加载首页
+	 */
 	public function index()
 	{
-		// $this->output->cache(1);
-		
+		//缓存首页页面
+		$this->output->cache(1);
+		//获取轮播数据
 		$this->data['carousel'] = $this->m_commen->get_carousels();
 
 		$this->load->model('m_article');
-		$this->data['news'] = news_format($this->m_article->get_article_by_time(0, 3));
-		
+		//获取首页显示的最新资讯
+		$this->data['news'] = news_format($this->m_article->get_article_by_time(1, 0, 3));
+		//获取经营业务的数据
 		$this->data['business'] = get_business();
+		//获取公司简介的数据
 		$this->data['brief'] = get_brief_intr();
-
+		//加载首页面
 		$this->load->view('index', $this->data);
 	}
 	
-	public function team($value='')
+	/**
+	 * 加载团队页面
+	 * @return 加载的团队介绍的页面
+	 */
+	public function team()
 	{
 		$this->data['title'] = $this->config->item('team_title').$this->config->item('title');
 		$this->data['team_title'] = $this->config->item('team_title');
 		$this->load->view('team', $this->data);
 	}
 
-	public function news($value='')
-	{
-		$this->load->model('M_article');
-		$this->data['news'] = $this->m_article->get_article_by_time();
-		$this->data['title'] = $this->config->item('news_stitle').$this->config->item('title');
-		$this->load->view('news', $this->data);	
-	}
-
 	public function aboutxc($value='')
 	{
+		//缓存首页页面
+		$this->output->cache(1);
 		$this->data['title'] = $this->config->item('aboutxc_title').$this->config->item('title');
 		$this->data['aboutxc_title']  = $this->config->item('aboutxc_title');
 		$this->data['cooperator']['item'] = $this->m_commen->get_cooperators();
 		$this->load->view('aboutxc', $this->data);
 	}
 
-	public function contact($value='')
+	/**
+	 * 加载联系我们页面
+	 */
+	public function contact()
 	{
+		//缓存首页页面
+		$this->output->cache(1);
 		$this->data['title'] = $this->config->item('contact_title').$this->config->item('title');
 		$this->data['contact_title']  = $this->config->item('contact_title');
+		//查询中心的信息
+		$this->data['cangkus'] = $this->m_commen->get_cangkus();
 		$this->load->view('contact', $this->data);	
 	}
 
@@ -98,9 +89,13 @@ class Welcome extends CI_Controller {
 		$this->load->view('errors/404', $this->data);
 	}
 
+	/**
+	 * 测试函数（可删除）
+	 * @param  string $value [description]
+	 * @return [type]        [description]
+	 */
 	public function test($value='')
 	{
-
 		// $this->load->view('test', array('title'=>'测试页面'));
 		$this->load->model('m_commen');
 		$this->data['carousel'] = $this->m_commen->get_carousels();

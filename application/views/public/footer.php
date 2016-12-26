@@ -14,8 +14,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 				<h3>关于我们</h3>
 				<p><a href="/aboutxc">公司简介</a></p>
 				<p><a href="/news">公司新闻</a></p>
-				<p><a href="/">员工风采</a></p>
-				<p><a href="/joinus">诚聘英才</a></p>
+				<p><a href="/news/employee">员工风采</a></p>
+				<p><a href="/contact/joinus">诚聘英才</a></p>
 			</div>
 			<div class="col-md-6 col-lg-6 text-left">
 				<!-- 此处可以再放一列 -->

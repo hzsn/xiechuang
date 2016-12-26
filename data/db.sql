@@ -74,6 +74,7 @@
 -- status int(2) not null default 0 comment '显示的状态, 0表示显示，非0表示不显示'
 -- );
 
+-- 分类表
 -- create table IF NOT EXISTS xc_category(
 -- id int(3) not null primary key auto_increment comment '主键',
 -- name varchar(16) NOT null default '公司咨询',
@@ -84,6 +85,20 @@
 -- insert into xc_category(name) values('公司咨询');
 -- alter table xc_article add column cato_id int(4);
 -- alter table xc_article add CONSTRAINT article_cato_fk foreign key(cato_id) REFERENCES xc_category(id);
+
+-- 中心库表
+create table IF NOT EXISTS xc_cangku(
+id int(3) not null primary key auto_increment comment '主键',
+name varchar(16) NOT null default '杭州协创实业有限公司' comment '中心库名称',
+address varchar(128) NOT null comment '中心库地址',
+phone varchar(64) comment '联系电话',
+email varchar(64) comment '联系邮箱',
+create_time TIMESTAMP not null default now() comment '创建id的时间',
+create_user	varchar(32) not null default 'admin' comment '创建者',
+status int(2) not null default 0 comment '显示的状态, 0表示显示，非0表示不显示'
+);
+
+insert into xc_cangku(address, phone, email) values('浙江省杭州市拱墅区花园岗路113号金通国际大厦A座9F', '400-827-3666', 'xiechuang@hzxc.com');
 
 -- insert into xc_article(title, summary, contant) select title,summary, contant from xc_article where id = 1;
 -- insert into xc_article(title, summary, contant) select title,summary, contant from xc_article where id = 1;

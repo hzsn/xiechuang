@@ -2,7 +2,7 @@ body{
 	    overflow-x: hidden;
 }
 header{
-	border-bottom: 1px solid #eee;
+	border-bottom: 1px solid rgb(247, 9, 9);
 }
 .black-header{
 	background-color: #292929;
@@ -24,8 +24,8 @@ header{
     overflow: hidden;
 }
 .tel {
-    margin-top: 40px;
-    font-size: 33px;
+    /*margin-top: 40px;*/
+    font-size: 28px;
 }
 .tel-text{
 	color: rgb(233, 3, 2);
@@ -405,7 +405,7 @@ footer p{
 	position: absolute;width: 80%;
 	left: 10%;height: 80%;
 	top: 10%;
-	border:10px solid #ddd;
+	border:10px solid rgba(247,3,9,.6);
 	border-radius: 50%;
 	cursor: pointer;
 	transition: all .5s;
@@ -470,7 +470,7 @@ border-radius: 0%;
 height: 100px; 
 padding: 10px; 
 background-color: transparent;
-box-shadow: 0 0 0 5px transparent inset;
+box-shadow: 0 0 1px 0px #0C0A0A inset;
 position: relative;
 cursor: pointer;
 }
@@ -483,13 +483,12 @@ cursor: pointer;
     height: 100%;
 }
 .xc-firends-text{
-	font-size: 26px;
+	font-size: 20px;
 	line-height: 90px;
-	background: rgba(0,0,0,.6);
+	background: rgba(247, 9, 9, 0.8);
 	border: 1px dashed rgba(255,255,255,.5);
 	color: #fff;
-	top: 10px;
-	height: 90%;
+	height: 100%;
 	opacity: 0;
 	display: block;
 	text-decoration: none;

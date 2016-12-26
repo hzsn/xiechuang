@@ -25,76 +25,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<p><?php echo $this->config->item('address');?></p>
 		</div>
 	</div>
-	<h3><del>关于地图功能，建议使用公司的账号实现此功能 此行文字需要删除</del></h3>
+	<!-- <h3><del>关于地图功能，建议使用公司的账号实现此功能 此行文字需要删除</del></h3> -->
 	<div class="contact-map-box" id="amap-container"></div>
 	<div id="address-box" class="xc-margin-top">
-		<h3><del>此处可以显示公司的各个中心库的信息（名称，地址，联系方式等）此行文字需要删除</del></h3>
-		<div class="row">
-			<div class="col-md-6">
-			<div class="panel panel-default text-left">
-			  <div class="panel-heading"><?php echo $this->config->item('title') ;?></div>
-			  <div class="panel-body">
-				  <p><?php echo $this->config->item('address') ;?></p>
-				  <p><?php echo $this->config->item('tel') ;?></p>
-				  <p><?php echo $this->config->item('email');?></p>
-			  </div>
-			</div>
-			</div>
-			<div class="col-md-6">
-			<div class="panel panel-default text-left">
-			  <div class="panel-heading"><?php echo $this->config->item('title') ;?></div>
-			  <div class="panel-body">
-				  <p><?php echo $this->config->item('address') ;?></p>
-				  <p><?php echo $this->config->item('tel') ;?></p>
-				  <p><?php echo $this->config->item('email');?></p>
-			  </div>
-			</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-6">
-			<div class="panel panel-default text-left">
-			  <div class="panel-heading"><?php echo $this->config->item('title') ;?></div>
-			  <div class="panel-body">
-				  <p>这里的地址非....................................................................常....................................................................长..................................</p>
-				  <p><?php echo $this->config->item('tel') ;?></p>
-				  <p><?php echo $this->config->item('email');?></p>
-			  </div>
-			</div>
-			</div>
-			<div class="col-md-6">
-			<div class="panel panel-default text-left">
-			  <div class="panel-heading"><?php echo $this->config->item('title') ;?></div>
-			  <div class="panel-body">
-				  <p><?php echo $this->config->item('address') ;?></p>
-				  <p><?php echo $this->config->item('tel') ;?></p>
-				  <p><?php echo $this->config->item('email');?></p>
-			  </div>
-			</div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-md-6">
-			<div class="panel panel-default text-left">
-			  <div class="panel-heading"><?php echo $this->config->item('title') ;?></div>
-			  <div class="panel-body">
-				  <p><?php echo $this->config->item('address') ;?></p>
-				  <p><?php echo $this->config->item('tel') ;?></p>
-				  <p><?php echo $this->config->item('email');?></p>
-			  </div>
-			</div>
-			</div>
-			<div class="col-md-6">
-			<div class="panel panel-default text-left">
-			  <div class="panel-heading"><?php echo $this->config->item('title') ;?></div>
-			  <div class="panel-body">
-				  <p><?php echo $this->config->item('address') ;?></p>
-				  <p><?php echo $this->config->item('tel') ;?></p>
-				  <p><?php echo $this->config->item('email');?></p>
-			  </div>
-			</div>
-			</div>
-		</div>
+		<!-- <h3><del>此处可以显示公司的各个中心库的信息（名称，地址，联系方式等）此行文字需要删除</del></h3> -->
+		<?php 
+			if ($cangkus) {
+				$len = count($cangkus);
+				$divs = [];
+				foreach ($cangkus as $key => $value) {
+					array_push($divs, '<div class="col-md-6" data-index="'.$key.'"><div class="panel panel-default text-left">');
+					array_push($divs, '<div class="panel-heading">'.$value['name'].'</div>');
+					array_push($divs, '<div class="panel-body">');
+					array_push($divs, '<p>地址：'.$value['address'].'</p>');
+					array_push($divs, '<p>联系电话：'.$value['phone'].'</p>');
+					array_push($divs, '<p>电子邮箱：'.$value['email'].'</p>');
+					array_push($divs, '</div>');
+					array_push($divs, '</div></div>');
+					
+					if (($key == $len-1 && $key%2==0)|| $key%2) {
+						echo '<div class="row">'.join('',$divs).'</div>';
+						$divs = [];
+					}
+				}
+			}
+		 ?>
 	</div>
 </div>
 <?php require_once('public/footer.php') ?>

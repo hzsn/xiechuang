@@ -26,7 +26,7 @@ class News extends CI_Controller{
 		return $return;
 	}
 
-	private function get_article_item($page_index=1, $cato_id = 1){
+	private function get_article_item($page_index=1, $cato_id = 1, $base_link_url = '/news/'){
 		if (!is_numeric($page_index) || intval($page_index) < 0) {
 			show_404();
 		}
@@ -42,9 +42,9 @@ class News extends CI_Controller{
 			redirect('/404');
 		}
 		$page_config['total_row'] = $row;
+		$page_config['base_link_url'] = $base_link_url;
 		//查询数据
 		$this->data['news'] = $this->m_article->get_article_by_time($cato_id, $page_index-1, $page_config['page_size']);
-
 		if (!$this->data['news']) {
 			redirect('/404');
 		}
@@ -64,40 +64,10 @@ class News extends CI_Controller{
 	/**
 	 * 获取公司咨询信息
 	 * @param  integer $page_index 当前页码
-	 * 
+	 * 加载新闻页面
 	 */
 	public function index($page_index = 1)
 	{
-		// if (!is_numeric($page_index) || intval($page_index) < 0) {
-		// 	show_404();
-		// }
-		// $page_index = intval($page_index);
-		// $cato_id = 1;
-		// $this->load->library('pager');
-		// $this->load->model('m_article');
-		// //加载配置文件
-		// $page_config = $this->config->item('pager');
-		// //设置title
-		// $this->data['title'] = $this->config->item('news_title').$this->config->item('title');
-		// //设置页面中的title
-		// $this->data['news_title'] = $this->config->item('news_title');
-		// //设置分页总数	
-		// $row = $this->get_total_row($cato_id);
-		// if (!$row) {
-		// 	redirect('/404');
-		// }
-		// $page_config['total_row'] = $row;
-		// //查询数据
-		// $this->data['news'] = $this->m_article->get_article_by_time($cato_id, $page_index-1, $page_config['page_size']);
-
-		// if (!$this->data['news']) {
-		// 	redirect('/404');
-		// }
-		// //设置当前页码
-		// $page_config['cur_page'] = $page_index;
-		// //获取分页组件
-		// $this->data['pagination'] = $this->pager->create($page_config);
-
 		$this->get_article_item($page_index, 1);
 		//设置title
 		$this->data['title'] = $this->config->item('news_title').$this->config->item('title');
@@ -106,15 +76,33 @@ class News extends CI_Controller{
 		$this->load->view('news', $this->data);
 	}
 
-	
-
+	/**
+	 * 获取行业新闻
+	 * @param  integer $page_index 当前页码
+	 * @return 加载新闻页面
+	 */
 	public function other($page_index = 1)
 	{
 		//设置title
 		$this->data['title'] = $this->config->item('news_other_title').$this->config->item('title');
 		//设置页面中的title
 		$this->data['news_title'] = $this->config->item('news_other_title');
-		$this->get_article_item($page_index, 2);
+		$this->get_article_item($page_index, 2, '/news/other/');
+		$this->load->view('news', $this->data);
+	}
+
+	/**
+	 * 获取获取员工风采数据
+	 * @param  integer $page_index 当前页码
+	 * @return 加载员工风采页面
+	 */
+	public function staff($page_index = 1)
+	{
+		//设置title
+		$this->data['title'] = $this->config->item('staff_title').$this->config->item('title');
+		//设置页面中的title
+		$this->data['news_title'] = $this->config->item('staff_title');
+		$this->get_article_item($page_index, 3, '/news/staff/');
 		$this->load->view('news', $this->data);
 	}
 

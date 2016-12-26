@@ -6,7 +6,7 @@
 }
 .xc-nav-bar{
 		background: transparent;
-		height: 100px;
+		/*height: 100px;*/
 	}
 
 .pagination>.active>a, .pagination>.active>span,
@@ -26,7 +26,7 @@
     margin: 0;
     font-size: 16px;
     padding: 0 35px;
-    line-height: 100px;
+    line-height: 60px;
 	color: #333;
 }
 .pagination>li>a,.pagination>li>a:hover, .pagination>li>span{
@@ -80,10 +80,12 @@
 }
 .xc-btn-icon{
 	display: inline-block;
-	width: 50px;
-	height: 40px;
+	width: 38px;
+	height: 30px;
 	cursor: pointer;
 	position: relative;
+	background-image: url('/static/img/logo_weixin_small.png');
+	background-size: cover;
 
 }
 .xc-btn-icon > img{

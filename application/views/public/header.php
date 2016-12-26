@@ -6,21 +6,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 <header class="">
 	<div class="container">
 			<div class="row" >
-			<a class="pull-left" href="/"><img class="" src="/static/img/logo.PNG" alt="杭州协创实业有限公司" height ="160px"></a>
+			<a class="pull-left" href="/"><img class="" src="/static/img/logo.PNG" alt="杭州协创实业有限公司" height ="120px"></a>
 				<div class="" style="height: 60px;padding-right: 20px;">
-					<div class="pull-right">
+					<div class="pull-right" style="margin-top: 10px;">
 						<span class="tel">
 							<span class="glyphicon glyphicon-earphone" style="color: #9f9f9f"></span>
 							<span class="tel-text"><?php echo $this->config->item('tel');;?></span>
 						</span>
-						<!-- <span class="tel" style="background-image: url(/static/img/tel.png);"></span> -->
-						<span class="xc-btn-icon" style="background: url('/static/img/logo_weixin_small.png');" >
+						<span class="xc-btn-icon">
 							<img src="/static/img/csh_weixin-2.jpg" style="width: 150px;">
 						</span>
 					</div>
 				</div>
 				<!-- 导航条  -->
-				<nav class="xc-nav-bar" style="height: 100px">
+				<nav class="xc-nav-bar">
 						<div class="navbar-collapse collapse" role="navigation">
 					      <ul class="nav navbar-nav" id="navbar-nav">
 					         <?php

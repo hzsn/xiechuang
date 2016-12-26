@@ -46,12 +46,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="row animatedParent" style="height: 400px">
 		<h2 class="xc-title text-center"><?php echo $brief['title'] ?></h2>
 			
-		<div class="col-lg-6 col-md-6 animated bounceInUp go">
+		<div class="col-lg-6 col-md-6 animated fadeInUpShort go">
 			<div class="xc-img-box" style="background-image: url(<?php echo $brief['bg_img']?>); height: 275px"></div>
 		</div>
-		<div class="col-lg-6 col-md-6 animated bounceInUp go">
+		<div class="col-lg-6 col-md-6 animated fadeInUpShort go">
 			<div class="xc-panel-box" style="margin: 10px 0 0 35px;">
-				<div style="height: 12.6em;overflow: hidden;font-size: 16px;"><?php echo $brief['brief_summary'] ?></div>
+				<div style="height: 12.6em;overflow: hidden;"><?php echo $brief['brief_summary'] ?></div>
 				<div class="text-center" style="margin-top: 10px;"><a class="xc-button xc-button-red" href="/aboutxc">查看更多</a></div>
 			</div>
 		</div>
@@ -61,14 +61,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="xc-img-box" style="background-image: url('http://10437109.s61i.faiusr.com/2/AD0I9YP9BBACGAAg4qSfvgUogKSyMjCADzj5Bw.jpg');z-index: -1;">
 	</div>
 	<div class="container">
-		<div class="row">
+		<div class="row animatedParent animateOnce">
 			<h2 class="xc-title text-center" style="color: #fff"><?php echo $business['title']?></h2>	
 			<?php 
 				$item = $business['content'];
 				for($i = 0; $i < count($item); $i++){
 			?>
 			<div class="col-md-3 xc-buss-box">
-				<div class="xc-buss-wapper">
+				<div class="xc-buss-wapper animated fadeInUpShort">
 					<div class="xc-buss-bg" style="background-image: url(<?php echo $item[$i]['item_img'];?>);"></div>
 					<div class="xc-buss-content-box">
 							<div class="xc-buss-content-title"><?php echo $item[$i]['item_title'];?></div>
@@ -83,10 +83,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 <div class="xc-section" style="background: #eee;">
     <div class="container">
-        <div class="row">
+        <div class="row animatedParent animateOnce">
         	<h2 class="xc-title text-center" style="color: rgb(247,9,9);"><?php echo $this->config->item('news_title'); ?></h2>	
         	<?php 
-        		// var_dump($news);
         		if (!$news) {
         			echo '没有数据';
         		}else if ($news['code']) {
@@ -95,27 +94,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         			echo $news['item'];
         		}
         	;?>
-            <!-- <div class="col-md-8"> -->
-                
-            
-           <!--  <div class="col-md-4 xc-news-i-box" style="padding-left: 0px;">
-                <div class="xc-news-i-img" style="background-image: url('http://www.hdu.edu.cn/uploads/images/20160321/201603211104281000.jpg');height: 157.5px;">
-                        <a class="xc-news-i-title text-right" href="/article/0">标题</a>
-                        <span class="xc-news-i-date" style="right: 0">2016-12-21</span>
-                </div>
-                <div class="xc-height100 xc-news-small">
-                   <div class="xc-news-i-content">
-                   	<p>kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf, ha.
-                        kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf. ha
-                        kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf. ha
-                        kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf. ha
-                        kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf. ha
-                        kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf. ha
-                        kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf. ha
-                        kasjd hfiu, a asj, fkja;ksjdfkja hs i dfhasl kdjf. ha</p>
-                    </div>
-                </div>
-            </div> -->
         </div>
     </div>    
 </div>

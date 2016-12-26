@@ -135,19 +135,19 @@ if (!function_exists('news_format')) {
             $re_arr['msg'] = '暂无资讯';
             return $re_arr;
         }
-        $div = '<div class="col-md-8"><div class="xc-news-i-box xc-news-large"><div class="col-md-6 xc-news-i-img"  style="background-image: url('.$array[0]['item_img'].');"><a class="xc-news-i-title text-right" href="/article/'.$array[0]['id'].'">'.$array[0]['title'].'</a><span class="xc-news-i-date" style="right: 0">'.explode(' ', $array[0]['create_time'])[0].'</span></div><div class="col-md-6 xc-height100"><div class="xc-news-i-content">'.$array[0]['summary'].'</div></div></div>';
+        $div = '<div class="col-md-8"><div class="xc-news-i-box xc-news-large animated bounceInLeft"><div class="col-md-6 xc-news-i-img"  style="background-image: url('.$array[0]['item_img'].');"><a class="xc-news-i-title text-right" href="/article/'.$array[0]['id'].'">'.$array[0]['title'].'</a><span class="xc-news-i-date" style="right: 0">'.explode(' ', $array[0]['create_time'])[0].'</span></div><div class="col-md-6 xc-height100"><div class="xc-news-i-content">'.$array[0]['summary'].'</div></div></div>';
         $len = count($array);
         if ($len == 1) {
             $div .= '</div>';
         }
         if ($len == 2) {
-            $div .= '<div class="xc-news-i-box xc-news-large"><div class="col-md-6 xc-height100"><div class="xc-news-i-content">'.$array[1]['summary'].'</div></div><div class="col-md-6 xc-news-i-img"  style="background-image: url('.$array[1]['item_img'].');"><a class="xc-news-i-title text-right" href="/article/'.$array[1]['id'].'">'.$array[1]['title'].'</a><span class="xc-news-i-date" style="left: 0">'.explode(' ', $array[1]['create_time'])[0].'</span></div></div>';
+            $div .= '<div class="xc-news-i-box xc-news-large animated bounceInLeft"><div class="col-md-6 xc-height100"><div class="xc-news-i-content">'.$array[1]['summary'].'</div></div><div class="col-md-6 xc-news-i-img"  style="background-image: url('.$array[1]['item_img'].');"><a class="xc-news-i-title text-right" href="/article/'.$array[1]['id'].'">'.$array[1]['title'].'</a><span class="xc-news-i-date" style="left: 0">'.explode(' ', $array[1]['create_time'])[0].'</span></div></div>';
             $div .= '</div>';
         }
         if ($len > 2) {
-             $div .= '<div class="xc-news-i-box xc-news-large"><div class="col-md-6 xc-height100"><div class="xc-news-i-content">'.$array[1]['summary'].'</div></div><div class="col-md-6 xc-news-i-img"  style="background-image: url('.$array[1]['item_img'].');"><a class="xc-news-i-title text-right" href="/article/'.$array[1]['id'].'">'.$array[1]['title'].'</a><span class="xc-news-i-date" style="left: 0">'.explode(' ', $array[1]['create_time'])[0].'</span></div></div>';
+             $div .= '<div class="xc-news-i-box xc-news-large animated bounceInLeft"><div class="col-md-6 xc-height100"><div class="xc-news-i-content">'.$array[1]['summary'].'</div></div><div class="col-md-6 xc-news-i-img"  style="background-image: url('.$array[1]['item_img'].');"><a class="xc-news-i-title text-right" href="/article/'.$array[1]['id'].'">'.$array[1]['title'].'</a><span class="xc-news-i-date" style="left: 0">'.explode(' ', $array[1]['create_time'])[0].'</span></div></div>';
             $div .= '</div>';
-           $div .= '<div class="col-md-4 xc-news-i-box" style="padding-left: 0px;"><div class="xc-news-i-img" style="background-image: url('.$array[2]['item_img'].');height: 157.5px;"><a class="xc-news-i-title text-right" href="/article/'.$array[2]['id'].'">'.$array[2]['title'].'</a><span class="xc-news-i-date" style="right: 0">'.explode(' ', $array[2]['create_time'])[0].'</span>
+           $div .= '<div class="col-md-4 xc-news-i-box animated fadeInRightShort" style="padding-left: 0px;"><div class="xc-news-i-img" style="background-image: url('.$array[2]['item_img'].');height: 157.5px;"><a class="xc-news-i-title text-right" href="/article/'.$array[2]['id'].'">'.$array[2]['title'].'</a><span class="xc-news-i-date" style="right: 0">'.explode(' ', $array[2]['create_time'])[0].'</span>
                 </div><div class="xc-height100 xc-news-small">
                    <div class="xc-news-i-content">'.$array[0]['summary'].'</div></div></div>';
         }
