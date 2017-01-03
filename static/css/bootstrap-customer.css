@@ -100,7 +100,10 @@
 }
 
 .carousel .item{
-	height: 550px;
+	height: 500px;
+}
+#xc-groups-carousel .item{
+	height: 400px;
 }
 .carousel .item img{
 	height: 100%;
@@ -140,4 +143,7 @@ background: transparent;
 #address-box .panel-body{
 	height: 130px;
 overflow: hidden;
+}
+.thumbnail{
+	position: relative;
 }

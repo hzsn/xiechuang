@@ -23,8 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 		</div>
 		<div class="col-md-4 col-lg-4 text-right">
 			<h2>
-				<img style="margin-right: 10px" src="/static/img/csh_weixin.jpg" width="120" height="120">
-				<img class="" src="/static/img/csh_weixin.jpg" width="120" height="120">
+				<img style="margin-right: 10px" src="/static/img/csh_weixin.jpg" width="129" height="129">
+				<img class="" src="/static/img/xc_weixin_258.jpg" width="129" height="129">
 			</h2>
 		</div>
 	</div>

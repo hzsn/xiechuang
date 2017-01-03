@@ -13,7 +13,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php require_once('public/head.php'); ?>
 <body>
 
-<?php require_once('public/header_new.php'); ?>
+<?php 
+	echo phpinfo();
+?>
+
 <div style="height: 550px; background: url('http://img.infinitynewtab.com/wallpaper/689.jpg');"></div>
 </body>
 

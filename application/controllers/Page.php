@@ -96,18 +96,18 @@ class Page extends CI_Controller {
 	 */
 	public function test($value='')
 	{
-		// $this->load->view('test', array('title'=>'测试页面'));
-		$this->load->model('m_commen');
-		$this->data['carousel'] = $this->m_commen->get_carousels();
+		$this->load->view('test', array('title'=>'测试页面'));
+		// $this->load->model('m_commen');
+		// $this->data['carousel'] = $this->m_commen->get_carousels();
 
-		$this->data['cooperator']['title'] = $this->config->item('cooperator_title');
-		$this->data['cooperator']['item'] = $this->m_commen->get_cooperators();
+		// $this->data['cooperator']['title'] = $this->config->item('cooperator_title');
+		// $this->data['cooperator']['item'] = $this->m_commen->get_cooperators();
 
-		$this->load->model('m_article');
-		$this->data['news'] = news_format($this->m_article->get_article_by_time(0, 3));
+		// $this->load->model('m_article');
+		// $this->data['news'] = news_format($this->m_article->get_article_by_time(0, 3));
 		
-		$this->data['business'] = get_business();
-		$this->data['brief'] = get_brief_intr();
-		$this->load->view('index_old', $this->data);
+		// $this->data['business'] = get_business();
+		// $this->data['brief'] = get_brief_intr();
+		// $this->load->view('index_old', $this->data);
 	}
 }

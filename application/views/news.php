@@ -11,9 +11,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 <div class="container xc-margin">
 	<?php
-		// if ($code != '0') {
-		// 	echo $message;
-		// }else{
 		foreach ($news as $key => $value) {
 	?>
 	<div class="row xc-news-box">

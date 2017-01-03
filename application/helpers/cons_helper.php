@@ -119,3 +119,170 @@ if (!function_exists('get_carousel')) {
 	}
 }
 
+if (!function_exists('get_yuangong')) {
+	function get_yuangong($groupname = 'groups'){
+		
+		$staffgroups = [
+				['title_text'=>'会议',
+				'title_img'=>'/static/img/1.png',
+				'url'=>'/news/staff/group_',
+				'img_item'=>[
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png'
+				]],
+				['title_text'=>'协创周庆',
+				'title_img'=>'/static/img/3.png',
+				'url'=>'/news/staff/group_',
+				'img_item'=>[
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png'
+				]],
+				['title_text'=>'会议1',
+				'title_img'=>'/static/img/2.png',
+				'url'=>'/news/staff/group_',
+				'img_item'=>[
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png'
+				]],
+				['title_text'=>'会议2',
+				'title_img'=>'/static/img/1.png',
+				'url'=>'/news/staff/group_',
+				'img_item'=>[
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png'
+				]],
+				['title_text'=>'会议3',
+				'title_img'=>'/static/img/1.png',
+				'url'=>'/news/staff/group_',
+				'img_item'=>[
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png'
+				]],
+				['title_text'=>'会议3',
+				'title_img'=>'/static/img/1.png',
+				'url'=>'/news/staff/group_',
+				'img_item'=>[
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png',
+					'/static/img/1.png'
+				]],
+				['title_text'=>'会议3',
+				'title_img'=>'/static/img/1.png',
+				'url'=>'/news/staff/group_',
+				'img_item'=>[
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/2_b.jpg',
+						'smallSrc'=>'/static/css/image/2_s.jpg',
+					],
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/1_b.jpg',
+						'smallSrc'=>'/static/css/image/1_s.jpg',
+					],
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/3_b.jpg',
+						'smallSrc'=>'/static/css/image/3_s.jpg',
+					],
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/4_b.jpg',
+						'smallSrc'=>'/static/css/image/4_s.jpg',
+					],
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/5_b.jpg',
+						'smallSrc'=>'/static/css/image/5_s.jpg',
+					],
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/6_b.jpg',
+						'smallSrc'=>'/static/css/image/6_s.jpg',
+					],
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/7_b.jpg',
+						'smallSrc'=>'/static/css/image/7_s.jpg',
+					],
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/8_b.jpg',
+						'smallSrc'=>'/static/css/image/8_s.jpg',
+					],
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/9_b.jpg',
+						'smallSrc'=>'/static/css/image/9_s.jpg',
+					],
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/10_b.jpg',
+						'smallSrc'=>'/static/css/image/10_s.jpg',
+					],
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/11_b.jpg',
+						'smallSrc'=>'/static/css/image/11_s.jpg',
+					],
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/12_b.jpg',
+						'smallSrc'=>'/static/css/image/12_s.jpg',
+					],
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/13_b.jpg',
+						'smallSrc'=>'/static/css/image/13_s.jpg',
+					],
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/14_b.jpg',
+						'smallSrc'=>'/static/css/image/14_s.jpg',
+					],
+					[
+						'id'=>1,
+						'src'=>'/static/css/image/15_b.jpg',
+						'smallSrc'=>'/static/css/image/15_s.jpg',
+					]
+				]],
+			];
+		if ($groupname == 'groups') {
+			return $staffgroups;		
+		}else{
+			$group_id = substr($groupname, strripos($groupname, '_')+1);
+			
+			if (0 <= $group_id && $group_id <= count($staffgroups)) {
+				return $staffgroups[$group_id]['img_item'];	
+			}else{
+				return [];
+			}
+			
+		}
+		
+	}
+}
+

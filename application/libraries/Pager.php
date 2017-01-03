@@ -37,6 +37,9 @@ class Pager
 				$this->$key = $val;
 			}
 		}
+		if(!preg_match('/\/$/', $this->base_link_url)){
+			$this->base_link_url = $this->base_link_url.'/';
+		}
         $this->set_page_row();
         return $this;
 	}

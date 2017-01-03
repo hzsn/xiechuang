@@ -67,7 +67,7 @@ if (!function_exists('cache_navbar')) {
     function cache_navbar(){
         $CI =& get_instance();
 
-        $CI->load->driver('cache', array('adapter' => 'apc', 'backup' => 'file'));
+        $CI->load->driver('cache', array('adapter' => 'memcached', 'backup' => 'file'));
         $navbar = $CI->cache->get('navbar');
         if ($navbar) {
             return $navbar;

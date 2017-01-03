@@ -42,5 +42,26 @@ class M_commen extends CI_Model
 		$query = $this->db->get_where('xc_cangku', array('status' => 0));
 		return $query->result_array();	
 	}
+	/**
+	 * 查询相册的
+	 * @return array 返回查询结果，若无数据则返回空
+	 */
+	public function get_gallerys($index = 1, $size = 6)
+	{
+		$this->db->limit($size,$index*$size);
+		$this->db->select('id, cover_img_path, name');
+		return $this->db->get_where('xc_galley_group', array('status' => 0))->result_array();
+	}
+
+	public function get_gallery_by_groupid($groupid)
+	{
+		$this->db->select('name, img_path');
+		return $this->db->get_where('xc_galley_group', array('status' => 0, 'id' => $groupid))->row();
+	}
+
+	public function get_groups_total_row()
+	{
+		return $this->db->query('select count(1) as total_row from xc_galley_group where status = 0;')->row()->total_row;
+	}
 
 }
