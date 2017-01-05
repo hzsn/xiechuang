@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 				<h3>关于我们</h3>
 				<p><a href="/aboutxc">公司简介</a></p>
 				<p><a href="/news">公司新闻</a></p>
-				<p><a href="/news/employee">员工风采</a></p>
+				<p><a href="/news/staff/groups">员工风采</a></p>
 				<p><a href="/contact/joinus">诚聘英才</a></p>
 			</div>
 			<div class="col-md-6 col-lg-6 text-left">
@@ -29,8 +29,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 		</div>
 	</div>
 	<div class="row">
-		<p>Copyright © 2016 Hangzhou Xiechuang Industries Co.,Ltd</p>
+		<p>Copyright © 2017 Hangzhou Xiechuang Industries Co.,Ltd All Rights Reserved</p>
 		<p>杭州协创实业有限公司版权所有|网站备案/许可证号：浙ICP备00000000号-0（测试数据）</p>
 	</div>
 	</div>
 </footer>
+<script type="text/javascript">
+	$(function(){
+		
+		var height = $(document).height() - $('body').height();
+		//让footer固定在页面的底部，
+		//如果body的height小于document的height的话,在footer前加一个适当高度的div，把页面撑开
+		if (height > 0) {
+			$('footer').before('<div style="height:'+height+'px;"></div>');
+		}
+	});
+</script>

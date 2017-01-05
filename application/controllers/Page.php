@@ -21,8 +21,6 @@ class Page extends CI_Controller {
 	 */
 	public function index()
 	{
-		//缓存首页页面
-		$this->output->cache(1);
 		//获取轮播数据
 		$this->data['carousel'] = $this->m_commen->get_carousels();
 
@@ -35,6 +33,8 @@ class Page extends CI_Controller {
 		$this->data['brief'] = get_brief_intr();
 		//加载首页面
 		$this->load->view('index', $this->data);
+		//缓存首页页面
+		$this->output->cache(1);
 	}
 	
 	/**

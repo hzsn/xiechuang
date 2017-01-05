@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					array_push($divs, '</div>');
 					array_push($divs, '</div></div>');
 					
-					if (($key == $len-1 && $key%2!=1)|| $key%2 == 1) {
+					if ($key%2 == 1 || $key == $len-1) {
 						echo '<div class="row">'.join('',$divs).'</div>';
 						$divs = [];
 					}

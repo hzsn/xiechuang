@@ -15,16 +15,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<?php
 			if (!$staffgroups || $staffgroups['code']) {
 				redirect('/404');
-			} else if($staffgroups['t'] == 'groups') {
+			} else if($staffgroups['type'] == 'groups') {
 				$divs = [];
 				$len = count($staffgroups['item']);
 				foreach ($staffgroups['item'] as $key => $value) {
 					array_push($divs, '<div class="col-md-4"> <div class="thumbnail">');
 					array_push($divs, '<div class="s-icon">图集</div>');
 					array_push($divs, '<a href="/news/staff/group_'.$value['id'].'"><img src="'.$value['cover_img_path'].'" style="height:180px;width:100%"></a>');
-					array_push($divs, '<div class="caption"><div class="text-center">'.$value['name'].'</div></div>');
+					array_push($divs, '<div class="caption"><div class="text-center xc-text-wrap">'.$value['name'].'</div></div>');
 					array_push($divs, '</div></div>');
-					if (($key == $len-1 && $key%3 != 2)||$key%3 == 2) {
+					if ($key%3 == 2 || $key == $len-1) {
 						echo '<div class="row">'.join('',$divs).'</div>';
 						$divs = [];
 					}

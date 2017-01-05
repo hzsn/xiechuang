@@ -12,7 +12,6 @@ class M_navbar extends CI_Model{
 
 	public function get_navbars($value='')
 	{
-
 		$query = $this->db->get_where('xc_navbar', array('status' => 0));
 		return $query->result_array();
 

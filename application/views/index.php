@@ -97,7 +97,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
     </div>    
 </div>
-
 <!-- body end -->
 <script type="text/javascript" src="/static/css3animate/js/css3-animate-it.js" ></script>
 <?php require_once('public/footer.php') ?>

@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php require_once(dirname(dirname(__FILE__)).'/public/head.php') ?>
 <?php require_once(dirname(dirname(__FILE__)).'/public/header.php') ?>
 <body>
-<div class="container" style="min-height: 400px;">
+<div id="error-container" class="xc-section container">
 	<div class="row">
 		<div class="col-md-6 text-right">
 			<h1 style="font-size: 300px; text-shadow: 10px 0 10px #ef2222">404</h1>	
@@ -18,5 +18,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 </div>
 </body>
+
 <?php require_once(dirname(dirname(__FILE__)).'/public/footer.php') ?>
 </html>

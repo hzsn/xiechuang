@@ -1,9 +1,13 @@
-body{
+
+html,body{
 	    overflow-x: hidden;
+	    min-height: 100%;
+	    height: auto !important;
 }
 header{
 	border-bottom: 1px solid rgb(247, 9, 9);
 }
+
 .black-header{
 	background-color: #292929;
 	border-bottom: 1px solid #292929;
@@ -211,6 +215,7 @@ footer{
 	border-top: 5px solid rgb(233, 3, 2);
     padding: 10px 0;
     background: #0e0d0d;
+    clear: both;
 }
 footer *{
 	color: #828282;
@@ -231,7 +236,8 @@ footer p{
 	
 }
 .xc-ban-titile{
-	height: 250px; 
+	height: 250px;
+	position: relative;
 	background: #ec7575;
 	background-position: center;
 	background-size: cover;

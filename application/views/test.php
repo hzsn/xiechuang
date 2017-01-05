@@ -14,7 +14,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <?php 
-	echo phpinfo();
+	echo(preg_match('/^\d+$/', 4.23));
+	echo(preg_match('/^\d+$/', -423));
+	echo(preg_match('/^\d+$/', -0));
+	echo(preg_match('/^\d+$/', -2));
+	echo(preg_match('/^\d+$/', +0));
+	echo(preg_match('/^\d+$/', 2));
 ?>
 
 <div style="height: 550px; background: url('http://img.infinitynewtab.com/wallpaper/689.jpg');"></div>

@@ -15,7 +15,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			<h2>公司介绍</h2>
 			<p>杭州协创实业有限公司是一家以汽车备件仓储管理，物流配送服务，汽车备件信息技术服务为主营业务，辅以整车销售的集团控股公司。其实际管理和控股多家公司给全国各大主机厂提供专业的区域售后备件仓储与物流配送服务。公司为各汽车品牌提供专业的汽车售后备件保障服务，有着丰富的汽车备件仓储和物流管理经验。对全国的汽车市场具有较为扎实的汽车备件仓储及配送服务运作经验。其中所管理的中心库连续多年位居全国服务榜首。</p>
 			<div style="background-image: url('http://9429871.s21i-9.faiusr.com/4/ABUIABAEGAAg8cK7uQUoycz80wMwgA84rAI.png');background-position: center;background-size: cover;width: 100%;height: 220px"></div>
-			<!-- <img class="img-responsive" src="/static/img/IMG_20161215_130908_2_HDR_meitu_2.png" width="100%" height="200" style="background-color: red" alt=""> -->
 		</div>
 		<div>
 			<h2>经营理念</h2>

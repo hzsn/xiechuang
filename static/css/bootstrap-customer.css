@@ -5,9 +5,8 @@
 .container {width: 1200px}  
 }
 .xc-nav-bar{
-		background: transparent;
-		/*height: 100px;*/
-	}
+	background: transparent;
+}
 
 .pagination>.active>a, .pagination>.active>span,
 .pagination>.active>a:hover, .pagination>.active>span:hover,
@@ -25,18 +24,42 @@
     display: block;
     margin: 0;
     font-size: 16px;
-    padding: 0 35px;
+    /*
+    改.dropdown-menu>li>a的padding
+    padding: 0 35px;*/
+    padding: 0 49px;
+    /*padding: 0px;*/
     line-height: 60px;
 	color: #333;
 }
 .pagination>li>a,.pagination>li>a:hover, .pagination>li>span{
 	color:rgb(247, 9, 9);
 }
+.navbar-collapse{
+	padding: 0;
+}
+.black-header .nav>li>a{
+	color: #f9f9f9;
+}
+.black-header .navbar-nav>li>.dropdown-menu{
+	background-color: rgba(51,51,51,.76);
+}
+.black-header .dropdown-menu>li>a{
+	color: #f9f9f9;
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
+	color: rgb(247, 9, 9);
+	background: transparent;
+}
 .nav>.xc-active, .nav>li:hover, .nav>li:focus, .nav>li>a:hover,
-.nav>li>a:focus, .nav>.xc-active>a, .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus,
+.nav>li>a:focus, .nav>.xc-active>a, .black-header .nav>.xc-active>a, .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus,
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus{
 	background: transparent;
 	color: rgb(247, 9, 9);
+}
+.last-li>.dropdown-menu{
+	left: -50%;
+	text-align: right;
 }
 .navbar-nav>li>.dropdown-menu{
 	
@@ -56,7 +79,7 @@
 }
 .dropdown-menu>li>a{
 	display: block;
-    padding: 12px 35px;
+    padding: 12px 49px;
     clear: both;
     font-weight: 400;
     line-height: 1.42857143;
@@ -65,19 +88,6 @@
     font-size: 16px;
 }
 
-.black-header .nav>li>a{
-	color: #f9f9f9;
-}
-.black-header .navbar-nav>li>.dropdown-menu{
-	background-color: rgba(51,51,51,.76);
-}
-.black-header .dropdown-menu>li>a{
-	color: #f9f9f9;
-}
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
-	color: rgb(247, 9, 9);
-	background: transparent;
-}
 .xc-btn-icon{
 	display: inline-block;
 	width: 38px;

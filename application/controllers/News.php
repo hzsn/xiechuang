@@ -27,8 +27,8 @@ class News extends CI_Controller{
 	}
 
 	private function get_article_item($page_index=1, $cato_id = 1, $base_link_url = '/news/'){
-		if (!is_numeric($page_index) || intval($page_index) < 0) {
-			show_404();
+		if(!preg_match("/^\d+$/", $page_index)){
+				redirect('/404');
 		}
 		$page_index = intval($page_index);
 		$this->load->library('pager');
@@ -108,7 +108,7 @@ class News extends CI_Controller{
 		//加载配置文件
 		$page_config = $this->config->item('pager');
 		$this->data['staffgroups']['code'] = 0;
-		$this->data['staffgroups']['t'] = $groupname;
+		$this->data['staffgroups']['type'] = $groupname;
 		$this->data['staffgroups']['msg'] = '';
 		$this->data['staffgroups']['item'] = [];
 		if ($groupname == 'groups') {
