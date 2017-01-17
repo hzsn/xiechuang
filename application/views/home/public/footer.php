@@ -32,6 +32,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 		<p>Copyright © 2017 Hangzhou Xiechuang Industries Co.,Ltd All Rights Reserved</p>
 		<p>杭州协创实业有限公司版权所有|网站备案/许可证号：浙ICP备00000000号-0（测试数据）</p>
 	</div>
+	
 	</div>
 </footer>
 <script type="text/javascript">

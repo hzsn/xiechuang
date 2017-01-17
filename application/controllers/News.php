@@ -76,7 +76,7 @@ class News extends CI_Controller{
 		//设置页面中的title
 		$this->data['news_title'] = $this->config->item('news_title');
 				
-		$this->load->view('news', $this->data);
+		$this->load->view('home/news', $this->data);
 	}
 
 	/**
@@ -91,7 +91,7 @@ class News extends CI_Controller{
 		//设置页面中的title
 		$this->data['news_title'] = $this->config->item('news_other_title');
 		$this->get_article_item($page_index, 2, '/news/other/');
-		$this->load->view('news', $this->data);
+		$this->load->view('home/news', $this->data);
 	}
 
 	/**
@@ -148,7 +148,7 @@ class News extends CI_Controller{
 			$this->data['staffgroups']['code'] = 1;
 			$this->data['staffgroups']['msg'] = '<h4 class="text-center">暂无数据</h4>';
 		}
-		$this->load->view('staff', $this->data);
+		$this->load->view('home/staff', $this->data);
 	}
 
 
@@ -175,7 +175,7 @@ class News extends CI_Controller{
 		$this->data['article_title'] = $this->config->item('news_title');
 		$this->data['title'] = $this->data['article']['title'].$this->config->item('title');
 		
-		$this->load->view('article', $this->data);
+		$this->load->view('home/article', $this->data);
 	}
 
 /**

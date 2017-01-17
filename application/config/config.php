@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'];
-
+$config['admin_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/admin';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -100,7 +100,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------

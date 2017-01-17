@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 	function add_pv() {
 		$.ajax({
-			url:'<?php echo site_url("/news/add_pv")?>',
+			url:'<?php echo site_url("/home/news/add_pv")?>',
 			type:"POST",
 			data:{
 				'article_id':$('#article_id').val()

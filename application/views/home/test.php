@@ -11,17 +11,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head> -->
 <?php require_once('public/head.php'); ?>
+<script type="text/javascript" src="http://cdn.bootcss.com/clipboard.js/1.5.16/clipboard.min.js"></script>
 <body>
 
 <?php 
-	echo(preg_match('/^\d+$/', 4.23));
-	echo(preg_match('/^\d+$/', -423));
-	echo(preg_match('/^\d+$/', -0));
-	echo(preg_match('/^\d+$/', -2));
-	echo(preg_match('/^\d+$/', +0));
-	echo(preg_match('/^\d+$/', 2));
-?>
-
+	echo phpversion();
+	?>
+<span id="clip" data-clipboard-target="#clip">clip</span>
+<p><span class="clipboard" data-clipboard-text="clipboard self">clipboard selflip</span></p>
+<p><span class="clipboard" data-clipboard-target="clipboard self1">clipboard selfl111ip</span></p>
 <div style="height: 550px; background: url('http://img.infinitynewtab.com/wallpaper/689.jpg');"></div>
 </body>
 
@@ -42,6 +40,21 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	    })
 
 	})
+
+	var clipboard = new Clipboard('.clipboard');
+
+clipboard.on('success', function(e) {
+    console.info('Action:', e.action);
+    console.info('Text:', e.text);
+    console.info('Trigger:', e.trigger);
+
+    e.clearSelection();
+});
+
+clipboard.on('error', function(e) {
+    console.error('Action:', e.action);
+    console.error('Trigger:', e.trigger);
+});
 
 </script>
 </html>
