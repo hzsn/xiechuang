@@ -242,6 +242,15 @@ footer p{
 	background-position: center;
 	background-size: cover;
 }
+.xc-ban-titile h1{
+	margin: 0 auto; line-height: 250px;
+}
+.xc-ban-titile h1 span{
+	background: rgba(247, 7, 9, 0.62);
+    padding: 15px 25px;
+    border-radius: 35px;
+    color: #fff;
+}
 .xc-news-box{
 	height: 160px;
 	overflow: hidden;

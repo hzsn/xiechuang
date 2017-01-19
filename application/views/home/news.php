@@ -6,8 +6,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php require_once('public/head.php') ?>
 <?php require_once('public/header.php') ?>
 <body>
-<div class="xc-ban-titile" style="background-image: url('http://9429871.s21i-9.faiusr.com/4/ABUIABAEGAAg8cK7uQUoycz80wMwgA84rAI.png'); color: #fff">
-	<h1 class="text-center" style="margin: 0 auto; line-height: 250px;"><?php echo $news_title;?></h1>
+<div class="xc-ban-titile" style="background-image: url('http://9429871.s21i-9.faiusr.com/4/ABUIABAEGAAg8cK7uQUoycz80wMwgA84rAI.png');">
+	<h1 class="text-center"><span><?php echo $news_title;?></span></h1>
 </div>
 <div class="container xc-margin">
 	<?php

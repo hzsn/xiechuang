@@ -5,7 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php require_once('public/header.php') ?>
 <body>
 <div class="xc-ban-titile" style="background-image: url('http://10253945.s61i.faiusr.com/2/AD0I_ezxBBACGAAgxYKmwAUoz56FuwMwgA84rAI.jpg');">
-	<h1 class="text-center" style="margin: 0 auto; line-height: 250px;"><?php echo $contact_title;?></h1>
+	<h1 class="text-center"><span><?php echo $contact_title;?></span></h1>
 </div>
 <div class="container text-center">
 	<div class="row">

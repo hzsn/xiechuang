@@ -86,6 +86,16 @@
     color: #333;
     white-space: nowrap;
     font-size: 16px;
+    transition: transform 0.3s ease;
+	-moz-transition:transform 0.3s ease;
+	-webkit-transition:transform 0.3s ease;
+	-o-transition:transform 0.3s ease;
+}
+.dropdown-menu>li>a:hover{
+	transform: translateX(2%)
+}
+.last-li>.dropdown-menu>li>a:hover{
+	transform: translateX(-2%)
 }
 
 .xc-btn-icon{

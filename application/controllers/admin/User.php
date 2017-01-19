@@ -31,6 +31,7 @@ class User extends CI_Controller {
         );
         $this->form_validation->set_error_delimiters('', '');
         $this->form_validation->set_rules('useremail', 'Email', 'trim|required|valid_email', array('valid_email' =>'账号格式不正确'));
+        $this->form_validation->set_rules('captchaValue','captchaValue','callback_captchaValue_check');
 
         $data['code'] = 0;
         $data['msg'] = '';
@@ -40,7 +41,8 @@ class User extends CI_Controller {
         	$data['msg'] = '数据验证错误';
         	$data['error'] = array(
         		'useremail'=>form_error('useremail'),
-        		'password'=>form_error('password')
+        		'password'=>form_error('password'),
+                'captchaValue'=>form_error('captchaValue')
         		);
         	echo(json_encode($data));
         }
@@ -61,4 +63,19 @@ class User extends CI_Controller {
             redirect('/admin/user/login');
         }
     }
+
+    public function get_code(){
+      $this->load->library('captcha');
+      $code = $this->captcha->getCaptcha();
+      $this->session->set_flashdata('code', $code);
+      $this->captcha->showImg();
+     }
+
+     public function captchaValue_check($str){
+        if ($str != $this->session->flashdata('code')) {
+            $this->form_validation->set_message('captchaValue_check', '验证码错误');
+            return false;
+        }
+        return true;
+     }
 }

@@ -60,15 +60,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         	$('#error-msg').text('');
         	if (!r_email.test(useremail)) {
         		$('#useremail').focus();
-        		$('#useremail-err-msg').removeClass('err-msg-hidden').text('账号错误');
+        		$('#useremail-err-msg').removeClass('err-msg-hidden').text('请正确输入账号');
         		return false;
         	}else{$('#useremail-err-msg').addClass('err-msg-hidden').text('');}
 
         	if (!password || password.length < 6) {
         		$('#password').focus();
-        		$('#password-err-msg').removeClass('err-msg-hidden').text('密码错误');
+        		$('#password-err-msg').removeClass('err-msg-hidden').text('请正确输入密码');
         		return false;
         	}else{$('#password-err-msg').addClass('err-msg-hidden').text();}
+        	if (!$('#captchaValue').val() ||$('#captchaValue').val().length != 4) {
+        		$('#captchaValue').focus();
+        		$('#captchaValue-err-msg').removeClass('err-msg-hidden').text('请正确输入验证码');
+        		return false;
+        	}
         	return true;
         }
         function inputFoucs(){
@@ -148,15 +153,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			   		</div>
 			   		<div class="feild feildtext">
 				   		<div class="login-input-box xc-scale-border">
-				   				<input type="text" class='login-input' id="captchaValue" name="captchaValue" placeholder='验证码:无须输入'/>
+				   				<input type="text" class='login-input' id="captchaValue" name="captchaValue" placeholder='请输入验证码（左击更新）'/>
 				   				<div class="xc-close-box login-input-clear"><span class='xc-close-btn'></span></div>
 				   				<span class='line left-line'></span>
 					            <span class='line right-line'></span>
 					            <span class='line top-line'></span>
 					            <span class='line bottom-line'></span>
-					            <div class="captcha-box">1122</div>
+					            <div class="captcha-box"><img id="captchaImg" onclick="this.src='get_code?time='+new Date()" src="get_code"></div>
 				   		</div>
-			   			<div id = 'captchaMsg' class="err-msg"></div>
+			   			<div id = 'captchaValue-err-msg' class="err-msg"></div>
 			   		</div>
 			   		<div class="feild">
 			   			<div class="login-float-left font-small">
@@ -207,25 +212,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					type:"POST",
 					data:{
 						'useremail':$('#useremail').val(),
-						'password':$('#password').val()
+						'password':$('#password').val(),
+						'captchaValue':$('#captchaValue').val()
 					},
 					success:function(rep,status,xhr){
 						try{
 							var jobj =JSON.parse(rep);
 							if (!jobj) {
 								$('#error-msg').text('服务器异常，请重新登录');
+								$('#captchaImg').attr('src', 'get_code?time='+new Date());
 								return;
 							}
 							if(jobj.code != '0'){
 								for(var k in jobj['error']){
 									$('#'+k+'-err-msg').text(jobj['error'][k]).removeClass('err-msg-hidden');
 								}
+								$('#captchaImg').attr('src', 'get_code?time='+new Date());
 								$('#error-msg').text(jobj['msg']);
 							}else{
+								// setTimeout(function(){window.location.href="/admin";},4000);
 								window.location.href="/admin";
 							}
 						}catch(e){
 							console.log('JSON字符串解析错误');
+							$('#captchaImg').attr('src', 'get_code?time='+new Date());
 							$('#error-msg').text('服务器异常，请重新登录');
 						}
 					},
