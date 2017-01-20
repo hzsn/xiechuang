@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
     <div class="layui-side-scroll">
       <div class="user-box">
       	<img src="/static/img/logo-small.png" alt="touxiang">
-      	<p>您好！<?php echo $this->session->profile;?>，欢迎登录</p>
+      	<p>您好！<?php echo $this->session->profile->useremail;?>，欢迎登录</p>
       </div>
 <ul id="xc-admin-nav" class="layui-nav layui-nav-tree site-demo-nav">
   <li class="layui-nav-item">

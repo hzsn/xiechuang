@@ -30,12 +30,43 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <tr>
         <td>站点路径：</td>
         <td><?php echo $_SERVER['DOCUMENT_ROOT'];?></td>
-        <td>PHP Version:</td>
-        <td><?php echo phpversion();?></td>
+        <td>备案号：</td><td>浙ICP备00000000号-0(测试数据)</td>
+      </tr>
+      <tr>
+        <td>PHP Version:</td><td><?php echo phpversion();?></td>
+        <td>数据库信息:</td><td><?php echo $this->db->platform().' '.$this->db->version();?></td>
       </tr>
     </tbody>
   </table>
   <!-- 网站基本信息 end-->
-  
+  <div class="layui-w" style="">
+    <div style="width: 33%;display: inline-block;">
+      <fieldset class="layui-elem-field">
+        <legend>资讯管理</legend>
+        <div class="layui-field-box">
+          <button class="layui-btn"><i class="layui-icon">&#xe63c;</i> 查看资讯</button>
+          <button class="layui-btn layui-btn-normal"><i class="layui-icon">&#xe608;</i> 添加资讯</button>
+        </div>
+      </fieldset>
+    </div>
+    <div style="width: 33%;display: inline-block;">
+      <fieldset class="layui-elem-field">
+        <legend>导航管理</legend>
+        <div class="layui-field-box">
+          <button class="layui-btn"><i class="layui-icon">&#xe63c;</i> 查看导航</button>
+          <button class="layui-btn layui-btn-normal"><i class="layui-icon">&#xe608;</i> 添加导航</button>
+        </div>
+      </fieldset>
+    </div>
+    <div style="width: 33%;display: inline-block;">
+      <fieldset class="layui-elem-field">
+        <legend>网站管理</legend>
+        <div class="layui-field-box">
+          <button class="layui-btn"><i class="layui-icon">&#xe63c;</i> 查看网站</button>
+          <button class="layui-btn layui-btn-normal"><i class="layui-icon">&#xe608;</i> 修改网站</button>
+        </div>
+      </fieldset>
+    </div>
+  </div>  
  </div>
 <?php require_once('public/footer.php') ;?>

@@ -16,6 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <?php 
 	echo phpversion();
+	var_dump($cap);
 	?>
 <span id="clip" data-clipboard-target="#clip">clip</span>
 <p><span class="clipboard" data-clipboard-text="clipboard self">clipboard selflip</span></p>

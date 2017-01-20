@@ -86,6 +86,18 @@
 -- alter table xc_article add column cato_id int(4);
 -- alter table xc_article add CONSTRAINT article_cato_fk foreign key(cato_id) REFERENCES xc_category(id);
 
+-- 用户表
+-- create table IF NOT EXISTS xc_user(
+-- id int(3) not null primary key auto_increment comment '主键',
+-- username	varchar(16) NOT null comment '用户名',
+-- useremail	varchar(64) NOT null comment '用户邮箱',
+-- password	varchar(64) NOT null comment '密码',
+-- avatar		varchar(256) NOT null default '/static/img/logo-small.png' comment '头像',
+-- create_time TIMESTAMP not null default now() comment '创建id的时间',
+-- create_user	varchar(32) not null default 'admin' comment '创建者',
+-- status int(2) not null default 0 comment '显示的状态, 0表示显示，非0表示不显示'
+-- );
+-- insert into xc_user(username, useremail, password) values('admin', 'admin@hzxcsy.com.cn', password('hzxc'));
 -- 中心库表
 -- create table IF NOT EXISTS xc_cangku(
 -- id int(3) not null primary key auto_increment comment '主键',
@@ -111,6 +123,7 @@
 -- status int(2) not null default 0 comment '显示的状态, 0表示显示，非0表示不显示'
 -- );
 
+-- 人才招聘表
 -- create table IF EXISTS xc_job(
 -- id int(8) not null primary key auto_increment comment '主键',
 -- name varchar(16) NOT null comment '职位名称',

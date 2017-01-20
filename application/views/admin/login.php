@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         		$('#captchaValue').focus();
         		$('#captchaValue-err-msg').removeClass('err-msg-hidden').text('请正确输入验证码');
         		return false;
-        	}
+        	}else{$('#captchaValue-err-msg').addClass('err-msg-hidden').text();}
         	return true;
         }
         function inputFoucs(){
@@ -130,7 +130,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			   		<div id="error-msg" class="err-msg"></div>
 			   		<div class="feild feildtext">
 			   			<div class="login-input-box xc-scale-border">
-			   				<input id="useremail" type="text" class='login-input' name="useremail" autofocus ='autofocus' placeholder='您的邮箱' value="zhang@hzxcsy.com.cn" />
+			   				<input id="useremail" type="text" class='login-input' name="useremail" autofocus ='autofocus' placeholder='您的邮箱' value="admin@hzxcsy.com.cn" />
 			   				<div class="xc-close-box login-input-clear"><span class='xc-close-btn'></span></div>
 			   				<span class='line left-line'></span>
 				            <span class='line right-line'></span>
@@ -142,7 +142,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			   		</div>
 			   		<div class="feild feildtext">
 			   			<div class="login-input-box xc-scale-border">
-			   				<input id="password" type="password" class='login-input' name="password" placeholder='您的密码' value="1111111"/>
+			   				<input id="password" type="password" class='login-input' name="password" placeholder='您的密码' value="hzxcsy"/>
 			   				<div class="xc-close-box login-input-clear"><span class='xc-close-btn'></span></div>
 			   				<span class='line left-line'></span>
 				            <span class='line right-line'></span>
@@ -230,9 +230,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								$('#captchaImg').attr('src', 'get_code?time='+new Date());
 								$('#error-msg').text(jobj['msg']);
 							}else{
-								// setTimeout(function(){window.location.href="/admin";},4000);
-								window.location.href="/admin";
-							}
+								window.location.href=jobj['url'];
+							}console.log(jobj);
 						}catch(e){
 							console.log('JSON字符串解析错误');
 							$('#captchaImg').attr('src', 'get_code?time='+new Date());
