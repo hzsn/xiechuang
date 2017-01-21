@@ -26,8 +26,15 @@ class News extends CI_Controller{
 		return $return;
 	}
 
-	private function get_article_item($page_index=1, $cato_id = 1, $base_link_url = '/news/'){
-		if(!preg_match("/^\d+$/", $page_index)){
+	/**
+	 * [get_article_item description]
+	 * @param  integer $page_index    [description]
+	 * @param  integer $cato_id       [description]
+	 * @param  string  $base_link_url [description]
+	 * @return [type]                 [description]
+	 */
+	private function get_article_item($page_index=1, $cato_id = 1, $base_link_url = '/news/cato/'){
+		if(!preg_match("/^\d+$/", $page_index) || !preg_match("/^\d+$/", $cato_id)){
 				redirect('/404');
 		}
 		$page_index = intval($page_index);
@@ -42,7 +49,7 @@ class News extends CI_Controller{
 			redirect('/404');
 		}
 		$page_config['total_row'] = $row;
-		$page_config['base_link_url'] = $base_link_url;
+		$page_config['base_link_url'] = $base_link_url.$cato_id;
 		//查询数据
 		$this->data['news'] = $this->m_article->get_article_by_time($cato_id, $page_index-1, $page_config['page_size']);
 		if (!$this->data['news']) {
@@ -70,27 +77,22 @@ class News extends CI_Controller{
 	 */
 	public function index($page_index = 1)
 	{
-		$this->get_article_item($page_index, 1);
+		redirect('/news/cato');
+	}
+
+	/**
+	 * 获取资讯信息
+	 * @param  integer $cato_id    资讯分类
+	 * @param  integer $page_index 当前页码
+	 * @return [type]              加载新闻页面
+	 */
+	public function cato($cato_id = 1, $page_index = 1)
+	{
+		$this->get_article_item($page_index, $cato_id);
 		//设置title
 		$this->data['title'] = $this->config->item('news_title').$this->config->item('title');
 		//设置页面中的title
 		$this->data['news_title'] = $this->config->item('news_title');
-				
-		$this->load->view('home/news', $this->data);
-	}
-
-	/**
-	 * 获取行业新闻
-	 * @param  integer $page_index 当前页码
-	 * @return 加载新闻页面
-	 */
-	public function other($page_index = 1)
-	{
-		//设置title
-		$this->data['title'] = $this->config->item('news_other_title').$this->config->item('title');
-		//设置页面中的title
-		$this->data['news_title'] = $this->config->item('news_other_title');
-		$this->get_article_item($page_index, 2, '/news/other/');
 		$this->load->view('home/news', $this->data);
 	}
 

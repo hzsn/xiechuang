@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
     <a class="javascript:;" href="javascript:;">资讯管理<span class="layui-nav-more"></span></a>
     <dl class="layui-nav-child">
       <dd class="">
-        <a class="layui-item-link" href="/demo/button.html">资讯列表</a>
+        <a class="layui-item-link" href="/admin/news" rel="/admin/news">资讯列表</a>
       </dd>
       <dd class="">
         <a class="layui-item-link" href="/demo/button.html">栏目列表</a>
@@ -135,9 +135,6 @@ layui.use(['jquery','element'], function(){
   var $ = layui.jquery;
   $(function(){
     var pathname = window.location.pathname.replace(/\/+$/, '');
-          
-    $('.layui-this').removeClass('layui-this');
-    
     $('.layui-item-link').each(function(){
       if ($(this).attr('rel')!='' && pathname == $(this).attr('rel')) {
           $(this).parent().addClass('layui-this');
