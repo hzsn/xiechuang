@@ -19,8 +19,8 @@ function fnBackTop() {
       }
     });
     
-    $backtop.on('click', function () {
-      $('html, body').animate({scrollTop:0+'px'}, 'slow');
+    $backtop.on('click', function () { console.log($(window).scrollTop());
+      $('html,body').animate({scrollTop:0+'px'}, 'slow');
     });
 
   }

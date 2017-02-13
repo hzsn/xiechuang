@@ -58,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 </div>
 <div class="xc-section">
-	<div class="xc-img-box" style="background-image: url('http://10437109.s61i.faiusr.com/2/AD0I9YP9BBACGAAg4qSfvgUogKSyMjCADzj5Bw.jpg');z-index: -1;">
+	<div class="xc-img-box" style="background-color: #9e1d1d;z-index: -1;">
 	</div>
 	<div class="container">
 		<div class="row animatedParent animateOnce">

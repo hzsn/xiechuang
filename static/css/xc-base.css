@@ -212,10 +212,10 @@ to {
 
 footer{
 	text-align: center;
-	border-top: 5px solid rgb(233, 3, 2);
     padding: 10px 0;
     background: #0e0d0d;
     clear: both;
+    position: relative;
 }
 footer *{
 	color: #828282;
@@ -224,6 +224,13 @@ footer *{
 footer a:hover{
 	color: #828282;
 	text-decoration: none;
+}
+.linear-line{
+	background: linear-gradient(90deg, rgb(247,7,9), rgb(2,2,2), rgb(247,7,9),rgb(2,2,2), rgb(247,7,9)) rgb(247,7,9);
+	height:5px;
+	position: absolute;
+	top: 0;
+	width: 100%;
 }
 footer p{
 	margin: 0;

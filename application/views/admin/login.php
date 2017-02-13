@@ -153,7 +153,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			   		</div>
 			   		<div class="feild feildtext">
 				   		<div class="login-input-box xc-scale-border">
-				   				<input type="text" class='login-input' id="captchaValue" name="captchaValue" placeholder='请输入验证码（左击更新）'/>
+				   				<input type="text" class='login-input' id="captchaValue" name="captchaValue" placeholder='左击更新验证码'/>
 				   				<div class="xc-close-box login-input-clear"><span class='xc-close-btn'></span></div>
 				   				<span class='line left-line'></span>
 					            <span class='line right-line'></span>

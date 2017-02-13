@@ -1,6 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');?>
 <footer class="">
+<div class="linear-line"></div>
 <div class="container">
 	<div class="row">
 		<div class="col-md-4 col-lg-4 text-left">

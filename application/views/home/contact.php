@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 	<h3><del>关于地图功能，建议使用公司的账号实现此功能 此行文字需要删除</del></h3>
 	<div class="contact-map-box" id="amap-container">
-		<!-- <p class="text-center">地图显示</p> -->
+		<p class="text-center">地图显示</p>
 	</div>
 	<div id="address-box" class="xc-margin-top">
 		<h3><del>此处可以显示公司的各个中心库的信息（名称，地址，联系方式等）此行文字需要删除</del></h3>
