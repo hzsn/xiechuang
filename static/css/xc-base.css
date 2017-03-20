@@ -319,8 +319,7 @@ footer p{
 	overflow: hidden;
 }
 .xc-news-i-box{
-	
-	/*box-shadow: 0 6px 12px rgba(0,0,0,.175);*/
+	box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
 .xc-news-large{
 	height: 150px;

@@ -92,8 +92,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$(function () {
 		$('#joinus-desc-0').show();
 		$('#joinus-box').on('click', '.joinus-info', function(){
-			// $('.joinus-active').removeClass('joinus-active');
-			// $(this).addClass('joinus-active');
 			$('#'+$(this).data('joinusDesc')).toggle('normal');
 			
 		});

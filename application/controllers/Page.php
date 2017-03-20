@@ -37,17 +37,6 @@ class Page extends CI_Controller {
 		$this->output->cache(1);
 	}
 	
-	/**
-	 * 加载团队页面
-	 * @return 加载的团队介绍的页面
-	 */
-	public function team()
-	{
-		$this->data['title'] = $this->config->item('team_title').$this->config->item('title');
-		$this->data['team_title'] = $this->config->item('team_title');
-		$this->load->view('home/team', $this->data);
-	}
-
 	public function aboutxc($value='')
 	{
 		//缓存首页页面

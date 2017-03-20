@@ -5,7 +5,7 @@
  var position = [120.122819,30.32512];
  var config = {
     'address':'浙江省杭州市拱墅区花园岗路113号金通国际大厦A座9F',
-    'email':'xiechuang@hzxc.com(测试数据)',
+    'email':'',
     'tel':'400-827-3666'
  };
  function setConfig(paramter){
@@ -32,7 +32,6 @@ setConfig(paramter);
  content.push('<div class="info-body">');
  content.push('<img src="/static/img/logo.png" width="64px" height="64px">');
  content.push('<div>联系方式：'+config['tel']+'</div>');
-
  content.push('<div>邮箱：'+config['email']+'</div>');
  content.push('<div>地址：'+config['address']+'</div>');
  content.push('</div>');
@@ -46,7 +45,6 @@ setConfig(paramter);
     offset: new AMap.Pixel(0, -55),
  });
 infowindow.open(map,position);
- // document.getElementById('info-close').click
  //关闭信息窗口
  XCAMap.closeInfoWindow = function(){
  	infowindow.close();

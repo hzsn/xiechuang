@@ -517,8 +517,10 @@ $config['proxy_ips'] = '';
  * $config['pager']['page_size']	每一页显示的条数
  * $config['pager']['base_link_url']	链接
  */
-$config['pager']['page_size'] = 5;
-$config['pager']['base_link_url'] = '/news/';
+$config['pager'] = [
+	'page_size' => 5,
+	'base_link_url' => '/news/'
+];
 
 $config['title'] = '杭州协创实业有限公司';
 $config['news_title'] = '综合资讯 / News';
@@ -533,5 +535,11 @@ $config['joinus_title'] = '诚聘精英 / Join US';
 $config['404_title'] = '找不到你所需要的资源';
 
 $config['tel'] = '400-827-3666';
-$config['email'] = 'xiechuang@hzxc.com(测试数据)';
+$config['email'] = 'hangzhouxcsy@126.com';
 $config['address'] = '浙江省杭州市拱墅区花园岗路113号金通国际大厦A座9F';
+$config['icp'] = '浙ICP备00000000号-0（测试数据）';
+
+$config['weixin'] = [
+	'xc'=>'/static/img/xc_weixin_258.jpg',
+	'csh'=>'/static/img/csh_weixin_516.jpg'
+];

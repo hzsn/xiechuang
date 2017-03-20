@@ -25,6 +25,9 @@
 	position: relative;
 	width:2500px;
 }
+.imgUl>li>a{
+	cursor: pointer;
+}
 .box {
 	/*width: 684px;*/
 	margin: 0 30px;

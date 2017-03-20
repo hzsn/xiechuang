@@ -58,11 +58,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 </div>
 <div class="xc-section">
-	<div class="xc-img-box" style="background-color: #9e1d1d;z-index: -1;">
+	<div class="xc-img-box" style="background-color: #f5f5f5;z-index: -1;">
 	</div>
 	<div class="container">
 		<div class="row animatedParent animateOnce">
-			<h2 class="xc-title text-center" style="color: #fff"><?php echo $business['title']?></h2>	
+			<h2 class="xc-title text-center" style="color: rgb(247,9,9);"><?php echo $business['title']?></h2>	
 			<?php 
 				$item = $business['content'];
 				for($i = 0; $i < count($item); $i++){
@@ -81,10 +81,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 </div>
-<div class="xc-section" style="background: #eee;">
+<div class="xc-section" style="background-color: #fdfdfd">
     <div class="container">
         <div class="row animatedParent animateOnce">
-        	<h2 class="xc-title text-center" style="color: rgb(247,9,9);"><?php echo $this->config->item('news_title'); ?></h2>	
+        	<h2 class="xc-title text-center"><?php echo $this->config->item('news_title'); ?></h2>	
         	<?php 
         		if (!$news) {
         			echo '没有数据';

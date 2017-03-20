@@ -20,7 +20,12 @@ if (!function_exists('dump')) {
 }
 
 if (!function_exists('pre_next_format')) {
-    
+    /**
+     * 显示文章页面的上一篇或下一篇的函数
+     * @param  array  $array [description]
+     * @param  [type] $id    [description]
+     * @return [type]        [description]
+     */
     function pre_next_format(array $array, $id){
         $_html = '';
         if (!is_array($array) || empty($array)) {
@@ -127,7 +132,11 @@ if (!function_exists('navbar_format')) {
 }
 
 if (!function_exists('news_format')) {
-    
+    /**
+     * 显示首页的新闻
+     * @param  array  $array [description]
+     * @return [type]        [description]
+     */
     function news_format(array $array){
         $re_arr['code'] =  0;
         if (!is_array($array) || empty($array)) {
@@ -147,9 +156,9 @@ if (!function_exists('news_format')) {
         if ($len > 2) {
              $div .= '<div class="xc-news-i-box xc-news-large animated bounceInLeft"><div class="col-md-6 xc-height100"><div class="xc-news-i-content">'.$array[1]['summary'].'</div></div><div class="col-md-6 xc-news-i-img"  style="background-image: url('.$array[1]['item_img'].');"><a class="xc-news-i-title text-right" href="/article/'.$array[1]['id'].'">'.$array[1]['title'].'</a><span class="xc-news-i-date" style="left: 0">'.explode(' ', $array[1]['create_time'])[0].'</span></div></div>';
             $div .= '</div>';
-           $div .= '<div class="col-md-4 xc-news-i-box animated fadeInRightShort" style="padding-left: 0px;"><div class="xc-news-i-img" style="background-image: url('.$array[2]['item_img'].');height: 157.5px;"><a class="xc-news-i-title text-right" href="/article/'.$array[2]['id'].'">'.$array[2]['title'].'</a><span class="xc-news-i-date" style="right: 0">'.explode(' ', $array[2]['create_time'])[0].'</span>
+           $div .= '<div class="col-md-4 animated fadeInRightShort" style="padding-left: 0px;"><div class="xc-news-i-box"><div class="xc-news-i-img" style="background-image: url('.$array[2]['item_img'].');height: 157.5px;"><a class="xc-news-i-title text-right" href="/article/'.$array[2]['id'].'">'.$array[2]['title'].'</a><span class="xc-news-i-date" style="right: 0">'.explode(' ', $array[2]['create_time'])[0].'</span>
                 </div><div class="xc-height100 xc-news-small">
-                   <div class="xc-news-i-content">'.$array[0]['summary'].'</div></div></div>';
+                   <div class="xc-news-i-content">'.$array[0]['summary'].'</div></div></div></div>';
         }
         $re_arr['item'] = $div;
         return $re_arr;

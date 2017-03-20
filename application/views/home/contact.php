@@ -58,7 +58,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=cd74d160d2bc29712cf306b9db4815d0"></script>
 <script type="text/javascript" src="<?php echo base_url('/static/js/xc-amap.js');?>"></script>
 <script type="text/javascript">
- XCAMap.createAMap('amap-container');
+ XCAMap.createAMap('amap-container',{'email':'<?php echo $this->config->item('email'); ?>'});
 </script>
 </body>
 </html>

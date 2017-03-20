@@ -10,7 +10,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
         <link rel="stylesheet" type="text/css" href="/static/admin/css/xc.css">
 
-        <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
         <script type="text/javascript">
         	//公共函数
         	function getRandNum(mod, flag){
@@ -22,10 +22,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				var xc = xc || {};
 				/****************设置背景图片****************/
 				xc.BackGround = function (){
-					var index = getRandNum(36, 1);
-					while(index == 30){index = getRandNum(36, 1);}
-					
-					$('.xc-bgimg').css({'background-image': 'url(https://images.mafengwo.net/images/signup/wallpaper/'+index+'.jpg)'});
+					var index = getRandNum(3000, 1);
+					$('.xc-bgimg').css({'background-image': 'url(http://img.infinitynewtab.com/wallpaper/'+index+'.jpg)'});
 				}
 				/****************设置验证码****************/
 				xc.initCaptcha = function (indexNum){
@@ -130,7 +128,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			   		<div id="error-msg" class="err-msg"></div>
 			   		<div class="feild feildtext">
 			   			<div class="login-input-box xc-scale-border">
-			   				<input id="useremail" type="text" class='login-input' name="useremail" autofocus ='autofocus' placeholder='您的邮箱' value="admin@hzxcsy.com.cn" />
+			   				<input id="useremail" type="text" class='login-input' name="useremail" autofocus ='autofocus' placeholder='您的邮箱' value="" />
 			   				<div class="xc-close-box login-input-clear"><span class='xc-close-btn'></span></div>
 			   				<span class='line left-line'></span>
 				            <span class='line right-line'></span>
@@ -142,7 +140,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			   		</div>
 			   		<div class="feild feildtext">
 			   			<div class="login-input-box xc-scale-border">
-			   				<input id="password" type="password" class='login-input' name="password" placeholder='您的密码' value="hzxcsy"/>
+			   				<input id="password" type="password" class='login-input' name="password" placeholder='您的密码' value=""/>
 			   				<div class="xc-close-box login-input-clear"><span class='xc-close-btn'></span></div>
 			   				<span class='line left-line'></span>
 				            <span class='line right-line'></span>
@@ -184,7 +182,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    		</div>
    	</div>
    	<footer>
-   		<p>&copy;2017 杭州协创实业有限公司 <a href="http://hzxcsy.xlgp.xc">官网首页</a></p>
+   		<p>&copy;2017 杭州协创实业有限公司 <a href="<?php echo base_url('/')?>">官网首页</a></p>
    	</footer>
   </body>
     <script type="text/javascript">

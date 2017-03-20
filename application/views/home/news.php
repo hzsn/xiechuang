@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <?php require_once('public/footer.php') ?>
 </body>
-<script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+<script type="text/javascript" src="http://cdn.staticfile.org/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
 <script type="text/javascript">
 	
 </script>

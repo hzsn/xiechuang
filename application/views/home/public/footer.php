@@ -24,14 +24,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 		</div>
 		<div class="col-md-4 col-lg-4 text-right">
 			<h2>
-				<img style="margin-right: 10px" src="/static/img/csh_weixin.jpg" width="129" height="129">
-				<img class="" src="/static/img/xc_weixin_258.jpg" width="129" height="129">
+				<img src="<?php echo $this->config->item('weixin')['csh'];?>" width="129" height="129">
+				<img src="<?php echo $this->config->item('weixin')['xc'];?>" width="129" height="129">
 			</h2>
 		</div>
 	</div>
 	<div class="row">
 		<p>Copyright © 2017 Hangzhou Xiechuang Industries Co.,Ltd All Rights Reserved</p>
-		<p>杭州协创实业有限公司版权所有|网站备案/许可证号：浙ICP备00000000号-0（测试数据）</p>
+		<p>杭州协创实业有限公司版权所有|网站备案/许可证号：<?php echo $this->config->item('icp');?></p>
 	</div>
 	
 	</div>
