@@ -128,7 +128,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			   		<div id="error-msg" class="err-msg"></div>
 			   		<div class="feild feildtext">
 			   			<div class="login-input-box xc-scale-border">
-			   				<input id="useremail" type="text" class='login-input' name="useremail" autofocus ='autofocus' placeholder='您的邮箱' value="" />
+			   				<input id="useremail" type="text" class='login-input' name="useremail" autofocus ='autofocus' placeholder='您的邮箱' value="wwtx@sn.xc" />
 			   				<div class="xc-close-box login-input-clear"><span class='xc-close-btn'></span></div>
 			   				<span class='line left-line'></span>
 				            <span class='line right-line'></span>
@@ -140,7 +140,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 			   		</div>
 			   		<div class="feild feildtext">
 			   			<div class="login-input-box xc-scale-border">
-			   				<input id="password" type="password" class='login-input' name="password" placeholder='您的密码' value=""/>
+			   				<input id="password" type="password" class='login-input' name="password" placeholder='您的密码' value="000000"/>
 			   				<div class="xc-close-box login-input-clear"><span class='xc-close-btn'></span></div>
 			   				<span class='line left-line'></span>
 				            <span class='line right-line'></span>

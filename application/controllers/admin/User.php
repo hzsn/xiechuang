@@ -65,10 +65,12 @@ class User extends CI_Controller {
 
     public function logout()
     {
-        if (isset($_SESSION['profile'])) {
-            unset($_SESSION['profile']);
-            redirect('/admin/user/login');
-        }
+        session_destroy();
+        redirect('/admin/user/login');
+        // if (isset($_SESSION['profile'])) {
+        //     unset($_SESSION['profile']);
+        //     redirect('/admin/user/login');
+        // }
     }
 
     public function get_code(){
@@ -89,7 +91,7 @@ class User extends CI_Controller {
     private function check_user($useremail, $password){
         $this->load->model('m_user');
         $user = $this->m_user->get_user_by_email($useremail, $password);
-        if (!isset($user) || $user->password != $password) {
+        if(!isset($user)){
             return false;
         }
         return $user;

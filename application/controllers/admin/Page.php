@@ -24,6 +24,12 @@ class Page extends CI_Controller {
 	{
 		$this->load->view('admin/welcome', $this->data);
 	}
+
+	public function upload($value='')
+	{
+		$this->load->view('admin/test', $this->data);
+	}
+
 	/**
 	 * 默认404界面
 	 * @return

@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <tr>
         <td>站点路径：</td>
         <td><?php echo $_SERVER['DOCUMENT_ROOT'];?></td>
-        <td>备案号：</td><td>浙ICP备00000000号-0(测试数据)</td>
+        <td>备案号：</td><td><?php echo $this->config->item('icp');?></td>
       </tr>
       <tr>
         <td>PHP Version:</td><td><?php echo phpversion();?></td>
@@ -44,8 +44,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <fieldset class="layui-elem-field">
         <legend>资讯管理</legend>
         <div class="layui-field-box">
-          <button class="layui-btn"><i class="layui-icon">&#xe63c;</i> 查看资讯</button>
-          <button class="layui-btn layui-btn-normal"><i class="layui-icon">&#xe608;</i> 添加资讯</button>
+          <a class="layui-btn" href="/admin/news" rel="/admin/news"><i class="layui-icon">&#xe63c;</i> 查看资讯</a>
+          <a class="layui-btn layui-btn-normal" href="javascript:;"><i class="layui-icon">&#xe608;</i> 添加资讯</a>
         </div>
       </fieldset>
     </div>
@@ -53,8 +53,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <fieldset class="layui-elem-field">
         <legend>导航管理</legend>
         <div class="layui-field-box">
-          <button class="layui-btn"><i class="layui-icon">&#xe63c;</i> 查看导航</button>
-          <button class="layui-btn layui-btn-normal"><i class="layui-icon">&#xe608;</i> 添加导航</button>
+          <a class="layui-btn" href="javascript:;"><i class="layui-icon">&#xe63c;</i> 查看导航</a>
+          <a class="layui-btn layui-btn-normal" href="javascript:;"><i class="layui-icon">&#xe608;</i> 添加导航</a>
         </div>
       </fieldset>
     </div>
@@ -62,8 +62,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       <fieldset class="layui-elem-field">
         <legend>网站管理</legend>
         <div class="layui-field-box">
-          <button class="layui-btn"><i class="layui-icon">&#xe63c;</i> 查看网站</button>
-          <button class="layui-btn layui-btn-normal"><i class="layui-icon">&#xe608;</i> 修改网站</button>
+          <a class="layui-btn" href="javascript:;"><i class="layui-icon">&#xe63c;</i> 查看网站</a>
+          <a class="layui-btn layui-btn-normal" href="javascript:;"><i class="layui-icon">&#xe608;</i> 修改网站</a>
         </div>
       </fieldset>
     </div>

@@ -39,7 +39,7 @@ width: 100%;
 height: 100%;
 }
 
-.user-box{width: 200px;margin-top: 20px;margin-bottom:20px;text-align: center;}
+.user-box{width: 200px;margin-top: 20px;margin-bottom:20px;text-align: center;color: #eee;}
 .user-box img{width: 80px;height: 80px;border-radius: 50%;border:4px solid #44576b;margin-bottom: 10px}
 
 /* 底部 */
@@ -48,5 +48,19 @@ body .layui-layout-admin .footer-demo{height: 26px; padding: 10px 0; line-height
 .footer a{padding: 0 5px;}
 
 
+.layui-tb-input{
+	height: 32px;
+	width: 40px;
+	display: inline-block;
+	text-align: center;
+}
 
+.layui-table .layui-gray{
+	color:#aaa;
+}
+.layui-tab-page .layui-laypage{margin:0;}
 
+.layui-tab-page .layui-laypage a,
+.layui-tab-page .layui-laypage span{
+	margin:0;
+}

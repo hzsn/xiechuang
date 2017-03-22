@@ -46,7 +46,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
     <a class="javascript:;" href="javascript:;">资讯管理<span class="layui-nav-more"></span></a>
     <dl class="layui-nav-child">
       <dd class="">
-        <a class="layui-item-link" href="javascript:void(0)" rel="/admin/news">资讯列表</a>
+        <a class="layui-item-link" href="/admin/news" rel="/admin/news">资讯列表</a>
       </dd>
       <dd class="">
         <a class="layui-item-link" href="javascript:void('0')">资讯编辑</a>
@@ -55,69 +55,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
   </li>
   
   <li class="layui-nav-item layui-nav-itemed">
-    <a class="javascript:;" href="javascript:;">导航管理<span class="layui-nav-more"></span></a>
+    <a class="javascript:;" href="javascript:;">上传管理<span class="layui-nav-more"></span></a>
     <dl class="layui-nav-child">
-      <dd class="">
-        <a class="layui-item-link" href="javascript:void('0')">
-          <i class="layui-icon"></i><cite>弹出层</cite>
-        </a>
-      </dd>
-       <dd class="">
-        <a class="layui-item-link" href="javascript:void('0')">
-          <i class="layui-icon" style="position: relative; top: 3px;"></i>
-          <cite>即时通讯</cite>
-        </a>
-      </dd>
-       <dd class="">
-        <a href="javascript:void('0')">
-          <i class="layui-icon" style="top: 1px;"></i><cite>日期时间选择</cite>
-        </a>
-      </dd>
-       <dd class="">
-        <a href="javascript:void('0')">
-          <i class="layui-icon"></i><cite>多功能分页</cite>
-        </a>
-      </dd>
-       <dd class="">
-        <a href="javascript:void('0')">
-          <i class="layui-icon"></i><cite>模板引擎</cite>
-        </a>
-      </dd>
-       <dd class="">
-        <a href="javascript:void('0')">
-          <i class="layui-icon"></i>
-          <cite>富文本编辑器</cite>
-        </a>
-      </dd>
-       <dd class="">
-        <a href="javascript:void('0')">
-          <i class="layui-icon"></i>
-          <cite>文件上传</cite>
-        </a>
-      </dd>
-       <dd class="">
-        <a href="javascript:void('0')">
-          <i class="layui-icon"></i>
-          <cite>树形菜单</cite>
-        </a>
-      </dd>
-      <dd class="">
-        <a href="javascript:void('0')">
-          <i class="layui-icon"></i>
-          <cite>工具块</cite>
-        </a>
-      </dd>
-      <dd class="">
-        <a href="javascript:void('0')">
-          <i class="layui-icon"></i>
-          <cite>流加载</cite>
-        </a>
-      </dd>
-      <dd class="">
-        <a href="javascript:void('0')">
-          <i class="layui-icon" style="top: 1px;"></i>
-          <cite>代码修饰器</cite>
-        </a>
+      <dd>
+        <a class="layui-item-link" href="javascript:;">员工风采</a>
       </dd>
     </dl>
   </li>

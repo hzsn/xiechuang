@@ -27,15 +27,32 @@ class M_article extends CI_Model
 		$query = $this->db->get_where('xc_article', array('status' => 0, 'cato_id'=>$cato_id));
 		return $query->result_array();
 	}
+	/**
+	 * 根据最新时间与状态查询
+	 * @return [type] [description]
+	 */
+	public function get_articles_by_ts($index = 0, $size = 10){
+		$this->db->order_by('a.create_time', 'DESC');
+		$this->db->order_by('a.status', 'ASC');
+
+		$this->db->limit($size,$index*$size);
+		$this->db->join('xc_category as c', 'a.cato_id = c.id', 'left');
+
+		$this->db->select('a.id, a.title, a.pv, a.cato_id, a.status, c.name as cato_name, c.en_name as cato_en_name, a.create_time');
+		$query = $this->db->get_where('xc_article as a');
+		return $query->result_array();
+	}	
+
+
 
 	/**
 	 * 根据id查询文章
 	 * @param  integer $id 文章id
 	 * @return arrary 返回文章信息,若查无此文，则返回空    
 	 */
-	public function get_article_by_id($id=0)
+	public function get_article_by_id($id=0, $status = 0)
 	{
-		$query = $this->db->get_where('xc_article', array('status' => 0, 'id'=>$id));
+		$query = $this->db->get_where('xc_article', array('status' => $status, 'id'=>$id));
 		return $query->row_array();
 	}
 	/**
@@ -59,9 +76,16 @@ class M_article extends CI_Model
 	 * @param  integer $cato_id 分类的id
 	 * @return integer 返回数据表中的记录数，若无数据，则返回0;
 	 */
-	public function get_article_count($cato_id)
+	public function get_article_count($cato_id, $total=0)
 	{
-		return $this->db->query('select count(1) as total_row from xc_article where status = 0 and cato_id = '.$cato_id.';')->row()->total_row;
+		$total_row = 0;
+		if($total == 0){
+			$total_row = $this->db->query('select count(1) as total_row from xc_article where status = 0 and cato_id = '.$cato_id.';')->row()->total_row;
+		}
+		else {
+			$total_row = $this->db->query('select count(1) as total_row from xc_article')->row()->total_row;
+		}
+		return $total_row;
 	}
 
 	/**

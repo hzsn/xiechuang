@@ -85,7 +85,7 @@ class Page extends CI_Controller {
 	 */
 	public function test($value='')
 	{
-		$this->load->view('home/test', array('title'=>'测试页面'));
+		
 		// $this->load->model('m_commen');
 		// $this->data['carousel'] = $this->m_commen->get_carousels();
 
@@ -98,5 +98,10 @@ class Page extends CI_Controller {
 		// $this->data['business'] = get_business();
 		// $this->data['brief'] = get_brief_intr();
 		// $this->load->view('home/index_old', $this->data);
+		$this->load->model('m_user');
+		// $data = $this->m_user->get_user_by_email('wwtx@sn.xc', '000000');
+		$this->load->model('m_article');
+		$data = $this->m_article->get_articles_by_ts();
+		$this->load->view('home/test', array('title'=>'测试页面', 'data'=>$data));
 	}
 }

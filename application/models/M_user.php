@@ -12,8 +12,10 @@ class M_user extends CI_Model
 		parent::__construct();
 	}
 
-	public function get_user_by_email($useremail='')
+	public function get_user_by_email($useremail='', $password='')
 	{
-		return $this->db->get_where('xc_user', array('useremail' => $useremail))->row();
+		$sql = "`useremail`='".$useremail."' AND `password`=PASSWORD('".$password."')";
+		$this->db->where($sql);
+		return $this->db->get('xc_user')->row();
 	}
 }
