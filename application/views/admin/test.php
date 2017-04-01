@@ -5,18 +5,69 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="layui-layout layui-layout-admin">
  <?php require_once('public/header.php') ;?>
  <div class="layui-body">
-  	<h1>测试页面</h1>
-	<input type="file" name="file" class="layui-upload-file">
+  	<input type="file" name="files" class="layui-upload-file">
+  	<fieldset class="layui-elem-field layui-field-title">
+	  <legend>文件信息</legend>
+	</fieldset>
+	  <table id="layui-upload-table" class="layui-table" lay-skin="line">
+		  <colgroup>
+		    <col width="47%">
+		    <col width="37%">
+		    <col width="8%">
+		    <col width="8%">
+		    <col>
+		  </colgroup>
+  	</table>
+
+	<ul id="filelist"></ul>
  </div>
+ <!-- <script type="text/javascript" src="/static/layui-v1.0.9/lay/modules/upload.js"></script> -->
+ <!-- <script type="text/javascript" src="/static/js/mupload.js"></script> -->
  <script type="text/javascript">
- 	layui.use(['upload','layer'], function(){
- 		var layer = layui.layer;
+ 	// console.log(layui, layui.mupload);
+ 	layui.config({base:'/static/js/'}).use(['upload','mupload'],function(){
+ 		layui.mupload({
+ 			container:'#layui-upload-table',
+ 			url:'/admin/file/upload',
+ 			complete:function(res){
+ 				console.log(res);
+ 			}
+ 		});
+
  		layui.upload({
-		  url: '/admin/file/upload'
+		  url: '上传接口url'
 		  ,success: function(res){
-		     console.log(res);
+		    console.log(res); //上传成功返回值，必须为json格式
 		  }
-		});      
+		}); 
+		layer.open({
+			type: 2,
+			title: '测试',
+			shadeClose: true,
+			// shade: 0.8,
+			area: ['95%', '90%'],
+			content: 'http://hzxcsy.xlgp.xc/test' //iframe的url
+		});    
  	});
+ </script>
+ <script type="text/javascript">
+ 	// layui.config({base:'/static/layui-v1.0.9/lay/ext/'}).use(['upload','layer', 'element', 'jquery', 'mupload'], function(){
+ 	// 	var layer = layui.layer,
+ 	// 		element = layui.element(),
+ 	// 		$ = layui.jquery;
+ 	// 	layui.mupload({
+ 	// 		container:'#layui-upload-table',
+ 	// 		url:'/admin/file/upload',
+ 	// 		complete:function(res){
+ 	// 			console.log(res);
+ 	// 		}
+ 	// 	});
+
+ 	// });
+ </script>
+ <script type="text/javascript">
+ 	
+
+
  </script>
 <?php require_once('public/footer.php') ;?>

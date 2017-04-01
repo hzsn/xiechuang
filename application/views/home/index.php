@@ -30,7 +30,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     ?>
     <div class="item <?php echo $active;?>">
     	<div style="position: relative; width: 100%;height: 100%">
-    		<div class="xc-img-box" style="background-image: url('<?php echo $carousel[$i]['img_path'];?>');"></div>	
+    		<div class="xc-img-box" style="background-image: url(<?php echo base_url($this->config->item('carousel').$carousel[$i]['img_path']) ?>);"></div>	
     	</div>
       <div class="carousel-caption" style="background-color: <?php echo $bgcss;?>">
       	<h2><?php echo  $item_desc?></h2>

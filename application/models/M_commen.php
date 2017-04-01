@@ -52,8 +52,7 @@ class M_commen extends CI_Model
 		$this->db->select('id, cover_img_path, name');
 		return $this->db->get_where('xc_galley_group', array('status' => 0))->result_array();
 	}
-
-	public function get_gallery_by_groupid($groupid)
+ 	public function get_gallery_by_groupid($groupid)
 	{
 		$this->db->select('name, img_path');
 		return $this->db->get_where('xc_galley_group', array('status' => 0, 'id' => $groupid))->row();
@@ -62,6 +61,29 @@ class M_commen extends CI_Model
 	public function get_groups_total_row()
 	{
 		return $this->db->query('select count(1) as total_row from xc_galley_group where status = 0;')->row()->total_row;
+	}
+
+	public function get_jobs()
+	{
+		$params = [
+			'status'=>0
+		];
+		$select_array = [
+			'id'=>'ID',
+			'name'=>'职位名称',
+			'address'=>'工作地点',
+			'recruit_count'=>'招聘人数',
+			'ability'=>'岗位职能',
+			'requirement'=>'职位要求',
+			'remark'=>'备注',
+			'create_time'=>'发布时间'
+		];
+		$this->db->select(implode(',', array_keys($select_array)));
+		$data = [
+			'attr'=>$select_array,
+			'jobs'=>$this->db->get_where('xc_job', array('status'=>0))->result_array()
+		];
+		return $data;
 	}
 
 }

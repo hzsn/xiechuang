@@ -1,6 +1,6 @@
 
 /* 头部 */
-.header{height: 65px; border-bottom: 1px solid #404553;  background-color: #393D49; color: #fff;}
+.header{height: 65px; border-bottom: 5px solid #404553;  background-color: #393D49; color: #fff;}
 .logo{position: absolute; left: 0; top: 2px;}
 .logo img{width: 100px; height: 61px;}
 
@@ -63,4 +63,22 @@ body .layui-layout-admin .footer-demo{height: 26px; padding: 10px 0; line-height
 .layui-tab-page .layui-laypage a,
 .layui-tab-page .layui-laypage span{
 	margin:0;
+}
+.layui-fg-red{
+	color: #FF5722;
+}
+.layui-fg-green{
+	color: #5FB878;
+}
+.layui-fg-gray{
+	color: #808080;
+}
+.layui-upload-button-small{
+	height: 25px;
+	line-height: 25px;
+	font-size: 12px;
+	font-weight: initial;
+}
+.layui-upload-button-small i{
+	font-size: 16px !important;
 }

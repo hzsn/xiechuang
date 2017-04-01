@@ -1,4 +1,4 @@
-a:2:{s:6:"expire";i:1490158863;s:7:"headers";a:0:{}}ENDCI---><!DOCTYPE html>
+a:2:{s:6:"expire";i:1491023208;s:7:"headers";a:0:{}}ENDCI---><!DOCTYPE html>
 <html lang="zh-cn">
 
 <head>
@@ -59,15 +59,15 @@ a:2:{s:6:"expire";i:1490158863;s:7:"headers";a:0:{}}ENDCI---><!DOCTYPE html>
 <header>
 	<div class="container">
 			<div class="row" >
-			<a class="pull-left" href="/"><img class="" src="/static/img/logo.PNG" alt="杭州协创实业有限公司" height ="120px"></a>
+			<a class="pull-left" href="/"><img class="" src="http://hzxcsy.xlgp.xc/static/upload/commen/logo.PNG" alt="杭州协创实业有限公司" height ="120px"></a>
 			<div class="" style="height: 60px;padding-right: 20px;">
 				<div class="pull-right" style="margin-top: 10px;">
 					<span class="tel">
 						<span class="glyphicon glyphicon-earphone" style="color: #9f9f9f"></span>
 						<span class="tel-text">400-827-3666</span>
 					</span>
-					<span class="xc-btn-icon">
-						<img src="/static/img/csh_weixin-2.jpg" style="width: 150px;">
+					<span class="xc-btn-icon" style="background-image: url(http://hzxcsy.xlgp.xc/static/upload/commen/logo_weixin_small.png)">
+						<img src="/static/upload/commen/csh_weixin-1.jpg" style="width: 150px;">
 					</span>
 				</div>
 			</div>
@@ -84,7 +84,7 @@ a:2:{s:6:"expire";i:1490158863;s:7:"headers";a:0:{}}ENDCI---><!DOCTYPE html>
 </header>
 <!-- header end -->
 <body>
-<div class="xc-ban-titile" style="background-image: url('http://9429871.s21i-9.faiusr.com/4/ABUIABAEGAAg8cK7uQUoycz80wMwgA84rAI.png');">
+<div class="xc-ban-titile" style="background-image: url('http://hzxcsy.xlgp.xc/static/upload/banner/commen/banner_about.jpg');">
 	<h1 class="text-center"><span>公司简介 / About US</span></h1>
 </div>
 <div class="container">
@@ -125,31 +125,31 @@ a:2:{s:6:"expire";i:1490158863;s:7:"headers";a:0:{}}ENDCI---><!DOCTYPE html>
 		<div id="cooperator">
 			<h2>服务品牌</h2>
 									<div class="col-md-2 xc-firends-box">
-						<img class="" alt="海马汽车" style="width: 100%; height: 100%" src="/static/img/logo-haima.png" data-holder-rendered="true">
+						<img class="" alt="海马汽车" style="width: 100%; height: 100%" src="http://hzxcsy.xlgp.xc/static/upload/cooperator/logo-haima.png" data-holder-rendered="true">
 						<a class="xc-pos-abs text-center xc-firends-text" href="http://www.haima.com/" target="_blank">海马汽车</a>
 					</div>
 									<div class="col-md-2 xc-firends-box">
-						<img class="" alt="奇瑞汽车" style="width: 100%; height: 100%" src="/static/img/logo-qirui.png" data-holder-rendered="true">
+						<img class="" alt="奇瑞汽车" style="width: 100%; height: 100%" src="http://hzxcsy.xlgp.xc/static/upload/cooperator/logo-qirui.png" data-holder-rendered="true">
 						<a class="xc-pos-abs text-center xc-firends-text" href="http://www.chery.cn/" target="_blank">奇瑞汽车</a>
 					</div>
 									<div class="col-md-2 xc-firends-box">
-						<img class="" alt="长安铃木" style="width: 100%; height: 100%" src="/static/img/logo-changanlingmu.png" data-holder-rendered="true">
+						<img class="" alt="长安铃木" style="width: 100%; height: 100%" src="http://hzxcsy.xlgp.xc/static/upload/cooperator/logo-changanlingmu.png" data-holder-rendered="true">
 						<a class="xc-pos-abs text-center xc-firends-text" href="http://www.changansuzuki.com/" target="_blank">长安铃木</a>
 					</div>
 									<div class="col-md-2 xc-firends-box">
-						<img class="" alt="天津一汽" style="width: 100%; height: 100%" src="/static/img/logo-tianjinyiqi.png" data-holder-rendered="true">
+						<img class="" alt="天津一汽" style="width: 100%; height: 100%" src="http://hzxcsy.xlgp.xc/static/upload/cooperator/logo-tianjinyiqi.png" data-holder-rendered="true">
 						<a class="xc-pos-abs text-center xc-firends-text" href="http://m.tjyqxs.com/" target="_blank">天津一汽</a>
 					</div>
 									<div class="col-md-2 xc-firends-box">
-						<img class="" alt="北汽幻速" style="width: 100%; height: 100%" src="/static/img/logo-beiqihuansu.png" data-holder-rendered="true">
+						<img class="" alt="北汽幻速" style="width: 100%; height: 100%" src="http://hzxcsy.xlgp.xc/static/upload/cooperator/logo-beiqihuansu.png" data-holder-rendered="true">
 						<a class="xc-pos-abs text-center xc-firends-text" href="http://www.baic-hs.com/" target="_blank">北汽幻速</a>
 					</div>
 									<div class="col-md-2 xc-firends-box">
-						<img class="" alt="福田汽车" style="width: 100%; height: 100%" src="/static/img/logo-futian.png" data-holder-rendered="true">
+						<img class="" alt="福田汽车" style="width: 100%; height: 100%" src="http://hzxcsy.xlgp.xc/static/upload/cooperator/logo-futian.png" data-holder-rendered="true">
 						<a class="xc-pos-abs text-center xc-firends-text" href="http://www.foton.com.cn/" target="_blank">福田汽车</a>
 					</div>
 									<div class="col-md-2 xc-firends-box">
-						<img class="" alt="东风" style="width: 100%; height: 100%" src="/static/img/logo-dongfeng.png" data-holder-rendered="true">
+						<img class="" alt="东风" style="width: 100%; height: 100%" src="http://hzxcsy.xlgp.xc/static/upload/cooperator/logo-dongfeng.png" data-holder-rendered="true">
 						<a class="xc-pos-abs text-center xc-firends-text" href="http://www.dfmc.com.cn/" target="_blank">东风</a>
 					</div>
 						</div>
@@ -180,8 +180,8 @@ a:2:{s:6:"expire";i:1490158863;s:7:"headers";a:0:{}}ENDCI---><!DOCTYPE html>
 		</div>
 		<div class="col-md-4 col-lg-4 text-right">
 			<h2>
-				<img src="/static/img/csh_weixin_516.jpg" width="129" height="129">
-				<img src="/static/img/xc_weixin_258.jpg" width="129" height="129">
+				<img src="/static/upload/commen/csh_weixin_516.jpg" width="129" height="129">
+				<img src="/static/upload/commen/xc_weixin_258.jpg" width="129" height="129">
 			</h2>
 		</div>
 	</div>

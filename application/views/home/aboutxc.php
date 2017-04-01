@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php require_once('public/head.php') ?>
 <?php require_once('public/header.php') ?>
 <body>
-<div class="xc-ban-titile" style="background-image: url('http://9429871.s21i-9.faiusr.com/4/ABUIABAEGAAg8cK7uQUoycz80wMwgA84rAI.png');">
+<div class="xc-ban-titile" style="background-image: url('<?php echo base_url($this->config->item('banner')['about']); ?>');">
 	<h1 class="text-center"><span><?php echo $aboutxc_title;?></span></h1>
 </div>
 <div class="container">
@@ -42,7 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					}
 					?>
 					<div class="col-md-2 xc-firends-box">
-						<img class="" alt="<?php echo $value['name'];?>" style="width: 100%; height: 100%" src="/static/img/<?php echo $value['img_path'];?>" data-holder-rendered="true">
+						<img class="" alt="<?php echo $value['name'];?>" style="width: 100%; height: 100%" src="<?php echo base_url($this->config->item('cooperator').$value['img_path']) ;?>" data-holder-rendered="true">
 						<a class="xc-pos-abs text-center xc-firends-text" href="<?php echo $href?>" target="<?php echo $target?>"><?php echo $value['name'];?></a>
 					</div>
 				<?php }?>

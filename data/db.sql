@@ -124,7 +124,7 @@
 -- );
 
 -- 人才招聘表
--- create table IF EXISTS xc_job(
+-- create table IF NOT EXISTS xc_job(
 -- id int(8) not null primary key auto_increment comment '主键',
 -- name varchar(16) NOT null comment '职位名称',
 -- address varchar(32) NOT null comment '工作地点',

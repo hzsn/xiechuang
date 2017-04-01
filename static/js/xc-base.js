@@ -1,7 +1,7 @@
 $(function () {
   
   fnBackTop();
-
+  judge();
 /**
 返回顶部
 */
@@ -25,4 +25,14 @@ function fnBackTop() {
 
   }
 
+function judge(){
+  if (!!window.ActiveXObject || "ActiveXObject" in window){
+      var r = /MSIE \d+/.exec(navigator.userAgent);
+
+      if (r && r[0] != 'MSIE 10') {
+        alert('浏览器版本太低,请升级您的浏览器获取更好的体验');
+      }
+        
+    }
+}
 })

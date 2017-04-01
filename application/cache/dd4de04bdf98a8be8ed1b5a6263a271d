@@ -1,4 +1,4 @@
-a:2:{s:6:"expire";i:1489996285;s:7:"headers";a:0:{}}ENDCI--->
+a:2:{s:6:"expire";i:1491023073;s:7:"headers";a:0:{}}ENDCI--->
 <head>
 	<meta http-equiv='content.type' content='text/html;charset=utf-8'/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -57,15 +57,15 @@ a:2:{s:6:"expire";i:1489996285;s:7:"headers";a:0:{}}ENDCI--->
 <header>
 	<div class="container">
 			<div class="row" >
-			<a class="pull-left" href="/"><img class="" src="/static/img/logo.PNG" alt="杭州协创实业有限公司" height ="120px"></a>
+			<a class="pull-left" href="/"><img class="" src="http://hzxcsy.xlgp.xc/static/upload/commen/logo.PNG" alt="杭州协创实业有限公司" height ="120px"></a>
 			<div class="" style="height: 60px;padding-right: 20px;">
 				<div class="pull-right" style="margin-top: 10px;">
 					<span class="tel">
 						<span class="glyphicon glyphicon-earphone" style="color: #9f9f9f"></span>
 						<span class="tel-text">400-827-3666</span>
 					</span>
-					<span class="xc-btn-icon">
-						<img src="/static/img/csh_weixin-2.jpg" style="width: 150px;">
+					<span class="xc-btn-icon" style="background-image: url(http://hzxcsy.xlgp.xc/static/upload/commen/logo_weixin_small.png)">
+						<img src="/static/upload/commen/csh_weixin-1.jpg" style="width: 150px;">
 					</span>
 				</div>
 			</div>
@@ -82,7 +82,7 @@ a:2:{s:6:"expire";i:1489996285;s:7:"headers";a:0:{}}ENDCI--->
 </header>
 <!-- header end -->
 <body>
-<div class="xc-ban-titile" style="background-image: url('http://10253945.s61i.faiusr.com/2/AD0I_ezxBBACGAAgxYKmwAUoz56FuwMwgA84rAI.jpg');">
+<div class="xc-ban-titile" style="background-image: url('http://hzxcsy.xlgp.xc/static/upload/banner/commen/banner_contact.jpg');">
 	<h1 class="text-center"><span>联系我们 / Contact</span></h1>
 </div>
 <div class="container text-center">
@@ -135,8 +135,8 @@ a:2:{s:6:"expire";i:1489996285;s:7:"headers";a:0:{}}ENDCI--->
 		</div>
 		<div class="col-md-4 col-lg-4 text-right">
 			<h2>
-				<img src="/static/img/csh_weixin_516.jpg" width="129" height="129">
-				<img src="/static/img/xc_weixin_258.jpg" width="129" height="129">
+				<img src="/static/upload/commen/csh_weixin_516.jpg" width="129" height="129">
+				<img src="/static/upload/commen/xc_weixin_258.jpg" width="129" height="129">
 			</h2>
 		</div>
 	</div>

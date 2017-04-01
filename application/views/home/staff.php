@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="/static/js/xc-galleryview.js"></script>
 <?php require_once('public/header.php') ?>
 <body>
-	<div class="xc-ban-titile" style="background-image: url('http://9429871.s21i-9.faiusr.com/4/ABUIABAEGAAg8cK7uQUoycz80wMwgA84rAI.png');">
+	<div class="xc-ban-titile" style="background-image: url(<?php echo $this->config->item('banner')['staff'];?>);">
 		<h1 class="text-center"><span><?php echo $this->config->item('staff_title');?></span></h1>
 	</div>
 	<div class="container xc-margin text-center">
@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				$divs = [];
 				$len = count($staffgroups['item']);
 				foreach ($staffgroups['item'] as $key => $value) {
-					array_push($divs, '<div class="col-md-4"> <div class="thumbnail">');
+					array_push($divs, '<div class="col-md-4"> <div class="group-box thumbnail">');
 					array_push($divs, '<div class="s-icon">图集</div>');
 					array_push($divs, '<a href="/news/staff/group_'.$value['id'].'"><img src="'.$value['cover_img_path'].'" style="height:180px;width:100%"></a>');
 					array_push($divs, '<div class="caption"><div class="text-center xc-text-wrap">'.$value['name'].'</div></div>');

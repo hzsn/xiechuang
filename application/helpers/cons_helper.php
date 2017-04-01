@@ -56,7 +56,7 @@ if (!function_exists('get_brief_intr')) {
 
 	function get_brief_intr(){
 		$data['title'] = '公司简介 / About US';
-		$data['bg_img'] = '/static/img/DSC_6549_meitu_1.jpg';
+		$data['bg_img'] = '/static/upload/commen/2.png';
 		$data['brief_summary'] = '杭州协创实业有限公司是一家以汽车备件仓储管理，物流配送服务，汽车备件信息技术服务为主营业务，辅以整车销售的集团控股公司。
 其实际管理和控股多家公司给全国各大主机厂提供专业的区域售后备件仓储与物流配送服务。
 公司为各汽车品牌提供专业的汽车售后备件保障服务，有着丰富的汽车备件仓储和物流管理经验。
@@ -73,16 +73,16 @@ if (!function_exists('get_business')) {
 		$data['title'] = '经营业务 / Business';
 		$data['content'] = [
 			['item_title' => '配件仓储与配送',
-			'item_img' => '/static/img/csh_weixin-2.jpg',
+			'item_img' => '/static/upload/commen/csh_weixin-1.jpg',
 			'item_desc' => '配件仓储与配送......................描述语...............'],
 			['item_title' => '4S店',
-			'item_img' => '/static/img/csh_weixin-2.jpg',
+			'item_img' => '/static/upload/commen/csh_weixin-1.jpg',
 			'item_desc' => '4S店.................描述语.....................'],
 			['item_title' => '修理厂',
-			'item_img' => '/static/img/csh_weixin-2.jpg',
+			'item_img' => '/static/upload/commen/csh_weixin-1.jpg',
 			'item_desc' => '修理厂.................描述语......................................'],
 			['item_title' => '网络销售平台',
-			'item_img' => '/static/img/csh_weixin-2.jpg',
+			'item_img' => '/static/upload/commen/csh_weixin-1.jpg',
 			'item_desc' => '网络销售平台..........................................描述语.....................'],
 		];
 	return $data;

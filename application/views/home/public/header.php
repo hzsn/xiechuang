@@ -44,15 +44,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 <header>
 	<div class="container">
 			<div class="row" >
-			<a class="pull-left" href="/"><img class="" src="/static/img/logo.PNG" alt="杭州协创实业有限公司" height ="120px"></a>
+			<a class="pull-left" href="/"><img class="" src="<?php echo base_url($this->config->item('logo'))?>" alt="杭州协创实业有限公司" height ="120px"></a>
 			<div class="" style="height: 60px;padding-right: 20px;">
 				<div class="pull-right" style="margin-top: 10px;">
 					<span class="tel">
 						<span class="glyphicon glyphicon-earphone" style="color: #9f9f9f"></span>
-						<span class="tel-text"><?php echo $this->config->item('tel');;?></span>
+						<span class="tel-text"><?php echo $this->config->item('tel');?></span>
 					</span>
-					<span class="xc-btn-icon">
-						<img src="/static/img/csh_weixin-2.jpg" style="width: 150px;">
+					<span class="xc-btn-icon" style="background-image: url(<?php echo base_url($this->config->item('weixin')['logo']);?>)">
+						<img src="<?php echo $this->config->item('weixin')['csh1'];?>" style="width: 150px;">
 					</span>
 				</div>
 			</div>

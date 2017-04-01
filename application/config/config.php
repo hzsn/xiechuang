@@ -369,7 +369,7 @@ $config['encryption_key'] = '';
 */
 $config['sess_driver'] = 'files';
 $config['sess_cookie_name'] = 'xc_session';
-$config['sess_expiration'] = 7200;
+$config['sess_expiration'] = 1800;
 $config['sess_save_path'] = NULL;
 $config['sess_match_ip'] = FALSE;
 $config['sess_time_to_update'] = 300;
@@ -522,6 +522,7 @@ $config['pager'] = [
 	'base_link_url' => '/news/'
 ];
 
+$config['cache_time'] = 1;
 $config['title'] = '杭州协创实业有限公司';
 $config['news_title'] = '综合资讯 / News';
 $config['cooperator_title'] = '合作伙伴 / Cooperator';
@@ -539,7 +540,22 @@ $config['email'] = 'hangzhouxcsy@126.com';
 $config['address'] = '浙江省杭州市拱墅区花园岗路113号金通国际大厦A座9F';
 $config['icp'] = '浙ICP备00000000号-0（测试数据）';
 
+
+$config['dir_path'] = '/static/upload/';
 $config['weixin'] = [
-	'xc'=>'/static/img/xc_weixin_258.jpg',
-	'csh'=>'/static/img/csh_weixin_516.jpg'
+	'xc'=>$config['dir_path'].'commen/xc_weixin_258.jpg',
+	'csh'=>$config['dir_path'].'commen/csh_weixin_516.jpg',
+	'logo'=>$config['dir_path'].'commen/logo_weixin_small.png',
+	'csh1'=>$config['dir_path'].'commen/csh_weixin-1.jpg'
 ];
+$config['logo'] = $config['dir_path'].'commen/logo.PNG';
+$config['carousel'] = $config['dir_path'].'banner/';
+$config['banner'] = [
+	'new'=>$config['dir_path'].'banner/commen/banner_news.jpg',
+	'staff' => $config['dir_path'].'banner/commen/banner_staff.jpg',
+	'contact' => $config['dir_path'].'banner/commen/banner_contact.jpg',
+	'about' => $config['dir_path'].'banner/commen/banner_about.jpg',
+];
+$config['cooperator']=$config['dir_path'].'cooperator/';
+$config['new'] = $config['dir_path'].'new/';
+

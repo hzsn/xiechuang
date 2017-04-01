@@ -26,7 +26,7 @@ class Page extends CI_Controller {
 
 		$this->load->model('m_article');
 		//获取首页显示的最新资讯
-		$this->data['news'] = news_format($this->m_article->get_article_by_time(1, 0, 3));
+		$this->data['news'] = news_format($this->m_article->get_article_by_time(1, 0, 3),$dir_path=$this->config->item('new'));
 		//获取经营业务的数据
 		$this->data['business'] = get_business();
 		//获取公司简介的数据
@@ -34,13 +34,13 @@ class Page extends CI_Controller {
 		//加载首页面
 		$this->load->view('home/index', $this->data);
 		//缓存首页页面
-		$this->output->cache(1);
+		$this->output->cache($this->config->item('cache_time'));
 	}
 	
 	public function aboutxc($value='')
 	{
 		//缓存首页页面
-		$this->output->cache(1);
+		$this->output->cache($this->config->item('cache_time'));
 		$this->data['title'] = $this->config->item('aboutxc_title').$this->config->item('title');
 		$this->data['aboutxc_title']  = $this->config->item('aboutxc_title');
 		$this->data['cooperator']['item'] = $this->m_commen->get_cooperators();
@@ -53,7 +53,7 @@ class Page extends CI_Controller {
 	public function contact()
 	{
 		//缓存首页页面
-		$this->output->cache(1);
+		$this->output->cache($this->config->item('cache_time'));
 		$this->data['title'] = $this->config->item('contact_title').$this->config->item('title');
 		$this->data['contact_title']  = $this->config->item('contact_title');
 		//查询中心的信息
@@ -65,7 +65,8 @@ class Page extends CI_Controller {
 	{
 		$this->data['title'] = $this->config->item('joinus_title').$this->config->item('title');
 		$this->data['joinus_title']  = $this->config->item('joinus_title');
-		$this->load->view('home/joinus', $this->data);	
+		$this->data['jobStock'] = $this->m_commen->get_jobs();
+		$this->load->view('home/joinus', $this->data);
 	}
 
 	/**
@@ -98,10 +99,12 @@ class Page extends CI_Controller {
 		// $this->data['business'] = get_business();
 		// $this->data['brief'] = get_brief_intr();
 		// $this->load->view('home/index_old', $this->data);
-		$this->load->model('m_user');
+		// $this->load->model('m_user');
 		// $data = $this->m_user->get_user_by_email('wwtx@sn.xc', '000000');
-		$this->load->model('m_article');
-		$data = $this->m_article->get_articles_by_ts();
-		$this->load->view('home/test', array('title'=>'测试页面', 'data'=>$data));
+		// $this->load->model('m_article');
+		// $data = $this->m_article->get_articles_by_ts();
+		// $this->load->model('m_commen');
+		// $data = $this->m_commen->get_jobs();
+		$this->load->view('home/test', array('title'=>'测试页面'));
 	}
 }
