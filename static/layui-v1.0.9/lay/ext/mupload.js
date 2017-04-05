@@ -16,11 +16,46 @@ function guid() {
     });
 }
 
+var MUpload = function(options){
+	this.options = {
+		//上传路径
+		url:'',
+		//服务器接收的名称
+		file_name:'file',
+		//容器名称
+		container:'',
+		//回调函数
+		complete:function(){},
+	};
+	//存储当前需要上传的文件
+	this.fileobj = {};
+	//存储上传后服务器返回的结果
+	this.ress = [];
+	
+	this._attr = {
+		////记录上传完毕的文件份数（不管文件是否上传成功）
+		upload_count:0,
+	};
+	//设置参数
+	for(var k in this.options){
+		options[k] && (this.options[k] = options[k]);
+	}
+};
+
 function delFile(mpdobj, key){
+	if (!mpdobj) {return;}
+	//若没有key，则删除所有的file
+	if (!key) {
+		for(var k in mpdobj.fileobj){
+			delete mpdobj.fileobj[k];
+		}
+		change_del_btn(mpdobj.options.container+' .layui-mupload-submit', 0);
+		return;
+	}
 	if(!(key in mpdobj.fileobj)){return;}
 	delete mpdobj.fileobj[key];
 	$('#'+key).remove();
-	change_del_btn(mpdobj.options.container+' .layui-upload-submit', Object.keys(mpdobj.fileobj).length);
+	change_del_btn(mpdobj.options.container+' .layui-mupload-submit', Object.keys(mpdobj.fileobj).length);
 }
 
 function addFile(mpdobj, flist){
@@ -34,7 +69,8 @@ function addFile(mpdobj, flist){
 		mpdobj.fileobj[key] = flist[i];
 		add_file_item(options.container, key, mpdobj.fileobj[key].name);
 	}
-	change_del_btn(options.container+' .layui-upload-submit', Object.keys(mpdobj.fileobj).length);
+
+	change_del_btn(options.container+' .layui-mupload-submit', Object.keys(mpdobj.fileobj).length);
 }
 
 function change_del_btn(obj, index){
@@ -65,42 +101,6 @@ function changeIconCss(key,item, st){
 		st && st == 1 && $('#' + key + ' .layui-progress-bar').addClass('layui-bg-red');
 	}
 
-function initTable(otableid){
-	var thead = [];
-		thead.push('<thead>');
-		thead.push('<tr><th class="layui-elip">');
-		thead.push('<span>文件名</span>');
-		thead.push('<div class="layui-box layui-upload-button layui-upload-button-small">');
-		thead.push('<input class="layui-upload-file" name="" value="" lay-title="批量上传" multiple="multiple" type="file">');
-		thead.push('<span class="layui-upload-icon"><i class="layui-icon">&#xe608;</i>添加文件</span>');
-		thead.push('</div>');
-		thead.push('&nbsp;<a class="layui-btn layui-btn-disabled layui-upload-button-small layui-upload-submit"><i class="layui-icon">&#xe62f;</i>上传文件</a>');
-		thead.push('</th>');
-		thead.push('<th>进度条</th>');
-		thead.push('<th>状态</th>');
-		thead.push('<th>操作</th>');
-		thead.push('</tr></thead>');
-	$(otableid).append(thead.join(''));
-	$(otableid).append('<tbody></tbody>');
-}
-
-var MUpload = function(options){
-	this.options = {
-		//上传路径
-		url:'',
-		//服务器接收的名称
-		file_name:'file',
-		//容器名称
-		container:'',
-		//回调函数
-		complete:function(){},
-	};
-	this.fileobj = {};
-	this.ress = [];
-	for(var k in this.options){
-		options[k] && (this.options[k] = options[k]);
-	}
-};
 
 MUpload.prototype.upload = function(formobj, key){
 	var stop = 1,
@@ -114,15 +114,16 @@ MUpload.prototype.upload = function(formobj, key){
 			changeIconCss(key,'error', 1);
 		}
 		that.ress.push(res);
-		stop = 0;
+		complete();
 	}
-	function c(xhr){
-		delete that.fileobj[key];
+	function complete(){
 		stop = 0;
-		element.progress(key, '100%');		
+		element.progress(key, '100%');
+		that._attr.upload_count++;
 	}
 	function e(xhr, error, obj){
 		changeIconCss(key,'error', 1);
+		complete();
 	}
 	var settings = {
 	  url: options.url,
@@ -132,10 +133,10 @@ MUpload.prototype.upload = function(formobj, key){
 	  processData:false,
 	  contentType:false,
 	  dataType: 'json',
-	  complete:c,
 	  error:e,
 	}
 	var n = 0, timer = setInterval(function(){
+		//等待上传
 		if(stop){
 			n = n + Math.random()*10|0;
 			if (n>96) {
@@ -151,22 +152,51 @@ MUpload.prototype.upload = function(formobj, key){
 	$.ajax(settings);
 }
 
-MUpload.prototype.action = function(){
-	var fileobj = this.fileobj,
-		options = this.options;
-		this.ress = [];
+function initTable(otableid){
+	var thead = [];
+		thead.push('<thead>');
+		thead.push('<tr><th class="layui-elip">');
+		thead.push('<span>文件名</span>');
+		thead.push('<div class="layui-box layui-upload-button layui-upload-button-small">');
+		thead.push('<input class="layui-mupload-file" name="" value="" lay-title="批量上传" multiple="multiple" type="file">');
+		thead.push('<span class="layui-upload-icon"><i class="layui-icon">&#xe608;</i>添加文件</span>');
+		thead.push('</div>');
+		thead.push('&nbsp;<a class="layui-btn layui-btn-disabled layui-upload-button-small layui-mupload-submit"><i class="layui-icon">&#xe62f;</i>上传文件</a>');
+		thead.push('</th>');
+		thead.push('<th>进度条</th>');
+		thead.push('<th>状态</th>');
+		thead.push('<th>操作</th>');
+		thead.push('</tr></thead>');
+	$(otableid).append(thead.join(''));
+	$(otableid).append('<tbody></tbody>');
+}
 
+MUpload.prototype.action = function(){
+	var that = this,
+		fileobj = that.fileobj,
+		options = that.options;
+	that.ress = [];
+	that._attr.upload_count = 0;
+
+	var timer = setInterval(function(){
+		//判断所有文件是否已上传完毕
+		if (that._attr.upload_count == Object.keys(fileobj).length) {
+			clearInterval(timer);
+			delFile(that);
+			//所有文件上传操作完毕后，执行回调函数
+			typeof options.complete === 'function' && options.complete(that.ress);
+		}	
+	}, 10);
+	
 	var uForm = new FormData(),
 		file_name = options.file_name;
-	
-	for(var key in fileobj){
+
+	for(var key in that.fileobj){
 		uForm.append(file_name, fileobj[key]);
 		change_del_btn('#del-item-'+key, 0);
 		changeIconCss(key,'going');
-		element.progress(key, '10%');
-		this.upload(uForm, key);
+		that.upload(uForm, key);
 	}
-	typeof options.complete === 'function' && options.complete(this.ress);
 }
 
 MUpload.prototype.init = function(){
@@ -184,7 +214,7 @@ MUpload.prototype.init = function(){
 	});
 
 	//添加文件
-	$(options.container).on('change','.layui-upload-file', function(e){
+	$(options.container).on('change','.layui-mupload-file', function(e){
 		if(!this.files || this.files.length == 0){
 			return;
 		}
@@ -192,7 +222,7 @@ MUpload.prototype.init = function(){
 	});
 
 	//上传文件
-	$(options.container).on('click', '.layui-upload-submit', function(){
+	$(options.container).on('click', '.layui-mupload-submit', function(){
 		if (!Object.keys(that.fileobj).length) {return;}
 		change_del_btn(this,0);
 		that.action();

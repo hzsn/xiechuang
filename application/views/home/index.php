@@ -58,7 +58,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	</div>
 </div>
 <div class="xc-section">
-	<div class="xc-img-box" style="background-color: #f5f5f5;z-index: -1;">
+	<div class="xc-img-box" style="background-color: #f5f5f5;z-index: -1;background-image: url(<?php echo base_url('/static/upload/commen/bg1.jpg')?>);background-size: contain;">
+  <div style="width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.93);"></div>
 	</div>
 	<div class="container">
 		<div class="row animatedParent animateOnce">
