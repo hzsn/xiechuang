@@ -1,6 +1,27 @@
 -- database name :hzxcsydb
 -- mysql user:hzxc
 
+-- -- 创建管理员账号
+-- create user hzxcsyadmin;
+-- -- 设置密码
+-- use mysql;
+-- update user set password=password(密码) where user = 'hzxcsyadmin';
+-- -- 创建数据库
+-- create database hzxcsydb;
+-- --更改权限
+-- grant all on hzxcsydb.* to 'hzxcsyadmin'@'%';
+-- flush privileges;
+
+-- -- 创建普通账号
+-- create user hzxc;
+-- -- 设置密码
+-- use mysql;
+-- update user set password=password(密码) where user = 'hzxc';
+-- --更改权限
+-- grant all on hzxcsydb.* to 'hzxc'@'%';
+-- flush privileges;
+
+
 -- -- 导航条表
 -- create table if not exists xc_navbar (
 -- id int(4)	not null primary key auto_increment comment '主键',
@@ -85,7 +106,7 @@
 -- insert into xc_category(name) values('公司咨询');
 -- alter table xc_article add column cato_id int(4);
 -- alter table xc_article add CONSTRAINT article_cato_fk foreign key(cato_id) REFERENCES xc_category(id);
-
+ 
 -- 用户表
 -- create table IF NOT EXISTS xc_user(
 -- id int(3) not null primary key auto_increment comment '主键',
@@ -121,6 +142,17 @@
 -- create_time TIMESTAMP not null default now() comment '创建id的时间',
 -- create_user	varchar(32) not null default 'admin' comment '创建者',
 -- status int(2) not null default 0 comment '显示的状态, 0表示显示，非0表示不显示'
+-- );
+
+-- 协创员工相册表
+-- create table IF NOT EXISTS xc_galley(
+-- id int(3) not null primary key auto_increment comment '主键',
+-- img_src varchar(256) NOT null  comment '相册item的路径',
+-- img_small_src varchar(256) NOT null  comment '相册item缩略图的路径',
+-- create_time TIMESTAMP not null default now() comment '创建id的时间',
+-- create_user	varchar(32) not null default 'admin' comment '创建者',
+-- status int(2) not null default 0 comment '显示的状态, 0表示显示，非0表示不显示',
+-- group_id int(3) FOREIGN KEY REFERENCES xc_galley_group(id)
 -- );
 
 -- 人才招聘表

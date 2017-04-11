@@ -52,10 +52,47 @@ class M_commen extends CI_Model
 		$this->db->select('id, cover_img_path, name');
 		return $this->db->get_where('xc_galley_group', array('status' => 0))->result_array();
 	}
+
  	public function get_gallery_by_groupid($groupid)
 	{
-		$this->db->select('name, img_path');
-		return $this->db->get_where('xc_galley_group', array('status' => 0, 'id' => $groupid))->row();
+		$select_array = [
+			'id'=>'ID',
+			'name'=>''
+		];		
+		$params = [
+			'status'=>0,
+			'id'=>$groupid
+		];
+		$this->db->select(implode(',', array_keys($select_array)));
+		$groups = $this->db->get_where('xc_galley_group', $params)->row();
+		if (!isset($groups))
+		{
+		    return [];
+		}
+		$params = [
+			'status'=>0,
+			'group_id'=>$groups->id
+		];
+		$select_array = [
+			'id'=>'ID',
+			'img_src'=>'src',
+			'img_small_src'=>'smallSrc',
+			'group_id'=>'groupId'
+		];
+		$this->db->select(implode(',', array_keys($select_array)));
+		$query = $this->db->get_where('xc_galley', $params)->result_array();
+		$result_array = [];
+		foreach ($query as $key => $value) {
+			$sztmp = [];
+			foreach ($select_array as $k1 => $v1) {
+				$sztmp[$v1] = $value[$k1];
+			}
+			array_push($result_array, $sztmp);
+		}
+		return [
+			'title'=>$groups->name,
+			'item' => $result_array
+		];
 	}
 
 	public function get_groups_total_row()
@@ -81,7 +118,7 @@ class M_commen extends CI_Model
 		$this->db->select(implode(',', array_keys($select_array)));
 		$data = [
 			'attr'=>$select_array,
-			'jobs'=>$this->db->get_where('xc_job', array('status'=>0))->result_array()
+			'jobs'=>$this->db->get_where('xc_job', $params)->result_array()
 		];
 		return $data;
 	}

@@ -142,8 +142,8 @@ class News extends CI_Controller{
 			$groups = $this->m_commen->get_gallery_by_groupid($group_id);
 			
 			if (isset($groups)) {
-				$this->data['staffgroups']['title'] = $groups->name;
-				$this->data['staffgroups']['item'] = json_decode($groups->img_path);	
+				$this->data['staffgroups']['title'] = $groups['title'];
+				$this->data['staffgroups']['item'] = $groups['item'];
 			}
 		}
 		if (!$this->data['staffgroups']['item']) {
