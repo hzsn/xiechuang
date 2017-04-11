@@ -13,10 +13,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 		<div class="col-md-4 col-lg-4 text-left">
 			<div class="col-md-6 col-lg-6 text-left">
 				<h3>关于我们</h3>
-				<p><a href="/aboutxc">公司简介</a></p>
-				<p><a href="/news">公司新闻</a></p>
-				<p><a href="/news/staff/groups">员工风采</a></p>
-				<p><a href="/contact/joinus">诚聘英才</a></p>
+				<p><a href="<?php echo site_url('/aboutxc');?>/aboutxc">公司简介</a></p>
+				<p><a href="<?php echo site_url('/news');?>">公司新闻</a></p>
+				<p><a href="<?php echo site_url('/news/staff/groups');?>">员工风采</a></p>
+				<p><a href="<?php echo site_url('/contact/joinus');?>">诚聘英才</a></p>
 			</div>
 			<div class="col-md-6 col-lg-6 text-left">
 				<!-- 此处可以再放一列 -->

@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	?>
 	<div class="row xc-news-box">
 	    <div class="col-md-5 xc-news-img" style="background-image: url(<?php echo base_url($this->config->item('new').$value['item_img'])?>);">
-	      <a href="/article/<?php echo $value['id'] ;?>" class="xc-news-date">
+	      <a href="<?php echo site_url('article/'.$value['id']) ;?>" class="xc-news-date">
 	          	<div><?php echo $value['create_time'] ;?></div>
 	      </a>
 	    </div>

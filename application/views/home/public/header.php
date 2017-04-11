@@ -67,16 +67,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 					        	if (array_key_exists("subNavBar",$value) && $value['subNavBar']) {
 					        		$subli = '';
 					        		foreach ($value['subNavBar'] as $subObj) {
-					        			$subli .= '<li><a href="'.$subObj['url'].'" rel="'.$subObj['rel'].'" target="'.$subObj['target'].'">'.$subObj['name'].'</a></li>';
+					        			$subli .= '<li><a href="'.site_url($subObj['url']).'" rel="'.$subObj['rel'].'" target="'.$subObj['target'].'">'.$subObj['name'].'</a></li>';
 					        		}
 					        		
 					        		if ($key == $len-1) {
 					        			$lastli = 'last-li';
 					        		}
-					        		$li = '<li class="dropdown '.$lastli.'"><a href="'.$value['url'].'" rel="'.$value['rel'].'">'.$value['name'].'</a><ul class="dropdown-menu" role="menu">'.$subli.'</ul></li>';
+					        		$li = '<li class="dropdown '.$lastli.'"><a href="'.site_url($value['url']).'" rel="'.$value['rel'].'">'.$value['name'].'</a><ul class="dropdown-menu" role="menu">'.$subli.'</ul></li>';
 							        echo($li);
 					        	}else{
-					        		echo('<li class=""><a href="'.$value['url'].'" rel="'.$value['rel'].'" target="'.$value['target'].'">'.$value['name'].'</a></li>');
+					        		echo('<li class=""><a href="'.site_url($value['url']).'" rel="'.$value['rel'].'" target="'.$value['target'].'">'.$value['name'].'</a></li>');
 					        	}
 					        }
 					        ?>
