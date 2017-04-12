@@ -70,10 +70,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | The $query_builder variables lets you determine whether or not to load
 | the query builder class.
 */
-$active_group = 'wwtx_test';
+$active_group = 'loca_test';
 $query_builder = TRUE;
 
-$db['test'] = array(
+$db['sn_test'] = array(
 	'dsn'	=> '',
 	'hostname' => '192.168.1.124',
 	'username' => 'hzxc',
@@ -95,7 +95,7 @@ $db['test'] = array(
 	'save_queries' => TRUE
 );
 
-$db['wwtx_test'] = array(
+$db['loca_test'] = array(
 	'dsn'	=> '',
 	'hostname' => '127.0.0.1',
 	'username' => 'hzxc',

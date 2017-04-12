@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="col-lg-6 col-md-6 animated fadeInUpShort go">
 			<div class="xc-panel-box" style="margin: 10px 0 0 35px;">
 				<div style="height: 12.6em;overflow: hidden;"><?php echo $brief['brief_summary'] ?></div>
-				<div class="text-center" style="margin-top: 15px;"><a class="xc-button xc-button-red" href="/aboutxc">查看更多</a></div>
+				<div class="text-center" style="margin-top: 15px;"><a class="xc-button xc-button-red" href="<?php echo site_url('/aboutxc');?>">查看更多</a></div>
 			</div>
 		</div>
 	</div>
