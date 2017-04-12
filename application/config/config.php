@@ -35,7 +35,7 @@ $config['admin_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/admin';
 | variable so that it is blank.
 |
 */
-$config['index_page'] = '';
+$config['index_page'] = 'index.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -213,7 +213,7 @@ $config['directory_trigger'] = 'd';
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 0;
+$config['log_threshold'] = 1;
 
 /*
 |--------------------------------------------------------------------------
@@ -549,6 +549,7 @@ $config['weixin'] = [
 	'csh1'=>$config['dir_path'].'commen/csh_weixin-1.jpg'
 ];
 $config['logo'] = $config['dir_path'].'commen/logo.PNG';
+$config['small_logo'] = $config['dir_path'].'commen/logo-small.png';
 $config['carousel'] = $config['dir_path'].'banner/';
 $config['banner'] = [
 	'new'=>$config['dir_path'].'banner/commen/banner_news.jpg',

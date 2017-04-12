@@ -59,18 +59,14 @@ class User extends CI_Controller {
         //验证通过，则存入session
         $this->session->profile = $user;
         //登录成功后，跳转路径
-        $data['url'] = '/admin';
+        $data['url'] = site_url('/admin');
         echo(json_encode($data));
 	}
 
     public function logout()
     {
         session_destroy();
-        redirect('/admin/user/login');
-        // if (isset($_SESSION['profile'])) {
-        //     unset($_SESSION['profile']);
-        //     redirect('/admin/user/login');
-        // }
+        redirect(site_url('/admin/user/login'));
     }
 
     public function get_code(){

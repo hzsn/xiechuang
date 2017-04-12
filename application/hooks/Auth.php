@@ -32,16 +32,16 @@ class Auth
 			//判断是否登录
 			if (!isset($this->CI->session->profile)) {
 				if (!($_SERVER['REQUEST_METHOD'] == "POST" && preg_match('/\/do_login/', $_SERVER['REQUEST_URI'])) && !preg_match('/\/login/', $_SERVER['REQUEST_URI'])) {
-					redirect('/admin/user/login');
+					redirect(site_url('/admin/user/login'));
 				}
 			}else{
 				if (($_SERVER['REQUEST_METHOD'] == "POST" && preg_match('/\/do_login/', $_SERVER['REQUEST_URI'])) ||preg_match('/\/login/', $_SERVER['REQUEST_URI'])) {
-					redirect('/admin');
+					redirect(site_url('/admin'));
 				}
 				//只允许post提交
 				foreach ($this->only_post as $key => $value) {
 					if(preg_match($value, $_SERVER['REQUEST_URI']) && $_SERVER['REQUEST_METHOD'] != "POST"){
-						redirect('/admin');
+						redirect(site_url('/admin'));
 					}	
 				}
 				

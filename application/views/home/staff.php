@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="container xc-margin text-center">
 		<?php
 			if (!$staffgroups || $staffgroups['code']) {
-				redirect('/404');
+				redirect(site_url('/404'));
 			} else if($staffgroups['type'] == 'groups') {
 				$divs = [];
 				$len = count($staffgroups['item']);

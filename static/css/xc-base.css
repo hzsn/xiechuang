@@ -613,7 +613,7 @@ cursor: pointer;
 	top: 0px;
 }
 .contact-item-box:hover{
-	color: #1f8be9;
+	color: rgb(233,3,2);
 }
 .contact-item-box span{
 font-size: 40px;
