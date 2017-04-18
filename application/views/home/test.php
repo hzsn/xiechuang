@@ -13,25 +13,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <a href="http://www.layui.com" class="layui-btn" target="">一个可跳转的按钮</a>
 
-<table id="container" class="layui-table" lay-skin="row">
-		  <colgroup>
-		    <col width="47%">
-		    <col width="37%">
-		    <col width="8%">
-		    <col width="8%">
-		    <col>
-		  </colgroup>
-  	</table>
+<table id="container" class="layui-table" lay-skin="row"></table>
 
-<table id="container1" class="layui-table" lay-skin="line">
-	<colgroup>
-		<col width="47%">
-		<col width="37%">
-		<col width="8%">
-		<col width="8%">
-		<col>
-	</colgroup>
-</table>
+<table id="container1" class="layui-table" lay-skin="line"></table>
 </body>
 
 <script type="text/javascript">

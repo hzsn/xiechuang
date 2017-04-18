@@ -6,10 +6,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php require_once('public/head.php'); ?>
 <?php require_once('public/header.php'); ?>
 <body>
-<div class="xc-ban-titile" style="background-image: url('http://9429871.s21i-9.faiusr.com/4/ABUIABAEGAAg8cK7uQUoycz80wMwgA84rAI.png');">
-	<h1 class="text-center""><span><?php echo $article_title;?></span></h1>
+<div class="xc-ban-titile hidden-xs" style="background-image: url('<?php echo base_url($this->config->item('banner')['new']) ;?>');">
+	<h1 class="text-center"><span><?php echo $article_title;?></span></h1>
 </div>
-<div class="container">
+<div class="container"> 
 	<div class="row">
 		<h2 class="text-center" id="article-title"><?php echo $article['title'];?></h2>
 		<div class="text-center">
@@ -48,7 +48,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 	function add_pv() {
 		$.ajax({
-			url:'<?php echo site_url("/home/news/add_pv")?>',
+			url:'<?php echo site_url("/news/add_pv")?>',
 			type:"POST",
 			data:{
 				'article_id':$('#article_id').val()
@@ -62,13 +62,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 							$('#pv').data('pv',pv);
 					}
 				}catch(e){
-					console.log(e.message, e.name, e.lineNumber);
-					console.log('JSON字符串解析错误');
 				}
 			},
 			timeout:3000,
 			error:function(xhr,status,error){
-				console.log(xhr,status,error);
 			},
 		});
 	}

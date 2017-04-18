@@ -556,6 +556,7 @@ $config['banner'] = [
 	'staff' => $config['dir_path'].'banner/commen/banner_staff.jpg',
 	'contact' => $config['dir_path'].'banner/commen/banner_contact.jpg',
 	'about' => $config['dir_path'].'banner/commen/banner_about.jpg',
+	'article' => $config['dir_path'].'banner/commen/banner_article.jpg',
 ];
 $config['cooperator']=$config['dir_path'].'cooperator/';
 $config['new'] = $config['dir_path'].'new/';

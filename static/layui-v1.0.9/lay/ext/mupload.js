@@ -153,6 +153,16 @@ MUpload.prototype.upload = function(formobj, key){
 }
 
 function initTable(otableid){
+	var $table = $(otableid);
+	if ($table.children('colgroup').length == 0) {
+		var colgroup = ['<colgroup>',
+				    '<col>',
+				    '<col width="37%">',
+				    '<col width="8%">',
+				    '<col width="8%">',
+				  	'</colgroup>'].join('');
+		$table.append(colgroup);	
+	}
 	var thead = [];
 		thead.push('<thead>');
 		thead.push('<tr><th class="layui-elip">');
@@ -161,14 +171,23 @@ function initTable(otableid){
 		thead.push('<input class="layui-mupload-file" name="" value="" lay-title="批量上传" multiple="multiple" type="file">');
 		thead.push('<span class="layui-upload-icon"><i class="layui-icon">&#xe608;</i>添加文件</span>');
 		thead.push('</div>');
-		thead.push('&nbsp;<a class="layui-btn layui-btn-disabled layui-upload-button-small layui-mupload-submit"><i class="layui-icon">&#xe62f;</i>上传文件</a>');
+		thead.push('<a class="layui-btn layui-btn-disabled layui-upload-button-small layui-mupload-clear"><i class="layui-icon">&#xe640;</i>清空文件</a>');
+		thead.push('<a class="layui-btn layui-btn-disabled layui-upload-button-small layui-mupload-submit"><i class="layui-icon">&#xe62f;</i>上传文件</a>');
 		thead.push('</th>');
 		thead.push('<th>进度条</th>');
 		thead.push('<th>状态</th>');
 		thead.push('<th>操作</th>');
 		thead.push('</tr></thead>');
-	$(otableid).append(thead.join(''));
-	$(otableid).append('<tbody></tbody>');
+	$table.append(thead.join(''));
+	var tfoot = [
+		'<tfoot><tr style="background-color:#f2f2f2">',
+		'<td colspan="4">',
+		'<span>可直接拖拽多个文件</span>',
+		'</td>',
+		'</tr></tfoot>',
+	].join('');
+	$table.append(tfoot);
+	$table.append('<tbody></tbody>');
 }
 
 MUpload.prototype.action = function(){

@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <script type="text/javascript" src="/static/js/xc-galleryview.js"></script>
 <?php require_once('public/header.php') ?>
 <body>
-	<div class="xc-ban-titile" style="background-image: url(<?php echo $this->config->item('banner')['staff'];?>);">
+	<div class="xc-ban-titile hidden-xs" style="background-image: url(<?php echo $this->config->item('banner')['staff'];?>);">
 		<h1 class="text-center"><span><?php echo $this->config->item('staff_title');?></span></h1>
 	</div>
 	<div class="container xc-margin text-center">

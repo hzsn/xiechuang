@@ -67,36 +67,4 @@ class File extends CI_Controller
             echo(json_encode($data));
         }
     }
-
-	private function upload_bk()
-    {
-        $config['upload_path']      = $this->get_dir($this->dir_path.$this->sub_dir['gallery']);
-        $config['allowed_types']    = 'gif|jpg|png';
-        $config['file_name']		= date('YmdHis').rand(1000,9999);
-        $this->load->library('upload', $config);
-        
-        if ( ! $this->upload->do_upload('file'))
-        {
-            $error = array('error' => $this->upload->display_errors());
-            $data['code'] = 1;
-            $data['msg'] = '上传失败';
-            $data['obj'] = $error;
-            echo(json_encode(($data)));
-        }
-        else
-        {
-        	$data['code'] = 0;
-        	$data['msg'] = '上传成功';
-            
-            $udata = $this->upload->get_data();
-            
-            foreach ($udata as $key => $value) {
-                $data['obj'][$key] = [
-                    'file_name'=>$this->father_dir.$value['file_name'],
-                    'client_name'=>$this->father_dir.$value['client_name'],
-                ];
-            }
-            echo(json_encode($data));
-        }
-    }
 }

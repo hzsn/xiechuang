@@ -45,7 +45,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 	<div class="container">
 			<div class="row" >
 			<a class="pull-left" href="/"><img class="" src="<?php echo base_url($this->config->item('logo'))?>" alt="杭州协创实业有限公司" height ="120px"></a>
-			<div class="" style="height: 60px;padding-right: 20px;">
+			<div class="hidden-xs" style="height: 60px;padding-right: 20px;">
 				<div class="pull-right" style="margin-top: 10px;">
 					<span class="tel">
 						<span class="glyphicon glyphicon-earphone" style="color: #9f9f9f"></span>
@@ -67,7 +67,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 					        	if (array_key_exists("subNavBar",$value) && $value['subNavBar']) {
 					        		$subli = '';
 					        		foreach ($value['subNavBar'] as $subObj) {
-					        			$subli .= '<li><a href="'.site_url($subObj['url']).'" rel="'.$subObj['rel'].'" target="'.$subObj['target'].'">'.$subObj['name'].'</a></li>';
+					        			$url = strpos($subObj['url'], 'http') === FALSE ? site_url($subObj['url']):$subObj['url'];
+					        			$subli .= '<li><a href="'.$url.'" rel="'.$subObj['rel'].'" target="'.$subObj['target'].'">'.$subObj['name'].'</a></li>';
 					        		}
 					        		
 					        		if ($key == $len-1) {
@@ -76,7 +77,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 					        		$li = '<li class="dropdown '.$lastli.'"><a href="'.site_url($value['url']).'" rel="'.$value['rel'].'">'.$value['name'].'</a><ul class="dropdown-menu" role="menu">'.$subli.'</ul></li>';
 							        echo($li);
 					        	}else{
-					        		echo('<li class=""><a href="'.site_url($value['url']).'" rel="'.$value['rel'].'" target="'.$value['target'].'">'.$value['name'].'</a></li>');
+					        		$url = strpos($value['url'], 'http') === FALSE ? site_url($value['url']):$value['url'];
+					        		echo('<li class=""><a href="'.$url.'" rel="'.$value['rel'].'" target="'.$value['target'].'">'.$value['name'].'</a></li>');
 					        	}
 					        }
 					        ?>

@@ -6,7 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <?php require_once('public/head.php') ?>
 <?php require_once('public/header.php') ?>
 <body>
-<div class="xc-ban-titile" style="background-image: url('<?php echo base_url($this->config->item('banner')['new']) ;?>');">
+<div class="xc-ban-titile hidden-xs" style="background-image: url('<?php echo base_url($this->config->item('banner')['new']) ;?>');">
 	<h1 class="text-center"><span><?php echo $news_title;?></span></h1>
 </div>
 <div class="container xc-margin">

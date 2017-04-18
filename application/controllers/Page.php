@@ -105,6 +105,6 @@ class Page extends CI_Controller {
 		// $data = $this->m_article->get_articles_by_ts();
 		// $this->load->model('m_commen');
 		// $data = $this->m_commen->get_jobs();
-		// $this->load->view('home/test', array('title'=>'测试页面'));
+		$this->load->view('home/test', array('title'=>'测试页面'));
 	}
 }

@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 <footer class="">
 <div class="linear-line"></div>
 <div class="container">
-	<div class="row">
+	<div class="row hidden-xs">
 		<div class="col-md-4 col-lg-4 text-left">
 			<h3>联系我们</h3>
 			<p><?php echo $this->config->item('tel');?></p>
@@ -34,7 +34,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 		<p>杭州协创实业有限公司版权所有|网站备案/许可证号：<?php echo $this->config->item('icp');?></p>
 	</div>
 	
-	</div>
+</div>
 </footer>
 <script type="text/javascript">
 	$(function(){

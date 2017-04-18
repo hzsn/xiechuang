@@ -98,7 +98,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     if(data.tel) content.push('<span>'+customersStack.attrs.tel+'：'+data.tel+'</span>');
     content.push('</div>');
     if(data.bus_module) content.push('<div>'+customersStack.attrs.bus_module+'：'+data.bus_module+'</div>');
-    if(data.address) content.push('<div class "comp_type":"汽配商",="address">'+customersStack.attrs.address+'：'+data.address+'</div>');
+    if(data.address) content.push('<div class="address">'+customersStack.attrs.address+'：'+data.address+'</div>');
     content.push('</div></div>');
     return content.join('');
   }
