@@ -9,6 +9,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<script src="/static/layui-v1.0.9/layui.js"></script>
 </head>
 <body>
+<?php 
+?>
 <input type="file" name="file" class="layui-upload-file">
 
 <a href="http://www.layui.com" class="layui-btn" target="">一个可跳转的按钮</a>

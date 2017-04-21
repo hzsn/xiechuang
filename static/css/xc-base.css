@@ -5,12 +5,12 @@ html,body{
 	    height: auto !important;
 }
 header{
-	border-bottom: 1px solid rgb(247, 9, 9);
+	border-bottom: 2px solid rgb(247, 9, 9);
 }
 
 .black-header{
 	background-color: #292929;
-	border-bottom: 1px solid #292929;
+	border-bottom: 2px solid #292929;
 }
 
 .fl-r{
@@ -259,7 +259,7 @@ footer p{
     color: #fff;
 }
 .xc-news-box{
-	height: 160px;
+	/*height: 160px;*/
 	overflow: hidden;
 }
 .xc-news-heading{
@@ -391,7 +391,7 @@ footer p{
 }
 
 .xc-news-img{
-	height: 100%;
+	height: 160px;
 	overflow: hidden;
 	position: relative;
 	background-size: cover; 

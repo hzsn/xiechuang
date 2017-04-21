@@ -9,9 +9,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <link rel="shortcut icon" href="<?php echo base_url('/favicon.ico'); ?>" type="image/x-icon" />
         <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon.png">
         <link rel="stylesheet" type="text/css" href="/static/admin/css/xc.css">
-
         <script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
         <script type="text/javascript">
+			
         	//公共函数
         	function getRandNum(mod, flag){
     						if (isNaN(mod) || isNaN(flag)) return;
@@ -20,11 +21,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						}
 
 				var xc = xc || {};
-				/****************设置背景图片****************/
-				xc.BackGround = function (){
-					var index = getRandNum(3000, 1);
-					$('.xc-bgimg').css({'background-image': 'url(http://img.infinitynewtab.com/wallpaper/'+index+'.jpg)'});
-				}
 				/****************设置验证码****************/
 				xc.initCaptcha = function (indexNum){
 					var tmpIndex = 0;
@@ -56,17 +52,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         		useremail = $('#useremail').val().trim(),
         		password = $('#password').val().trim();
         	$('#error-msg').text('');
+        	//验证邮箱
         	if (!r_email.test(useremail)) {
         		$('#useremail').focus();
         		$('#useremail-err-msg').removeClass('err-msg-hidden').text('请正确输入账号');
         		return false;
         	}else{$('#useremail-err-msg').addClass('err-msg-hidden').text('');}
 
+        	//验证密码
         	if (!password || password.length < 6) {
         		$('#password').focus();
         		$('#password-err-msg').removeClass('err-msg-hidden').text('请正确输入密码');
         		return false;
         	}else{$('#password-err-msg').addClass('err-msg-hidden').text();}
+        	//验证码
         	if (!$('#captchaValue').val() ||$('#captchaValue').val().length != 4) {
         		$('#captchaValue').focus();
         		$('#captchaValue-err-msg').removeClass('err-msg-hidden').text('请正确输入验证码');
@@ -96,9 +95,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		    $(document).ready(function(){
 
 		    	/***********静态文本******************************/
-    				
-						//背景图片
-				xc.BackGround();
 				//输入框边框变换
 				inputFoucs();
 				//清除输入框内的内容
@@ -109,8 +105,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<style>
 		html, body{margin: 0px; padding: 0; position: relative; background: #f5f5f5;overflow-x: hidden;height: 100%;}
 	    /********背景图片*********/
-	    .xc-bgimg{width:100%;height: 100%;position: relative;overflow: hidden; background: url('https://images.mafengwo.net/images/signup/wallpaper/25.jpg') center center transparent; background-size: cover;}
-
+	    .xc-bgimg{
+	    	background-color: #b61924;
+	    	width:100%;
+	    	height: 100%;
+	    	position: relative;
+	    	overflow: hidden;
+	    }
 	   .clear{clear: both;}
 	 
 
@@ -120,7 +121,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
   </head>
   <body>
-  <div class="xc-bgimg"></div>
+  <div id = "particles-js" class="xc-bgimg"></div>
    	<div id="xc-login-box">
    		<div class="login-box">
 		   	<form action="<?php echo site_url('/admin/user/login') ;?>" method="post">
@@ -185,6 +186,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
    		<p>&copy;2017 杭州协创实业有限公司 <a href="<?php echo base_url('/')?>">官网首页</a></p>
    	</footer>
   </body>
+  	<script type="text/javascript">
+    	particlesJS.load('particles-js', '/static/assets/particles.json', function() {});
+	</script>
     <script type="text/javascript">
 	    $(function(){
 	    	/***********动态按钮******************************/
@@ -229,24 +233,20 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 								$('#error-msg').text(jobj['msg']);
 							}else{
 								window.location.href=jobj['url'];
-							}console.log(jobj);
+							}
 						}catch(e){
-							console.log('JSON字符串解析错误');
 							$('#captchaImg').attr('src', 'get_code?time='+new Date());
 							$('#error-msg').text('服务器异常，请重新登录');
 						}
 					},
 					timeout:3000,
 					error:function(xhr,status,error){
-						console.log(xhr,status,error);
 						$('#error-msg').text('服务器异常，请重新登录');
 					},
 				});
 			}
 			
-			$('#submit').on('click', function(){
-				login();
-			})
+			$('#submit').on('click', login);
 			/***********动态按钮 end******************************/	
 	    })
 	    </script>

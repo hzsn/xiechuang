@@ -14,9 +14,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<h2 class="text-center" id="article-title"><?php echo $article['title'];?></h2>
 		<div class="text-center">
 			<input id="article_id" type="hidden" value="<?php echo $article['id'];?>">
-			<span>时间：<?php echo $article['create_time'];?></span>
-			<span>作者：<?php echo $article['create_user'];?></span>
-			<span>浏览量：<span id="pv" data-pv="<?php echo $article['pv'] ;?>"><?php echo $article['pv'];?></span></span>
+			<span><i class="glyphicon glyphicon-time" style="vertical-align: text-top;"></i> 时间：<?php echo $article['create_time'];?></span>
+			<span><i class="glyphicon glyphicon-user" style="vertical-align: text-top;"></i> 作者：<?php echo $article['create_user'];?></span>
+			<span><i class="glyphicon glyphicon-heart" style="vertical-align: text-top;"></i> 浏览量：<span id="pv" data-pv="<?php echo $article['pv'] ;?>"><?php echo $article['pv'];?></span></span>
 		</div>
 		<hr>
 		<div class="xc-article-content-box">

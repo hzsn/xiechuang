@@ -21,7 +21,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 	  	});
 
 		var pathname = window.location.pathname;
-		if (pathname == '/') {
+		if(pathname.indexOf('/index.php') > -1){
+			pathname = pathname.substr('/index.php'.length);
+		}
+		if (pathname == '' || pathname == '/') {
 			pathname = '/index';
 		}
 		$('#navbar-nav>li.xc-active').removeClass('xc-active');
@@ -30,7 +33,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 		      $(this).parent().addClass('xc-active');
 		    }
 		});
-		
+
 		$('.dropdown').each(function(i, e){ 
 			var w = $(this).width();
 			$(this).children('.dropdown-menu').css({

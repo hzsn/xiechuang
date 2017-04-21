@@ -24,6 +24,7 @@
     display: block;
     margin: 0;
     font-size: 16px;
+    outline: none;
     /*
     改.dropdown-menu>li>a的padding
     padding: 0 35px;*/

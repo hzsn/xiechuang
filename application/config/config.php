@@ -204,6 +204,7 @@ $config['directory_trigger'] = 'd';
 |	2 = Debug Messages
 |	3 = Informational Messages
 |	4 = All Messages
+|	5 = XC Info
 |
 | You can also pass an array with threshold levels to show individual error types
 |
@@ -213,7 +214,7 @@ $config['directory_trigger'] = 'd';
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 1;
+$config['log_threshold'] = array(1,5);
 
 /*
 |--------------------------------------------------------------------------

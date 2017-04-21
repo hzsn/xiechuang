@@ -1,41 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-if (!function_exists('get_nav_bar')) {
-	
-	function get_nav_bar(){
-		$szNav = array(
-	        	array('name' => '首页', 'url' => '/', 'rel'=>'/index'),
-	        	array('name' => '官网商城', 'url' => 'http://carsociety.cn/', 'target' =>'_blank', 'rel'=>'http://carsociety.cn/'),
-	        	array(
-	        		'name' => '企业动态',
-	        		'url'  => '/news',
-	        		'rel'  => '/news',
-	        		'subName' => array(
-	        			array('name' => '最新动态', 'url' => '/news', 'rel' => '/news'),
-	        			array('name' => '行业动态', 'url' => '/news/other', 'rel' => '/news'),
-	        			array('name' => '员工风采', 'url' => '/news/employee', 'rel' => '/news'),
-	        		)
-	        		),
-	        	array(
-	        		'name' => '关于协创',
-	        		'url' => '/aboutxc',
-	        		'rel' => '/aboutxc',
-	        		'subName' => array(
-	        				array('name' => '公司简介','url' => '/aboutxc/', 'rel' => '/aboutxc'),
-	        				array('name' => '团队介绍','url' => '/aboutxc/team', 'rel' => '/aboutxc/team'),
-	        			)
-	        		),
-	        	array('name'=>'合作伙伴', 'url' => '/cooperator', 'rel' => '/cooperator'),
-	        	array('name'=>'联系我们',
-	        			'url' => '/contact',
-	        			'rel' => '/contact',
-	        			'subName' => array(['name'=> '诚招英才','url'=> '/contact/joinus', 'rel'=> '/contact/joinus']))
-	        );
-		return $szNav;
-	}
-}
-
 if (!function_exists('get_cooperator')) {
 	function get_cooperator(){
 		$data['item'] = [
