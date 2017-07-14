@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  <!-- <script type="text/javascript" src="/static/js/mupload.js"></script> -->
  <script type="text/javascript">
  	// console.log(layui, layui.mupload);
- 	layui.config({base:'/static/js/'}).use(['upload','mupload'],function(){
+ 	layui.config({base:'/static/layui-v1.0.9/lay/ext/'}).use(['upload','mupload'],function(){
  		layui.mupload({
  			container:'#layui-upload-table',
  			url:'/admin/file/upload',
@@ -39,15 +39,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		  ,success: function(res){
 		    console.log(res); //上传成功返回值，必须为json格式
 		  }
-		}); 
-		layer.open({
-			type: 2,
-			title: '测试',
-			shadeClose: true,
-			// shade: 0.8,
-			area: ['95%', '90%'],
-			content: 'http://hzxcsy.xlgp.xc/test' //iframe的url
-		});    
+		});
+		// console.log($.ajax());  
  	});
  </script>
  <script type="text/javascript">
@@ -65,9 +58,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
  	// });
  </script>
- <script type="text/javascript">
- 	
 
+ <script type="text/javascript">
+ 
 
  </script>
 <?php require_once('public/footer.php') ;?>

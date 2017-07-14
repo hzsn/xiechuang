@@ -57,7 +57,7 @@ function judge(){
       var r = /MSIE \d+/.exec(navigator.userAgent);
 
       if (r && r[0] != 'MSIE 10') {
-        alert('浏览器版本太低,请升级您的浏览器获取更好的体验');
+        alert('浏览器版本太低,请升级您的浏览器获取更好的体验' + '\n' + '若您使用的是360浏览器，请更换为极速模式');
       }
         
     }

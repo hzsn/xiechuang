@@ -6,6 +6,7 @@
 }
 .xc-nav-bar{
 	background: transparent;
+	margin-top: 50px;
 }
 
 .pagination>.active>a, .pagination>.active>span,
@@ -29,8 +30,7 @@
     改.dropdown-menu>li>a的padding
     padding: 0 35px;*/
     padding: 0 49px;
-    /*padding: 0px;*/
-    line-height: 60px;
+    line-height: 50px;
 	color: #333;
 }
 .pagination>li>a,.pagination>li>a:hover, .pagination>li>span{

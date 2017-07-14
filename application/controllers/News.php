@@ -96,64 +96,7 @@ class News extends CI_Controller{
 		$this->load->view('home/news', $this->data);
 	}
 
-	/**
-	 * 获取获取员工风采数据
-	 * @param  integer $page_index 当前页码
-	 * @return 加载员工风采页面
-	 */
-	public function staff($groupname='groups', $page_index = 1)
-	{
-		//设置title
-		$this->data['title'] = $this->config->item('staff_title').$this->config->item('title');
-		$this->load->library('pager');
-		$this->load->model('m_commen');
-		//加载配置文件
-		$page_config = $this->config->item('pager');
-		$this->data['staffgroups']['code'] = 0;
-		$this->data['staffgroups']['type'] = $groupname;
-		$this->data['staffgroups']['msg'] = '';
-		$this->data['staffgroups']['item'] = [];
-		if ($groupname == 'groups') {
-			if(!preg_match("/^\d+$/", $page_index)){
-				redirect(site_url('/404'));
-			}
-			$this->load->driver('cache', array('adapter' => 'memcached', 'backup' => 'file'));
-			$total_row = $this->cache->get('staffgroups_total_row');
-			if (!$total_row) {
-				$total_row = $this->m_commen->get_groups_total_row();
-				if ($total_row > 0 and $this->cache->save('staffgroups_total_row', $total_row, 300)) {
-			    	$page_config['total_row'] = $total_row;
-			    }
-			}else{
-				$page_config['total_row'] = $total_row;
-			}			
-			$page_config['base_link_url'] = site_url('/news/staff/'.$groupname.'/');
-			//设置当前页码
-			$page_config['cur_page'] = $page_index;
-			$page_config['page_size'] = 9;
-			//获取分页组件
-			$this->data['pagination'] = $this->pager->create($page_config);
-			$this->data['staffgroups']['item'] = $this->m_commen->get_gallerys($page_index-1, $page_config['page_size']);
-		}else{
-			if(!preg_match("/^group_\d+$/", $groupname)){
-				redirect(site_url('/404'));
-			}
-			$group_id = substr($groupname, strripos($groupname, '_')+1);
-			$groups = $this->m_commen->get_gallery_by_groupid($group_id);
-			
-			if (isset($groups)) {
-				$this->data['staffgroups']['title'] = $groups['title'];
-				$this->data['staffgroups']['item'] = $groups['item'];
-			}
-		}
-		if (!$this->data['staffgroups']['item']) {
-			$this->data['staffgroups']['code'] = 1;
-			$this->data['staffgroups']['msg'] = '<h4 class="text-center">暂无数据</h4>';
-		}
-		$this->load->view('home/staff', $this->data);
-	}
-
-
+	
 	/**
 	 * 获取文章信息
 	 * @param  string $id [文章id]

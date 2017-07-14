@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'];
+$config['base_url'] = 'http://'.$_SERVER['SERVER_NAME'].':'.$_SERVER['SERVER_PORT'];
 $config['admin_url'] = 'http://'.$_SERVER['SERVER_NAME'].'/admin';
 /*
 |--------------------------------------------------------------------------
@@ -539,7 +539,7 @@ $config['404_title'] = '找不到你所需要的资源';
 $config['tel'] = '400-827-3666';
 $config['email'] = 'hangzhouxcsy@126.com';
 $config['address'] = '浙江省杭州市拱墅区花园岗路113号金通国际大厦A座9F';
-$config['icp'] = '浙ICP备00000000号-0（测试数据）';
+$config['icp'] = '浙ICP备17017268号-1';
 
 
 $config['dir_path'] = '/static/upload/';
@@ -559,6 +559,7 @@ $config['banner'] = [
 	'about' => $config['dir_path'].'banner/commen/banner_about.jpg',
 	'article' => $config['dir_path'].'banner/commen/banner_article.jpg',
 ];
+$config['brief_intr_img'] = $config['dir_path'].'/commen/jianjie.jpg';
 $config['cooperator']=$config['dir_path'].'cooperator/';
 $config['new'] = $config['dir_path'].'new/';
 

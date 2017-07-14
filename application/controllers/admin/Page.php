@@ -40,13 +40,7 @@ class Page extends CI_Controller {
 		$this->load->view('errors/404', $this->data);
 	}
 
-	/**
-	 * 测试函数（可删除）
-	 * @param  string $value [description]
-	 * @return [type]        [description]
-	 */
-	public function test($value='')
-	{
+	public function test(){
 		$this->load->view('admin/test', $this->data);
 	}
 }

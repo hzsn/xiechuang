@@ -1,0 +1,251 @@
+a:2:{s:6:"expire";i:1493711733;s:7:"headers";a:0:{}}ENDCI---><!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<meta http-equiv='content.type' content='text/html;charset=utf-8'/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>杭州协创实业有限公司</title>
+	<link rel="shortcut icon" href="http://hzxcsy.xlgp.xc/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="http://hzxcsy.xlgp.xc/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.3.0/css/bootstrap.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/static/css3animate/css/animations.css"/>
+	<link rel="stylesheet" type="text/css" href="/static/css/bootstrap-customer.css"/>
+	<link rel="stylesheet" type="text/css" href="/static/css/xc-base.css"/>
+	<script src="http://apps.bdimg.com/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="http://apps.bdimg.com/libs/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+	<script src="/static/js/xc-base.js"></script>
+</head>
+<script type="text/javascript">
+	$(function () {
+		// var body_width = 1000, logo_width = 220;
+		// navbar_width = $('#navbar-nav').width();
+		// var $nav_li = $('#navbar-nav>li');
+		// padding_width = Math.floor((body_width - logo_width - navbar_width)/($nav_li.length*2));
+		// $('#navbar-nav li').each(function(i, e){
+		// 	$(this).children('a').css({
+		// 		'padding-left':padding_width + "px",
+		// 		'padding-right':padding_width + "px",
+		// 	});
+		// });
+
+		$('.dropdown').hover(function () {
+	  		$(this).addClass('open');
+	  	},function(){
+	  		$(this).removeClass('open');
+	  	});
+
+		var pathname = window.location.pathname;
+		if(pathname.indexOf('/index.php') > -1){
+			pathname = pathname.substr('/index.php'.length);
+		}
+		if (pathname == '' || pathname == '/') {
+			pathname = '/index';
+		}
+		$('#navbar-nav>li.xc-active').removeClass('xc-active');
+		$('#navbar-nav>li>a').each(function(i, e){
+			if ((pathname).indexOf($(this).attr('rel')) > -1 && $(this).attr('rel')!='') {
+		      $(this).parent().addClass('xc-active');
+		    }
+		});
+
+		$('.dropdown').each(function(i, e){ 
+			var w = $(this).width();
+			$(this).children('.dropdown-menu').css({
+				'min-width':(w+w/2)+'px',
+			});
+		});
+
+	})
+</script>
+<!-- header -->
+<header>
+	<div class="container">
+			<div class="row" >
+			<a class="pull-left" href="/"><img class="" src="http://hzxcsy.xlgp.xc/static/upload/commen/logo.PNG" alt="杭州协创实业有限公司" height ="120px"></a>
+			<div class="hidden-xs" style="height: 60px;padding-right: 20px;">
+				<div class="pull-right" style="margin-top: 10px;">
+					<span class="tel">
+						<span class="glyphicon glyphicon-earphone" style="color: #9f9f9f"></span>
+						<span class="tel-text">400-827-3666</span>
+					</span>
+					<span class="xc-btn-icon" style="background-image: url(http://hzxcsy.xlgp.xc/static/upload/commen/logo_weixin_small.png)">
+						<img src="/static/upload/commen/csh_weixin-1.jpg" style="width: 150px;">
+					</span>
+				</div>
+			</div>
+			<!-- 导航条  -->
+			<nav class="xc-nav-bar pull-left">
+					<div class="navbar-collapse collapse" role="navigation">
+				      <ul class="nav navbar-nav" id="navbar-nav">
+				         <li class=""><a href="http://hzxcsy.xlgp.xc/index.php/" rel="/index" target="">首页</a></li><li class="dropdown "><a href="http://hzxcsy.xlgp.xc/index.php/news" rel="/news">企业动态</a><ul class="dropdown-menu" role="menu"><li><a href="http://hzxcsy.xlgp.xc/index.php/news/cato/1" rel="/news" target="">最新动态</a></li><li><a href="http://hzxcsy.xlgp.xc/index.php/news/cato/2" rel="/news" target="">行业动态</a></li><li><a href="http://hzxcsy.xlgp.xc/index.php/news/staff/groups" rel="/news" target="">员工风采</a></li></ul></li><li class="dropdown "><a href="http://hzxcsy.xlgp.xc/index.php/aboutxc" rel="/aboutxc">关于协创</a><ul class="dropdown-menu" role="menu"><li><a href="http://hzxcsy.xlgp.xc/index.php/aboutxc" rel="/aboutxc" target="">公司简介</a></li></ul></li><li class="dropdown "><a href="http://hzxcsy.xlgp.xc/index.php/contact" rel="/contact">联系我们</a><ul class="dropdown-menu" role="menu"><li><a href="http://hzxcsy.xlgp.xc/index.php/contact/joinus" rel="/contact" target="">诚聘英才</a></li></ul></li><li class=""><a href="http://carsociety.cn/" rel="http://carsociety.cn/" target="_blank">商城官网</a></li>				      </ul>					      
+				    </div>
+			</nav>
+			<!-- 导航条 end -->	
+			</div>
+	</div>
+</header>
+<!-- header end -->
+<body>
+<!-- 图片轮播 -->
+<div id="xc-big-carousel" class="carousel slide" data-ride="carousel" data-pause="none">
+    <!-- Indicators -->
+  <ol class="carousel-indicators">
+  	<li data-target="#xc-big-carousel" data-slide-to="0" class="active"></li><li data-target="#xc-big-carousel" data-slide-to="1"></li><li data-target="#xc-big-carousel" data-slide-to="2"></li>  </ol>
+  
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+        <div class="item active">
+    	<div style="position: relative; width: 100%;height: 100%">
+    		<div class="xc-img-box" style="background-image: url(http://hzxcsy.xlgp.xc/static/upload/banner/20170330/144_1920_500.jpg);"></div>	
+    	</div>
+      <div class="carousel-caption" style="background-color: rgba(0,0,0,0)">
+      	<h2></h2>
+      </div>
+    </div>
+        <div class="item ">
+    	<div style="position: relative; width: 100%;height: 100%">
+    		<div class="xc-img-box" style="background-image: url(http://hzxcsy.xlgp.xc/static/upload/banner/20170330/DSC_6549_meitu_1.jpg);"></div>	
+    	</div>
+      <div class="carousel-caption" style="background-color: rgba(0,0,0,0)">
+      	<h2></h2>
+      </div>
+    </div>
+        <div class="item ">
+    	<div style="position: relative; width: 100%;height: 100%">
+    		<div class="xc-img-box" style="background-image: url(http://hzxcsy.xlgp.xc/static/upload/banner/20170330/122_1920_500.jpg);"></div>	
+    	</div>
+      <div class="carousel-caption" style="background-color: rgba(0,0,0,0)">
+      	<h2></h2>
+      </div>
+    </div>
+      </div>
+</div>
+<!-- 图片轮播 end-->
+
+<!-- body -->
+<div class="xc-section container">
+	<div class="row animatedParent" style="height: 400px">
+		<h2 class="xc-title text-center">公司简介 / About US</h2>
+			
+		<div class="col-lg-6 col-md-6 animated fadeInUpShort go">
+			<div class="xc-img-box" style="background-image: url(/static/upload//commen/126_500_275.jpg); height: 275px"></div>
+		</div>
+		<div class="col-lg-6 col-md-6 animated fadeInUpShort go">
+			<div class="xc-panel-box" style="margin: 10px 0 0 35px;">
+				<div style="height: 12.6em;overflow: hidden;">杭州协创实业有限公司是一家以汽车备件仓储管理，物流配送服务，汽车备件信息技术服务为主营业务，辅以整车销售的集团控股公司。
+其实际管理和控股多家公司给全国各大主机厂提供专业的区域售后备件仓储与物流配送服务。
+公司为各汽车品牌提供专业的汽车售后备件保障服务，有着丰富的汽车备件仓储和物流管理经验。
+公司以“诚信、专业、服务、创新”为经营理念。倾力打造个性化服务品牌，为汽车厂家提供全方位、专业化的售后备件服务。</div>
+				<div class="text-center" style="margin-top: 15px;"><a class="xc-button xc-button-red" href="http://hzxcsy.xlgp.xc/index.php/aboutxc">查看更多</a></div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="xc-section">
+	<div class="xc-img-box" style="background-color: #f5f5f5;z-index: -1;background-image: url(http://hzxcsy.xlgp.xc/static/upload/commen/bg1.jpg);background-size: contain;">
+  <div style="width: 100%;height: 100%;background-color: rgba(0, 0, 0, 0.85);"></div>
+	</div>
+	<div class="container">
+		<div class="row animatedParent animateOnce">
+			<h2 class="xc-title text-center" style="color: rgb(247,9,9);">经营业务 / Business</h2>	
+						<div class="col-md-3 xc-buss-box">
+				<div class="xc-buss-wapper animated fadeInUpShort">
+					<div class="xc-buss-bg" style="background-image: url(/static/upload/commen/122_300_225.jpg);"></div>
+					<div class="xc-buss-content-box">
+							<div class="xc-buss-content-title">配件仓储与配送</div>
+							<div class="xc-buss-content">配件仓储与配送</div>
+					</div>
+					<div class="xc-buss-title">配件仓储与配送</div>
+				</div>
+			</div>
+						<div class="col-md-3 xc-buss-box">
+				<div class="xc-buss-wapper animated fadeInUpShort">
+					<div class="xc-buss-bg" style="background-image: url(/static/upload/commen/124_300_225.jpg);"></div>
+					<div class="xc-buss-content-box">
+							<div class="xc-buss-content-title">4S店</div>
+							<div class="xc-buss-content">4S店</div>
+					</div>
+					<div class="xc-buss-title">4S店</div>
+				</div>
+			</div>
+						<div class="col-md-3 xc-buss-box">
+				<div class="xc-buss-wapper animated fadeInUpShort">
+					<div class="xc-buss-bg" style="background-image: url(/static/upload/commen/133_300_225.jpg);"></div>
+					<div class="xc-buss-content-box">
+							<div class="xc-buss-content-title">修理厂</div>
+							<div class="xc-buss-content">修理厂</div>
+					</div>
+					<div class="xc-buss-title">修理厂</div>
+				</div>
+			</div>
+						<div class="col-md-3 xc-buss-box">
+				<div class="xc-buss-wapper animated fadeInUpShort">
+					<div class="xc-buss-bg" style="background-image: url(/static/upload/commen/wangluoyingxiao_300_225.jpg);"></div>
+					<div class="xc-buss-content-box">
+							<div class="xc-buss-content-title">网络销售平台</div>
+							<div class="xc-buss-content">网络销售平台</div>
+					</div>
+					<div class="xc-buss-title">网络销售平台</div>
+				</div>
+			</div>
+					</div>
+	</div>
+</div>
+<div class="xc-section" style="background-color: #fdfdfd">
+    <div class="container">
+        <div class="row animatedParent animateOnce">
+        	<h2 class="xc-title text-center">综合资讯 / News</h2>	
+        	<div class="col-md-8"><div class="xc-news-i-box xc-news-large animated bounceInLeft"><div class="col-md-6 xc-news-i-img"  style="background-image: url(/static/upload/new/defualt-news-logo.jpg);"><a class="xc-news-i-title text-right" href="http://hzxcsy.xlgp.xc/index.php/article/2">杭州神辇网络科技有限公司荣升新一届中国汽车维修工委会副主任单位</a><span class="xc-news-i-date" style="right: 0">2016-12-12</span></div><div class="col-md-6 xc-height100"><div class="xc-news-i-content">2016年秋，杭州神辇网络科技有限公司，成为新一届中国汽车维修行业协会配件工委会（下称“汽车维修工委会”）的副主任委员单位。汽车工委会的副主任委员单位还有长春华众离合器有限公司、国美控股集团有限公司、华维泰（北京）汽车零部件有限公司、华汽投资控股有限公司等10余家单位</div></div></div></div>        </div>
+    </div>    
+</div>
+<!-- body end -->
+<script type="text/javascript" src="/static/css3animate/js/css3-animate-it.js" ></script>
+<footer class="">
+<div class="linear-line"></div>
+<div class="container">
+	<div class="row hidden-xs">
+		<div class="col-md-4 col-lg-4 text-left">
+			<h3>联系我们</h3>
+			<p>400-827-3666</p>
+			<p>hangzhouxcsy@126.com</p>
+			<p>浙江省杭州市拱墅区花园岗路113号金通国际大厦A座9F</p>
+		</div>
+		<div class="col-md-4 col-lg-4 text-left">
+			<div class="col-md-6 col-lg-6 text-left">
+				<h3>关于我们</h3>
+				<p><a href="http://hzxcsy.xlgp.xc/index.php/aboutxc/aboutxc">公司简介</a></p>
+				<p><a href="http://hzxcsy.xlgp.xc/index.php/news">公司新闻</a></p>
+				<p><a href="http://hzxcsy.xlgp.xc/index.php/news/staff/groups">员工风采</a></p>
+				<p><a href="http://hzxcsy.xlgp.xc/index.php/contact/joinus">诚聘英才</a></p>
+			</div>
+			<div class="col-md-6 col-lg-6 text-left">
+				<!-- 此处可以再放一列 -->
+			</div>
+		</div>
+		<div class="col-md-4 col-lg-4 text-right">
+			<h2>
+				<img src="/static/upload/commen/csh_weixin_516.jpg" width="129" height="129">
+				<img src="/static/upload/commen/xc_weixin_258.jpg" width="129" height="129">
+			</h2>
+		</div>
+	</div>
+	<div class="row">
+		<p>Copyright © 2017 Hangzhou Xiechuang Industries Co.,Ltd All Rights Reserved</p>
+		<p>杭州协创实业有限公司版权所有|网站备案/许可证号：浙ICP备17017268号-1</p>
+	</div>
+	
+</div>
+</footer>
+<script type="text/javascript">
+	$(function(){
+		
+		var height = $(document).height() - $('body').height();
+		//让footer固定在页面的底部，
+		//如果body的height小于document的height的话,在footer前加一个适当高度的div，把页面撑开
+		if (height > 0) {
+			$('footer').before('<div style="height:'+height+'px;"></div>');
+		}
+	});
+</script></body>
+</html>

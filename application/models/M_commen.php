@@ -113,7 +113,8 @@ class M_commen extends CI_Model
 			'ability'=>'岗位职能',
 			'requirement'=>'职位要求',
 			'remark'=>'备注',
-			'create_time'=>'发布时间'
+			'create_time'=>'发布时间',
+			'resume_mail'=>'投递邮箱',
 		];
 		$this->db->select(implode(',', array_keys($select_array)));
 		$data = [

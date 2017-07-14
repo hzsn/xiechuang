@@ -37,7 +37,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 		$('.dropdown').each(function(i, e){ 
 			var w = $(this).width();
 			$(this).children('.dropdown-menu').css({
-				'min-width':(w+w/2)+'px',
+				// 'min-width':(w+w/2)+'px',
+				'min-width':0,
 			});
 		});
 
@@ -47,8 +48,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 <header>
 	<div class="container">
 			<div class="row" >
-			<a class="pull-left" href="/"><img class="" src="<?php echo base_url($this->config->item('logo'))?>" alt="杭州协创实业有限公司" height ="120px"></a>
-			<div class="hidden-xs" style="height: 60px;padding-right: 20px;">
+			<a class="pull-left" href="/"><img class="" src="<?php echo base_url($this->config->item('logo'))?>" alt="杭州协创实业有限公司" height ="100px"></a>
+			<div class="hidden-xs" style="height: 60px;padding-right: 20px;display: none;">
 				<div class="pull-right" style="margin-top: 10px;">
 					<span class="tel">
 						<span class="glyphicon glyphicon-earphone" style="color: #9f9f9f"></span>
@@ -67,6 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 				         	$len = count($navbar);
 				         	$lastli = '';
 					        foreach ($navbar as $key => $value) {
+					        	//有二级目录
 					        	if (array_key_exists("subNavBar",$value) && $value['subNavBar']) {
 					        		$subli = '';
 					        		foreach ($value['subNavBar'] as $subObj) {
@@ -77,9 +79,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 					        		if ($key == $len-1) {
 					        			$lastli = 'last-li';
 					        		}
-					        		$li = '<li class="dropdown '.$lastli.'"><a href="'.site_url($value['url']).'" rel="'.$value['rel'].'">'.$value['name'].'</a><ul class="dropdown-menu" role="menu">'.$subli.'</ul></li>';
+					        		$li = '<li class="dropdown '.$lastli.'"><a href="javascript:void(0);" rel="'.$value['rel'].'">'.$value['name'].'</a><ul class="dropdown-menu" role="menu">'.$subli.'</ul></li>';
 							        echo($li);
 					        	}else{
+					        		//无二级目录
 					        		$url = strpos($value['url'], 'http') === FALSE ? site_url($value['url']):$value['url'];
 					        		echo('<li class=""><a href="'.$url.'" rel="'.$value['rel'].'" target="'.$value['target'].'">'.$value['name'].'</a></li>');
 					        	}

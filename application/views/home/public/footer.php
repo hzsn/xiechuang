@@ -11,15 +11,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
 			<p><?php echo $this->config->item('address');?></p>
 		</div>
 		<div class="col-md-4 col-lg-4 text-left">
-			<div class="col-md-6 col-lg-6 text-left">
+			<!-- <div class="col-md-6 col-lg-6 text-left">
 				<h3>关于我们</h3>
 				<p><a href="<?php echo site_url('/aboutxc');?>/aboutxc">公司简介</a></p>
 				<p><a href="<?php echo site_url('/news');?>">公司新闻</a></p>
-				<p><a href="<?php echo site_url('/news/staff/groups');?>">员工风采</a></p>
+				<p><a href="<?php echo site_url('/staff');?>">员工风采</a></p>
 				<p><a href="<?php echo site_url('/contact/joinus');?>">诚聘英才</a></p>
-			</div>
+			</div> -->
 			<div class="col-md-6 col-lg-6 text-left">
-				<!-- 此处可以再放一列 -->
+				<h3>经营业务</h3>
+				<p><a href="javascript:void(0);">4S店</a></p>
+				<p><a href="javascript:void(0);">修理厂</a></p>
+				<p><a href="javascript:void(0);">网络销售平台</a></p>
+				<p><a href="javascript:void(0);">配件仓储与配送</a></p>
 			</div>
 		</div>
 		<div class="col-md-4 col-lg-4 text-right">

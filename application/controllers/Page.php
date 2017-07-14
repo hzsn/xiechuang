@@ -31,6 +31,7 @@ class Page extends CI_Controller {
 		$this->data['business'] = get_business();
 		//获取公司简介的数据
 		$this->data['brief'] = get_brief_intr();
+		$this->data['brief']['bg_img'] = $this->config->item('brief_intr_img');
 		//加载首页面
 		$this->load->view('home/index', $this->data);
 		//缓存首页页面
@@ -77,34 +78,5 @@ class Page extends CI_Controller {
 	{
 		$this->data['title'] = $this->config->item('404_title').$this->config->item('title');
 		$this->load->view('home/errors/404', $this->data);
-	}
-
-	/**
-	 * 测试函数（可删除）
-	 * @param  string $value [description]
-	 * @return [type]        [description]
-	 */
-	public function test($value='')
-	{
-		
-		// $this->load->model('m_commen');
-		// $this->data['carousel'] = $this->m_commen->get_carousels();
-
-		// $this->data['cooperator']['title'] = $this->config->item('cooperator_title');
-		// $this->data['cooperator']['item'] = $this->m_commen->get_cooperators();
-
-		// $this->load->model('m_article');
-		// $this->data['news'] = news_format($this->m_article->get_article_by_time(0, 3));
-		
-		// $this->data['business'] = get_business();
-		// $this->data['brief'] = get_brief_intr();
-		// $this->load->view('home/index_old', $this->data);
-		// $this->load->model('m_user');
-		// $data = $this->m_user->get_user_by_email('wwtx@sn.xc', '000000');
-		// $this->load->model('m_article');
-		// $data = $this->m_article->get_articles_by_ts();
-		// $this->load->model('m_commen');
-		// $data = $this->m_commen->get_jobs();
-		$this->load->view('home/test', array('title'=>'测试页面'));
 	}
 }

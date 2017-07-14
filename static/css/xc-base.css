@@ -33,8 +33,11 @@ header{
 }
 .tel-text{
 	color: rgb(233, 3, 2);
-	    /*margin-left: 6px;*/
+	vertical-align: text-bottom;
     font-weight: bold;
+}
+.text-indent-2em{
+	text-indent: 2em;
 }
 .xc-logo-box{
 	display: inline-block;
@@ -345,7 +348,7 @@ footer p{
 	bottom: 0;
 	display: block;
 	padding: 0 10px;
-	height: 50px; line-height: 50px; 
+	height: 40px; line-height: 40px; 
 	background-color: rgba(0,0,0,.4);
 	width: 100%;left: 0;
 }
@@ -354,10 +357,10 @@ footer p{
 
 }
 .xc-news-i-date{
-	position: absolute;
-	background: rgba(0,0,0,.4);
-	bottom: 50px;padding: 5px 10px;
-	color: rgb(233,9,7);font-size: 16px;
+	padding: 5px 10px;
+color: rgb(233,9,7);
+font-size: 12px;
+
 }
 
 .xc-news-i-content{

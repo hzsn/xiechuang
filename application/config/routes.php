@@ -63,3 +63,4 @@ $route['index']='Page/index';
 $route['404'] = 'Page/error_404';
 $route['contact'] = 'Page/contact';
 $route['contact/joinus'] = 'Page/joinus';
+$route['staff/(:num)'] = 'staff/index/$1';

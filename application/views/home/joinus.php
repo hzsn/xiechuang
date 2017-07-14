@@ -13,14 +13,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<div class="row text-center">
 		<h3>虚位以待</h3>
 		<div>
-			<p class="text-left">人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）</p>
+			<!-- <p class="text-left">人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）人才是公司的宝贵资源（此处更换）</p> -->
 		</div>
 	</div>
 	<!-- table -->
 	<?php
 		$job_attrs = array(
 			'thead' => ['name', 'address', 'recruit_count', 'create_time'],
-			'h_desc'=>['ability', 'requirement'],
+			'h_body'=>['ability', 'requirement'],
 			);
 		if (isset($jobStock)) {
 	?>
@@ -42,23 +42,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	  		$jobs = $jobStock['jobs'];
 		  	$collen = count($job_attrs['thead']);
 		  	foreach ($jobs as $key => $value) {
-		  		$tr_head = '<tr class="joinus-info" data-joinus-desc="joinus-desc-'.$key.'">';
-				$tr_desc = '<tr><td class="joinus-item-box" colspan="'.$collen.'">';
-				$tr_desc .= '<div id="joinus-desc-'.$key.'" class="text-left joinus-item">';
+		  		$tr_head = '<tr class="joinus-info" title="点击可展开或收缩" data-joinus-desc="joinus-desc-'.$key.'">';
+				$tr_body = '<tr><td class="joinus-item-box" colspan="'.$collen.'">';
+				$tr_body .= '<div id="joinus-desc-'.$key.'" class="text-left joinus-item">';
 				foreach ($value as $subkey => $subvalue) {
 		  			if(in_array($subkey, $job_attrs['thead'])){
 						$tr_head .= '<td class="'.$subkey.'">'.$subvalue.'</td>';
-					}elseif (in_array($subkey, $job_attrs['h_desc'])) {
-						$tr_desc .= '<div class="col-md-6 joinus-item-inner">';
-				  		$tr_desc .= '<h4>'.$job_attr[$subkey].'</h4>';
-				  		$tr_desc .= '<div>'.$subvalue.'</div>';
-				  		$tr_desc .='</div>';
+					}elseif (in_array($subkey, $job_attrs['h_body'])) {
+						$tr_body .= '<div class="col-md-6 joinus-item-inner">';
+				  		$tr_body .= '<h4>'.$job_attr[$subkey].'</h4>';
+				  		$tr_body .= '<div>'.$subvalue.'</div>';
+				  		$tr_body .='</div>';
 					}
 				}
+
+				/**
+				 * 添加联系方式
+				 */
+				$tr_body .= '<div class="col-md-12" style="padding:10px">简历投至:'.$value['resume_mail'].'</div>';
+
 				$tr_head .= '</tr>';
-				$tr_desc .= '</div></td></tr>';
+				$tr_body .= '</div></td></tr>';
 				
-		  		echo $tr_head.$tr_desc;
+		  		echo $tr_head.$tr_body;
 
 		  	}
 		  	;?>

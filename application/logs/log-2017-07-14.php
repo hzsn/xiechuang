@@ -1,0 +1,65 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+XCINFO - 2017-07-14 08:47:26 --> 192.168.1.105; /; HTTP_REFERER=
+XCINFO - 2017-07-14 08:48:16 --> 192.168.1.105; /index.php/aboutxc; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 09:27:17 --> 127.0.0.1; /; HTTP_REFERER=
+XCINFO - 2017-07-14 09:28:24 --> 127.0.0.1; /; HTTP_REFERER=
+XCINFO - 2017-07-14 09:30:18 --> 192.168.1.120; /; HTTP_REFERER=
+XCINFO - 2017-07-14 09:31:52 --> 127.0.0.1; /; HTTP_REFERER=
+XCINFO - 2017-07-14 09:32:59 --> 192.168.1.105; /; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 09:34:25 --> 127.0.0.1; /index.php/staff; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 09:34:26 --> 127.0.0.1; /index.php/aboutxc; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/staff
+XCINFO - 2017-07-14 09:34:28 --> 127.0.0.1; /index.php/staff; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/aboutxc
+XCINFO - 2017-07-14 09:34:29 --> 127.0.0.1; /index.php/staff/item/7; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/staff
+XCINFO - 2017-07-14 09:34:35 --> 127.0.0.1; /index.php/; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/staff/item/7
+XCINFO - 2017-07-14 09:34:50 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/aboutxc
+XCINFO - 2017-07-14 09:35:36 --> 127.0.0.1; /index.php/; HTTP_REFERER=
+XCINFO - 2017-07-14 10:27:49 --> 127.0.0.1; /index.php/; HTTP_REFERER=
+XCINFO - 2017-07-14 10:28:44 --> 127.0.0.1; /index.php/news/cato/2; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/
+XCINFO - 2017-07-14 10:29:29 --> 127.0.0.1; /index.php/staff; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/news/cato/2
+XCINFO - 2017-07-14 10:29:31 --> 127.0.0.1; /index.php/aboutxc; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/staff
+XCINFO - 2017-07-14 10:29:33 --> 127.0.0.1; /index.php/staff; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/aboutxc
+XCINFO - 2017-07-14 10:29:39 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/staff
+XCINFO - 2017-07-14 10:29:42 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact/joinus
+XCINFO - 2017-07-14 10:50:36 --> 127.0.0.1; /; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact/joinus
+XCINFO - 2017-07-14 10:54:49 --> 127.0.0.1; /index.php/staff; HTTP_REFERER=
+XCINFO - 2017-07-14 10:54:52 --> 127.0.0.1; /; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/staff
+XCINFO - 2017-07-14 10:54:55 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 10:55:48 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 10:58:41 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact/joinus
+XCINFO - 2017-07-14 10:58:45 --> 127.0.0.1; /; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact/joinus
+XCINFO - 2017-07-14 10:58:47 --> 127.0.0.1; /index.php/contact; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 11:00:19 --> 127.0.0.1; /; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 11:01:09 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 11:01:10 --> 127.0.0.1; /index.php/staff; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact/joinus
+XCINFO - 2017-07-14 11:01:12 --> 127.0.0.1; /index.php/contact; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/staff
+XCINFO - 2017-07-14 11:01:47 --> 127.0.0.1; /; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact
+XCINFO - 2017-07-14 14:09:36 --> 192.168.1.105; /; HTTP_REFERER=
+XCINFO - 2017-07-14 14:09:56 --> 192.168.1.105; /index.php/staff; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 14:10:02 --> 192.168.1.105; /index.php/contact; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 14:10:08 --> 192.168.1.105; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact
+XCINFO - 2017-07-14 14:10:45 --> 192.168.1.120; /; HTTP_REFERER=
+XCINFO - 2017-07-14 14:10:50 --> 192.168.1.120; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 14:11:22 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 14:11:57 --> 192.168.1.105; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact
+XCINFO - 2017-07-14 14:13:29 --> 192.168.1.120; /; HTTP_REFERER=
+XCINFO - 2017-07-14 14:13:33 --> 192.168.1.120; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 14:21:28 --> 192.168.1.120; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 14:37:26 --> 127.0.0.1; /; HTTP_REFERER=
+XCINFO - 2017-07-14 14:37:55 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+ERROR - 2017-07-14 14:37:55 --> Severity: error --> Exception: syntax error, unexpected '$tr_head' (T_VARIABLE) /var/www/xiechuang/application/views/home/joinus.php 64
+XCINFO - 2017-07-14 14:38:12 --> 127.0.0.1; /index.php/contact; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 14:38:15 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact
+ERROR - 2017-07-14 14:38:15 --> Severity: error --> Exception: syntax error, unexpected '$tr_head' (T_VARIABLE) /var/www/xiechuang/application/views/home/joinus.php 64
+XCINFO - 2017-07-14 14:38:33 --> 192.168.1.120; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+ERROR - 2017-07-14 14:38:33 --> Severity: error --> Exception: syntax error, unexpected '$tr_head' (T_VARIABLE) /var/www/xiechuang/application/views/home/joinus.php 64
+XCINFO - 2017-07-14 14:39:55 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact
+XCINFO - 2017-07-14 14:40:32 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact
+XCINFO - 2017-07-14 14:42:48 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact
+XCINFO - 2017-07-14 14:57:18 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact
+XCINFO - 2017-07-14 14:57:47 --> 192.168.1.120; /; HTTP_REFERER=
+XCINFO - 2017-07-14 14:57:50 --> 192.168.1.120; /index.php/contact; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 14:57:51 --> 192.168.1.120; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact
+XCINFO - 2017-07-14 14:58:25 --> 192.168.1.120; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/
+XCINFO - 2017-07-14 15:02:28 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact
+XCINFO - 2017-07-14 15:03:24 --> 127.0.0.1; /index.php/contact/joinus; HTTP_REFERER=http://hzxcsy.xlgp.xc/index.php/contact

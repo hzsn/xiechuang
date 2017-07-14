@@ -21,7 +21,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				foreach ($staffgroups['item'] as $key => $value) {
 					array_push($divs, '<div class="col-md-4"> <div class="group-box thumbnail">');
 					array_push($divs, '<div class="s-icon">图集</div>');
-					array_push($divs, '<a href="'.site_url('/news/staff/group_'.$value['id']).'"><img src="'.$value['cover_img_path'].'" style="height:180px;width:100%"></a>');
+					array_push($divs, '<a href="'.site_url('/staff/item/'.$value['id']).'"><img src="'.$value['cover_img_path'].'" style="height:180px;width:100%"></a>');
 					array_push($divs, '<div class="caption"><div class="text-center xc-text-wrap">'.$value['name'].'</div></div>');
 					array_push($divs, '</div></div>');
 					if ($key%3 == 2 || $key == $len-1) {
