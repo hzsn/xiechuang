@@ -41,14 +41,16 @@ class File extends CI_Controller
     {
         $data['code'] = 1;
         $data['msg'] = '上传失败';
+
         if (!array_key_exists($type, $this->sub_dir)) {
             $data['obj']='上传路径错误, type = '.$type;
             echo(json_encode(($data)));
             return;
         }
         $config['upload_path']      = $this->get_dir($this->dir_path.$this->sub_dir[$type]);
-        $config['allowed_types']    = 'jpg|png';
+        $config['allowed_types']    = 'jpg|png|jpeg';
         $config['file_name']        = date('YmdHis').rand(1000,9999);
+        
         $this->load->library('upload', $config);
         if ( ! $this->upload->do_upload('file'))
         {

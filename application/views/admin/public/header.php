@@ -12,7 +12,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
         <a href="<?php echo site_url('/')?>" target="_blank">官网首页</a>
       </li>
       <li class="layui-nav-item">
-        <a href="javascript:void()">清除缓存</a>
+        <a id="clean-btn" href="javascript:;">清除缓存</a>
       </li>
       <li class="layui-nav-item">
 			<a href="<?php echo site_url('/admin/user/logout');?>">
@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');?>
         <a class="layui-item-link" href="<?php echo site_url('/admin/news');?>" rel="/admin/news">资讯列表</a>
       </dd>
       <dd class="">
-        <a class="layui-item-link" href="javascript:void('0')">资讯编辑</a>
+        <a class="layui-item-link" href="<?php echo site_url('/admin/news#edit');?>">资讯编辑</a>
       </dd>
     </dl>
   </li>
@@ -80,6 +80,19 @@ layui.use(['jquery','element'], function(){
     });
   });
 
+  $('#clean-btn').on('click', function(){
+      $.ajax({
+          url:'/admin/page/clean',
+          type:'POST',
+          error:function(xhr, errMsg){
+            console.log(xhr, errMsg);
+          },
+          success:function(data){
+            console.log(data);
+          },
+        });
+      });  
+  });
+
   
-});
 </script>

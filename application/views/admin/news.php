@@ -9,6 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
   <ul class="layui-tab-title">
     <li class="layui-this" layui-id="">资讯列表</li>
     <li layui-id="">栏目列表</li>
+    <li layui-id="edit">添加资讯</li>
   </ul>
   <div class="layui-tab-content">
     <div id="layui-view-tab" class="layui-tab-item layui-show">
@@ -35,6 +36,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
       
       <table class="layui-table">
       <?php 
+        $thead = ['ID','标题','类别','状态','访问量','操作'];
       ?>
         <colgroup>
           <col>
@@ -43,30 +45,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </colgroup>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>标题</th>
-            <th>类别</th>
-            <th>状态</th>
-            <th>访问量</th>
-            <th>操作</th>
+            <?php 
+              foreach ($thead as $key => $value) {
+                echo "<th>".$value."</th>";
+              }
+            ?>
           </tr> 
         </thead>
         <tfoot>
           <tr>
-            <td colspan="6" align="right">
+            <td colspan="<?php echo count($thead);?>" align="right">
               <div id="page-atb" class="layui-tab-page"></div>
             </td>
           </tr>
         </tfoot>
         <tbody>
           <?php
-            if(!isset($article)){
-              echo "暂无数据";
+            if(!isset($article) || empty($article)){
+              $len = count($thead);
+              echo '<tr><td colspan='.$len.'>暂无数据</td><tr>';
             }
           foreach ($article as $key => $value) { 
               $status = '显示';
               $_class = '';
-              $article_title = '<a href="http://hzxcsy.xlgp.xc/article/'.$value["id"].'" target="_blank">'.$value["title"].'</a>';
+              $article_title = '<a href="<?php echo base_url(article/'.$value["id"].'); ?>" target="_blank">'.$value["title"].'</a>';
               if($value['status']){
                 $_class = 'layui-gray';
                 $status = '不显示';
@@ -99,9 +101,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="layui-tab-item">
       <blockquote class="layui-elem-quote"><h3>栏目列表</h3></blockquote>
     </div>
+    <div class="layui-tab-item">
+      <blockquote class="layui-elem-quote"><h3>添加资讯</h3></blockquote>
+      <div id="wang-editor" style="margin: 10px 0">
+          <p>欢迎使用 <b>wangEditor</b> 富文本编辑器</p>
+      </div>
+      <div>
+        <button class="layui-btn" id="edit-preview">预览</button>
+      </div>
+    </div>
   </div>
 </div>      
 </div>
+<script type="text/javascript" src="/static/wangeditor-3.0.4/wangEditor.min.js"></script>
+<script type="text/javascript">
+
+  var E = window.wangEditor;
+  var editor = new E(document.getElementById('wang-editor'))
+  // editor.customConfig.uploadImgShowBase64 = true;   // 使用 base64 保存图片
+  editor.customConfig.uploadImgServer = '/admin/file/we_upload';  // 上传图片到服务器
+  editor.customConfig.onchange = function (html) {
+      console.log(html)
+  }
+  editor.create();
+
+</script>
 <script type="text/javascript">
 layui.use(['laypage', 'layer', 'jquery', 'element','form'],function(){
   var laypage = layui.laypage,
@@ -146,8 +170,18 @@ layui.use(['laypage', 'layer', 'jquery', 'element','form'],function(){
     });
   });
 
+  $('#edit-preview').on('click', function(){
+    layer.open({
+      title:'测试页面',
+      type:1,
+      area: ['85%','90%'],
+      maxmin:true,
+      content:editor.txt.html(),
+    });
 
+  });
 
 });
 </script>
+
 <?php require_once('public/footer.php') ;?>

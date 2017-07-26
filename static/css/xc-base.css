@@ -548,6 +548,10 @@ cursor: pointer;
 	margin: 15px 0;
 	color: #505050;	
 }
+.xc-article-content{
+	width: 80%;
+	margin: 0 auto;	
+}
 .xc-share-box{
 	padding: 0 15px 10px;
 }

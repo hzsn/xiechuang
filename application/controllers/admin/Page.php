@@ -40,7 +40,11 @@ class Page extends CI_Controller {
 		$this->load->view('errors/404', $this->data);
 	}
 
-	public function test(){
+	private function test(){
 		$this->load->view('admin/test', $this->data);
+	}
+
+	public function clean(){
+		$this->cache->clean();
 	}
 }

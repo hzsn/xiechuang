@@ -26,7 +26,7 @@ class Page extends CI_Controller {
 
 		$this->load->model('m_article');
 		//获取首页显示的最新资讯
-		$this->data['news'] = news_format($this->m_article->get_article_by_time(1, 0, 3),$dir_path=$this->config->item('new'));
+		$this->data['news'] = news_format($this->m_article->get_article_by_time(0, 0, 3),$dir_path=$this->config->item('new'));
 		//获取经营业务的数据
 		$this->data['business'] = get_business();
 		//获取公司简介的数据

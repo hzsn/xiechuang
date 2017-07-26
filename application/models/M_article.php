@@ -24,7 +24,13 @@ class M_article extends CI_Model
 		$this->db->order_by('create_time', 'DESC');
 		$this->db->limit($size,$index*$size);
 		$this->db->select('id, title, summary, create_time, create_user, pv, item_img');
-		$query = $this->db->get_where('xc_article', array('status' => 0, 'cato_id'=>$cato_id));
+		$param = [
+			'status'=>0
+		];
+		if (!empty($cato_id)) {
+			$param['cato_id'] = $cato_id;
+		}
+		$query = $this->db->get_where('xc_article', $param);
 		return $query->result_array();
 	}
 	/**

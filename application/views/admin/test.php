@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  	layui.config({base:'/static/layui-v1.0.9/lay/ext/'}).use(['upload','mupload'],function(){
  		layui.mupload({
  			container:'#layui-upload-table',
- 			url:'/admin/file/upload',
+ 			url:'/admin/file/upload/',
  			complete:function(res){
  				console.log(res);
  			}
