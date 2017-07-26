@@ -397,7 +397,8 @@ font-size: 12px;
 	height: 160px;
 	overflow: hidden;
 	position: relative;
-	background-size: cover; 
+	background-size: cover;
+	border: 1px solid #efefef; 
 }
 .xc-news-body{
 	height: 100%;

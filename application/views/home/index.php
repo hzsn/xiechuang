@@ -73,7 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 					<div class="xc-buss-bg" style="background-image: url(<?php echo $item[$i]['item_img'];?>);"></div>
 					<div class="xc-buss-content-box">
 							<div class="xc-buss-content-title"><?php echo $item[$i]['item_title'];?></div>
-							<div class="xc-buss-content"><?php echo $item[$i]['item_desc'];?></div>
+							<div class="xc-buss-content text-indent-2em"><?php echo $item[$i]['item_desc'];?></div>
 					</div>
 					<div class="xc-buss-title"><?php echo $item[$i]['item_title'];?></div>
 				</div>
@@ -85,7 +85,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div class="xc-section" style="background-color: #fdfdfd">
     <div class="container">
         <div class="row animatedParent animateOnce">
-        	<h2 class="xc-title text-center"><?php echo $this->config->item('news_title'); ?></h2>	
+        	<h2 class="xc-title text-center"><?php echo $this->config->item('news_title'); ?></h2>
+          <input type="button" name="" value="更多">	
         	<?php 
         		if (!$news) {
         			echo '没有数据';

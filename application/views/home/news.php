@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	      <h2 class="xc-news-heading xc-text-wrap"><a href="<?php echo site_url('article/'.$value['id']) ;?>">
 	      	<?php echo $value['title'] ;?>
 	      </a></h2>
-	      <p class="lead"><?php echo $value['summary'] ;?></p>
+	      <p class="lead text-indent-2em"><?php echo $value['summary'] ;?></p>
 	    </div>
 	 </div>
      <?php
